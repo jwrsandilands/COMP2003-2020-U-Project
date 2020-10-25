@@ -9,7 +9,7 @@ Group Members:
               
               > James Mountford
               
-              > Myself (Joseph Sandilands)
+              > Joseph Sandilands
               
               > Luke White
               

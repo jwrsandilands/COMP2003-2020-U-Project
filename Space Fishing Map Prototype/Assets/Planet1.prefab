@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059dd3a6ed8c31c40985bb113454adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpin: -5
-  maxSpin: 5
+  minSpin: -8
+  maxSpin: 8
   spinNumber: 0
   minSize: 1
   MaxSize: 2

@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class mapCreate : MonoBehaviour
 {
+    //Get Planet Object to spawn
     public GameObject Planet;
 
-    public float xMin, xMax, yMin, yMax;
+    //Set up colider variables
+    public Collider2D collider;
+    Vector3 cMin, cMax;
+
+    //Get Number of Planets to Spawn
     public int maxPlanets;
+    //set co-ordinates Planets Spawn in
+    float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
     void Start()
     {
-        int count = 1;
+
+        collider = GetComponent<Collider2D>();
+        cMin = collider.bounds.min;
+        cMax = collider.bounds.max;
+
+        xMin = cMin.x;
+        xMax = cMax.x;
+        yMin = cMin.y;
+        yMax = cMax.y;
+
+        OutputData();
+
+    int count = 1;
         while(count <= maxPlanets)
         {
             Vector3 pos = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
@@ -22,6 +41,14 @@ public class mapCreate : MonoBehaviour
             count++;
         }
 
+    }
+
+    void OutputData()
+    {
+        Debug.Log("Collider bound Minimum : " + cMin);
+        Debug.Log("Collider bound Maximum : " + cMax);
+        Debug.Log("Co-Ordinate bound Minimum : (" + xMin + ", " + yMin + ")");
+        Debug.Log("Co-Ordinate bound Maximum : (" + xMax + ", " + yMax + ")");
     }
 
     // Update is called once per frame

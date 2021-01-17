@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Cast : MonoBehaviour
 {
@@ -29,12 +30,17 @@ public class Cast : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            casting = true;
-            CastHookAnim();
-            
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("Clicked on the UI");
+                casting = true;
+                CastHookAnim();
+            }
+            // Check if the mouse was clicked over a UI element
+
         }
 
-        if(casting && Time.time > atHook)
+        if (casting && Time.time > atHook)
         {
             
 

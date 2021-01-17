@@ -19,7 +19,7 @@ public class CameraFollowHook : MonoBehaviour
     // the fixedUpdate function bugged out player movement.
 
 
-    void SwitchTarget(Transform newTransform) 
+    public void SwitchTarget(Transform newTransform) 
     {
         target = newTransform;
     }

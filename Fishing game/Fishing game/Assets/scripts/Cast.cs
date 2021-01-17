@@ -18,10 +18,12 @@ public class Cast : MonoBehaviour
     private float angle;
     private Quaternion q;
 
+    CameraFollow mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -31,17 +33,11 @@ public class Cast : MonoBehaviour
         {
             casting = true;
             CastHookAnim();
-            
         }
 
         if(casting && Time.time > atHook)
-        {
-            
-
+        { 
             CastHook();
-           
-            
-
         }
     }
 
@@ -50,8 +46,6 @@ public class Cast : MonoBehaviour
         castAnimation.Play("Cast");
         atHook = Time.time + atHookTime;
         casting = true;
-        
-        
     }
 
     void CastHook()
@@ -63,5 +57,6 @@ public class Cast : MonoBehaviour
 
         Debug.Log("q = " + q);
         Instantiate(hookprefab, castPoint.position, q);
+        
     }
 }

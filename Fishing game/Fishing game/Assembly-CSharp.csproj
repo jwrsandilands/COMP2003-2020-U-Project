@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\scripts\CameraFollowHook.cs" />
+    <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\scripts\Cast.cs" />
     <Compile Include="Assets\scripts\HookLaunch.cs" />
     <Compile Include="Assets\scripts\PlayerCast.cs" />

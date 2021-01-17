@@ -8,9 +8,9 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    float speed;
-    float TimetoTarget;
-    float Fuel;
+    public float speed;
+    //float TimetoTarget;
+    public float Fuel;
     public SpriteRenderer CharSprite;
     public Rigidbody2D CharPhysics;
     float HoriPosition;
@@ -21,8 +21,6 @@ public class MovementScript : MonoBehaviour
     {
         //CharPhysics = GetComponent<Rigidbody2D>();
         //CharSprite = GetComponent<SpriteRenderer>();
-        Fuel = 5000;
-        speed = 25;
     }
 
     void Update()

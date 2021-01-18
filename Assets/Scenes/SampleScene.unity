@@ -704,15 +704,25 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 61471990903028636, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61471990903028636, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7805035639224574016, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 118.2
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7805035639224574016, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -32.4
+      value: -27.1
       objectReference: {fileID: 0}
     - target: {fileID: 7805035639224574016, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
@@ -983,10 +993,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1282782223}
   m_HandleRect: {fileID: 228704205}
   m_Direction: 2
-  m_MinValue: 15
-  m_MaxValue: 50
+  m_MinValue: 10
+  m_MaxValue: 25
   m_WholeNumbers: 0
-  m_Value: 15
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1132,7 +1142,7 @@ GameObject:
   - component: {fileID: 948644988}
   - component: {fileID: 948644987}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Velocity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1171,7 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.8018868, g: 0.76045233, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

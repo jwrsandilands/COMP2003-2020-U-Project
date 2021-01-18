@@ -8,6 +8,7 @@ public class HookLaunch : MonoBehaviour
 
     public float speed;
     public Rigidbody2D rb;
+    private bool startSlow = false;
     
     
 
@@ -21,14 +22,15 @@ public class HookLaunch : MonoBehaviour
 
     private void Update()
     {
-       
-        
-    }
-
-    private void slow()
-    {
-        
-       
+        if (transform.position.y < 0f)
+        {
+            startSlow = true;
+        }
+        if (startSlow == true)
+        {
+            rb.gravityScale = 0f;
+            rb.AddForce(new Vector2(-rb.velocity.x, -rb.velocity.y) * 0.0075f, ForceMode2D.Impulse);
+        }
     }
 
 

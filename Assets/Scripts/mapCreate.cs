@@ -20,6 +20,8 @@ public class mapCreate : MonoBehaviour
     void Start()
     {
 
+        
+
         collider = GetComponent<Collider2D>();
         cMin = collider.bounds.min;
         cMax = collider.bounds.max;
@@ -28,6 +30,10 @@ public class mapCreate : MonoBehaviour
         xMax = cMax.x;
         yMin = cMin.y;
         yMax = cMax.y;
+
+        //added by James to disable collision with hook
+        collider.enabled = !collider.enabled;
+        /////
 
         OutputData();
 

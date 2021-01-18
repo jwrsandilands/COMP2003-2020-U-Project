@@ -860,7 +860,7 @@ PrefabInstance:
     - target: {fileID: 61471990903028636, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
       propertyPath: m_Size.x
-      value: 256
+      value: 143.88803
       objectReference: {fileID: 0}
     - target: {fileID: 61471990903028636, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
@@ -877,15 +877,20 @@ PrefabInstance:
       propertyPath: m_UsedByComposite
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61471990903028636, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -56.055984
+      objectReference: {fileID: 0}
     - target: {fileID: 7805035639224574016, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 120
+      value: 128.5
       objectReference: {fileID: 0}
     - target: {fileID: 7805035639224574016, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.1
+      value: -33.2
       objectReference: {fileID: 0}
     - target: {fileID: 7805035639224574016, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
@@ -935,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
       propertyPath: maxPlanets
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d520e07fc17050f4dab42de91605ee67, type: 3}
@@ -1235,6 +1240,119 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &826605596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826605598}
+  - component: {fileID: 826605597}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &826605597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826605596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAAIeyMcQOPZQIAAAoFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtz2jAQ/iuMziVjE5uU3lpDSA95TGgnF1+EtMYabMmjR4Bk+O9dyTZ2KBfW++3j22/X/iRCmgaYVXqtBX9UHMiPCfE2+TYZwAc40p2SG/EBfcyb4Lb0QTTEvFIrFPpjn2ZUDVYL9lPuKh8codNJUShdr/gOMmWsQXdBKwMIaWV9tkTX54Qc8W+68CkntGZ33vpAaxFNzmgykBb0EHqXdJHT2+Rm4X+zpMuYzm9m8TxN56tpNA/JTrKK1g1wP8lQI076dvM2TuKQXYgfiKmqEqZjSOypCQpktDEO58MALihOHGj5+BLErrSe/Tj5uSgM2E4OTU9LoVG4tir5pVo1a2r2LbF3WjnfJ41ngVNb9PE/fBoHuNCqfuj7xpHvYUvB9q/0xKixI7nH7uVX4k4eaLWn2wreSpBPaq2VkxxBq51PdQZmy+HxMlpWAtsP/pbqldM1g+C93P1u/QznMP0xq0S99dBN0jo2lQp6h5MAjZv5jYTDwZiuBHo9i78G/tDd+LI64F5oYxHqppSe3lY57UPJKmjmp3E2U1pCcHekG5C0sqcXLGOvV3iFjdpeIffUv0Nd8w7rX42rlOAe4qPoCnpRh8uyTKkOj2DKZ2crIWEg7YEn1ClTUrYXNtakT9s4XVA2Sts5wb+eFkkpS4qEMVbEbBZH22n6PeXpLY8WgNY8npNwe0LinLR6aYl28uDW5FBc4p31n5bJWtMmXDvX9LAWH7UaSS5koTZMA8jntsKFOGhsgm8lX3GBAm3AWiHDvslnTirF9sDzS6E8TLo6Wk3zoUpOGvGurPfkJAvfkpycyfkfUEsDBBQAAAgIAAAAIeyS5H1ObAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSaWKySZpJcnJymmGykaFBkq6phWmKqXGKgWUqkGVmaKYUC1RfUlmQ6peYmwrRE5BYkpGWmZeSmZeu516UmeIOMlopthYAUEsBAi0AFAAACAgAAAAh7IxxA49lAgAACgUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7JLkfU5sAAAAeAAAAAkAJAAAAAAAAAAAAAAAsgIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABpAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &826605598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826605596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.1, y: 1.4, z: 9.030793}
+  m_LocalScale: {x: 2.1625, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &829134396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5135817693181339459, guid: d520e07fc17050f4dab42de91605ee67,
+    type: 3}
+  m_PrefabInstance: {fileID: 603499872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &829134397 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 61471990903028636, guid: d520e07fc17050f4dab42de91605ee67,
+    type: 3}
+  m_PrefabInstance: {fileID: 603499872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &829134400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829134396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bafaeef7e51b9534dab034dc8fa9889e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunFish: {fileID: 5146742808561035499, guid: b1dd1fb862c9a524bb1251a1a9a77c70, type: 3}
+  collider2: {fileID: 829134397}
+  maxSunFish: 30
 --- !u!1 &933561345
 GameObject:
   m_ObjectHideFlags: 0

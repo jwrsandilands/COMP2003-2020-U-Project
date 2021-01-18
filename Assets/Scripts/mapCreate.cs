@@ -16,6 +16,8 @@ public class mapCreate : MonoBehaviour
     //set co-ordinates Planets Spawn in
     float xMin, xMax, yMin, yMax;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class mapCreate : MonoBehaviour
 
         OutputData();
 
-    int count = 1;
+        int count = 1;
         while(count <= maxPlanets)
         {
             Vector3 pos = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
@@ -46,6 +48,10 @@ public class mapCreate : MonoBehaviour
             Instantiate(Planet, pos, rotate);
             count++;
         }
+
+        
+        //added by James to get pathfinder to scan the generated map for Fish AI
+        AstarPath.active.Scan();
 
     }
 

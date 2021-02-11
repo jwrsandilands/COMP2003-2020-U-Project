@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5146742808125788403}
   - component: {fileID: 5146742808125788400}
   - component: {fileID: 5146742808125788414}
+  - component: {fileID: 8638462080728937811}
   m_Layer: 0
   m_Name: SunFish
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5146742808125788401}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: 0.03, z: -1.8542658}
+  m_LocalPosition: {x: -0.04, y: 0.03, z: 0}
   m_LocalScale: {x: 1.0929, y: 1.0929, z: 1.0929}
   m_Children: []
   m_Father: {fileID: 5146742808561035511}
@@ -116,6 +117,27 @@ CircleCollider2D:
   m_Offset: {x: -0.30898649, y: 0}
   serializedVersion: 2
   m_Radius: 0.3310135
+--- !u!50 &8638462080728937811
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146742808125788401}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5146742808561035499
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,10 +150,9 @@ GameObject:
   - component: {fileID: 5146742808561035508}
   - component: {fileID: 5146742808561035509}
   - component: {fileID: 5146742808561035498}
-  - component: {fileID: 6524092770439775281}
   m_Layer: 0
   m_Name: SunFishPathFinder
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5146742808561035499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.36, y: -8.36, z: 1.8542658}
+  m_LocalPosition: {x: 14.36, y: -8.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5146742808125788402}
@@ -228,18 +249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10
---- !u!114 &6524092770439775281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5146742808561035499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf183402c00e82d4d994b5297715ffd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hook: {fileID: 0}
+  hooktran: {fileID: 0}
   Fish: {fileID: 5146742808561035511}
-  radius: 10
+  hookDetectRadius: 10

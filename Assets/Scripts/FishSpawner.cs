@@ -36,9 +36,9 @@ public class FishSpawner : MonoBehaviour
         int count = 1;
         while (count <= maxSunFish)
         {
-            Vector3 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f), 0);
+            Vector3 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f), 0f);
             Quaternion rotate = new Quaternion(0, 0, 0, 0);
-
+            
             Instantiate(sunFish, pos, rotate);
             count++;
         }

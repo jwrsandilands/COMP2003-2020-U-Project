@@ -5,28 +5,45 @@ using Pathfinding;
 
 public class HookIsNear : MonoBehaviour
 {
-    public Transform hook;
+    
+    public Transform hooktran;
     public Transform Fish;
     public float radius = 10;
+
+    //private CaughtOne catchDetector;
+    
+
     IAstarAI ai;
 
     // Start is called before the first frame update
     void Start()
     {
         ai = GetComponent<IAstarAI>();
-       
+        //catchDetector = GameObject.FindGameObjectWithTag("Hook").GetComponent<CaughtOne>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-         hook = GameObject.FindGameObjectWithTag("Hook").transform;
-        if (Vector3.Distance(hook.position, Fish.position) < radius)
+         
+        hooktran = GameObject.FindGameObjectWithTag("Hook").transform;
+        
+        
+
+        if (Vector3.Distance(hooktran.position, Fish.position ) < radius)
         {
             GetComponent<WanderingDestinationSetter>().enabled = false;
-            ai.destination = hook.position;
+            ai.destination = hooktran.position;
             ai.SearchPath();
             Debug.Log("hook is near");
         }
+        else
+        {
+            GetComponent<WanderingDestinationSetter>().enabled = true;
+            ai.SearchPath();
+        }
     }
+
+ 
 }

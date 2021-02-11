@@ -8,6 +8,7 @@ TagManager:
   - InventoryManager
   - ItemUI
   - Item
+  - fish
   layers:
   - Default
   - TransparentFX

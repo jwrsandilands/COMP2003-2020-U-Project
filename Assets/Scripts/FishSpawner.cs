@@ -5,7 +5,7 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     //get fish to Spawn
-    public GameObject sunFish;
+    public GameObject flock;
 
     //Set up colider variables
     public Collider2D collider2;
@@ -36,10 +36,10 @@ public class FishSpawner : MonoBehaviour
         int count = 1;
         while (count <= maxSunFish)
         {
-            Vector3 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f), 0f);
+            Vector2 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f));
             Quaternion rotate = new Quaternion(0, 0, 0, 0);
             
-            Instantiate(sunFish, pos, rotate);
+            Instantiate(flock, pos, rotate);
             count++;
         }
 

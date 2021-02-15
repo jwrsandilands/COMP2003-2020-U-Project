@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
+    public Transform spawnPoint;
+
     public FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     [Range(10, 500)]
     public int startingCount = 250;
-    const float AgentDensity = 0.08f;
+    const float AgentDensity = 1f;
 
     [Range(1f, 100f)]
     public float driveFactor = 10f;
@@ -37,7 +39,7 @@ public class Flock : MonoBehaviour
         {
             FlockAgent newAgent = Instantiate(
                 agentPrefab,
-                Random.insideUnitCircle * startingCount * AgentDensity,
+                (Vector2)spawnPoint.position + Random.insideUnitCircle * startingCount * AgentDensity,
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
                 );

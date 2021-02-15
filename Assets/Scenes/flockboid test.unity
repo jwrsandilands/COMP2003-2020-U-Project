@@ -112,6 +112,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133348106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133348108}
+  - component: {fileID: 133348107}
+  m_Layer: 0
+  m_Name: OrbitalOrca_Flock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &133348107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133348106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c91a2e66a7969f43b5e841437a6edd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  agentPrefab: {fileID: 3085577085432938060, guid: 5164fd8a1717c0c4f8d080c8558c9126,
+    type: 3}
+  behaviour: {fileID: 11400000, guid: 9601d8f0b9f65cc4da65705ddc1337b8, type: 2}
+  startingCount: 10
+  driveFactor: 10
+  maxSpeed: 4
+  neighborRadius: 8.8
+  avoidanceRadiusMultiplier: 1
+--- !u!4 &133348108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133348106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.11, y: 4.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242516021
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,11 +240,63 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242516021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1392716484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392716486}
+  - component: {fileID: 1392716485}
+  m_Layer: 0
+  m_Name: SpaceTrout_Flock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1392716485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392716484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c91a2e66a7969f43b5e841437a6edd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  agentPrefab: {fileID: 3085577085432938060, guid: 62a72ddb36967ea45bd422a4d6633695,
+    type: 3}
+  behaviour: {fileID: 11400000, guid: a4078f7cb4645be48ad774347fbeb73e, type: 2}
+  startingCount: 10
+  driveFactor: 1
+  maxSpeed: 18
+  neighborRadius: 2
+  avoidanceRadiusMultiplier: 1
+--- !u!4 &1392716486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392716484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.34, y: -8.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747343176
 GameObject:
@@ -292,14 +396,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91a2e66a7969f43b5e841437a6edd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
   agentPrefab: {fileID: 3085577085432938060, guid: 0324b3f74a5782847a351a15e946a757,
     type: 3}
   behaviour: {fileID: 11400000, guid: 9a97a9b5132b037488b6390bd4be8834, type: 2}
-  startingCount: 203
-  driveFactor: 10
-  maxSpeed: 5
-  neighborRadius: 3.56
-  avoidanceRadiusMultiplier: 0.5
+  startingCount: 16
+  driveFactor: 35
+  maxSpeed: 13
+  neighborRadius: 2.5
+  avoidanceRadiusMultiplier: 1
 --- !u!4 &1798256847
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798256845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.19, y: 6.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -20,13 +20,20 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         //finds target to follow
-        target = GameObject.FindGameObjectWithTag("Hook").transform;
+        try
+        {
+            target = GameObject.FindGameObjectWithTag("Hook").transform;
+        }
+        catch { }
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
         //sets camera to target
-        transform.position = target.position + offset;
+        if (target != null)
+        {
+            transform.position = target.position + offset;
+        }
     }
 }

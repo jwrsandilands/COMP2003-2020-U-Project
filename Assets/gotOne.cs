@@ -12,7 +12,6 @@ public class gotOne : MonoBehaviour
         if(collision.gameObject.tag == "fish")
         {
             manager.GetComponent<stateManager>().HasCaught = true;
-            Debug.Log(manager.GetComponent<stateManager>().HasCaught + "fish");
         }
     }
 

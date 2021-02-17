@@ -32,22 +32,15 @@ public class Cast : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                Debug.Log("Clicked on the UI");
                 casting = true;
                 CastHookAnim();
             }
             // Check if the mouse was clicked over a UI element
-
         }
 
         if (casting && Time.time > atHook)
         {
-            
-
             CastHook();
-           
-            
-
         }
     }
 
@@ -67,7 +60,6 @@ public class Cast : MonoBehaviour
         angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.Euler(0f, 0f, angle);
 
-        Debug.Log("q = " + q);
         Instantiate(hookprefab, castPoint.position, q);
     }
 }

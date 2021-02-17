@@ -37,8 +37,6 @@ public class mapCreate : MonoBehaviour
         collider.enabled = !collider.enabled;
         /////
 
-        OutputData();
-
         int count = 1;
         while(count <= maxPlanets)
         {
@@ -51,21 +49,7 @@ public class mapCreate : MonoBehaviour
 
         
         //added by James to get pathfinder to scan the generated map for Fish AI
-        AstarPath.active.Scan();
+        //AstarPath.active.Scan();
 
-    }
-
-    void OutputData()
-    {
-        Debug.Log("Collider bound Minimum : " + cMin);
-        Debug.Log("Collider bound Maximum : " + cMax);
-        Debug.Log("Co-Ordinate bound Minimum : (" + xMin + ", " + yMin + ")");
-        Debug.Log("Co-Ordinate bound Maximum : (" + xMax + ", " + yMax + ")");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

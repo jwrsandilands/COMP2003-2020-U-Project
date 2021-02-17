@@ -69,14 +69,12 @@ public class Flock : MonoBehaviour
                 
                 if(chance == true)
                 {
-                    Debug.Log("true if");
                     manager.GetComponent<stateManager>().CanLure = false;
                     agent.MoveTowards();
                     
                 }
                 if(chance == false) 
                 {
-                    Debug.Log("false if");
                     manager.GetComponent<stateManager>().CanLure = false;
                     
                     Invoke("SetBoolBack", 0.5f);
@@ -138,9 +136,7 @@ public class Flock : MonoBehaviour
 
     private void SetBoolBack()
     {
-        Debug.Log("Invoked");
         manager.GetComponent<stateManager>().CanLure = true;
-        Debug.Log(GetComponent<stateManager>().CanLure);
     }
    
 }

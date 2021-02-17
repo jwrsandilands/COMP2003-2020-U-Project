@@ -9,6 +9,8 @@ TagManager:
   - ItemUI
   - Item
   - fish
+  - Flock
+  - GameManager
   layers:
   - Default
   - TransparentFX

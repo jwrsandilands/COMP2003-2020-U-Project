@@ -18,6 +18,7 @@ public class HookLaunch : MonoBehaviour
         speed = GameObject.Find("VelocitySlider").GetComponent<Slider>().value;
         rb.gravityScale = 1;
         rb.velocity = transform.right * speed;
+        
     }
 
     private void Update()

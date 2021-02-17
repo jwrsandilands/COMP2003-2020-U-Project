@@ -141,9 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91a2e66a7969f43b5e841437a6edd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 968950207}
   agentPrefab: {fileID: 3085577085432938060, guid: 5164fd8a1717c0c4f8d080c8558c9126,
     type: 3}
+  fishLevel: 0
+  range: 10
   behaviour: {fileID: 11400000, guid: 9601d8f0b9f65cc4da65705ddc1337b8, type: 2}
   startingCount: 10
   driveFactor: 10
@@ -163,6 +165,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &968950206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968950207}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &968950207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968950206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 54.043224, y: -26.583946, z: -11.110484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242516021
 GameObject:
@@ -275,12 +307,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91a2e66a7969f43b5e841437a6edd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 968950207}
   agentPrefab: {fileID: 3085577085432938060, guid: 62a72ddb36967ea45bd422a4d6633695,
     type: 3}
+  fishLevel: 0
+  range: 10
   behaviour: {fileID: 11400000, guid: a4078f7cb4645be48ad774347fbeb73e, type: 2}
-  startingCount: 10
-  driveFactor: 1
+  startingCount: 15
+  driveFactor: 9
   maxSpeed: 18
   neighborRadius: 2
   avoidanceRadiusMultiplier: 1
@@ -396,9 +430,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91a2e66a7969f43b5e841437a6edd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 968950207}
   agentPrefab: {fileID: 3085577085432938060, guid: 0324b3f74a5782847a351a15e946a757,
     type: 3}
+  fishLevel: 0
+  range: 10
   behaviour: {fileID: 11400000, guid: 9a97a9b5132b037488b6390bd4be8834, type: 2}
   startingCount: 16
   driveFactor: 35

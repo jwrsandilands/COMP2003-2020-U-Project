@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4124827659783806126}
   - component: {fileID: 2190539227904357401}
   - component: {fileID: 3076621214063357440}
-  - component: {fileID: 6109998226539274857}
+  - component: {fileID: 2303906724680158308}
   m_Layer: 0
   m_Name: Hook
   m_TagString: Hook
@@ -134,7 +134,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6109998226539274857
+--- !u!114 &2303906724680158308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2872261931313296695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15a5d9c292e42d418ad1a1d40cf2989, type: 3}
+  m_Script: {fileID: 11500000, guid: d51e181cd026aaa4ab81116b395af938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caught: 0
+  manager: {fileID: 3677380827834020228, guid: 7065c15ef7e03ca429541a729e6b4f66, type: 3}

@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class FlockAgent : MonoBehaviour
 {
+    
+
 
     Flock agentFlock;
     public Flock AgentFlock { get { return agentFlock; } }
@@ -27,5 +29,13 @@ public class FlockAgent : MonoBehaviour
     {
         transform.up = velocity;
         transform.position += (Vector3)velocity * Time.deltaTime;
+    }
+
+
+    //method: move towards hook
+    public void MoveTowards()
+    {
+        this.GetComponent<MoveTowardsHook>().enabled = true;
+
     }
 }

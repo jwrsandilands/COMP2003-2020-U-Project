@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject selectedUI;
     GameObject selectedItem;
     GameObject[] itemUIs = new GameObject[9];
+    int currentItemIndex = 0;
 
     private void Start()
     {
@@ -29,6 +30,15 @@ public class InventoryManager : MonoBehaviour
                 itemUIs[i].GetComponent<ItemUI>().currentItem = tempInventory[i]; //.GetComponent<Hook>().invIcon;
                 itemUIs[i].GetComponent<ItemUI>().Draw(false);
             }
+        }
+        this.ChangeSelected(itemUIs[0].GetComponent<ItemUI>().currentItem);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Switch();
         }
     }
 
@@ -66,6 +76,18 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
+    private void Switch()
+    {
+        currentItemIndex += 1;
+        if (currentItemIndex == 9)
+        {
+            currentItemIndex = 0;
+        }
+        if (itemUIs[currentItemIndex].GetComponent<ItemUI>().isItem == false) 
+        {
+            currentItemIndex = 0;
+        }
+        this.ChangeSelected(itemUIs[currentItemIndex].GetComponent<ItemUI>().currentItem);
+    }
 
 }

@@ -7,8 +7,8 @@ public class ItemUI : MonoBehaviour
 {
     [System.NonSerialized] public GameObject currentItem;
     [System.NonSerialized] public GameObject icon;
-    public GameObject button;
     InventoryManager InventoryManager;
+    [System.NonSerialized] public bool isItem = false;
 
     private void Start()
     {
@@ -20,12 +20,12 @@ public class ItemUI : MonoBehaviour
         if (!isNothing)
         {
             icon = Instantiate(currentItem.GetComponent<Hook>().invIcon, gameObject.transform) as GameObject;
-            button.SetActive(true);
+            isItem = true;
         }
         else 
         {
             icon = Instantiate(currentItem, gameObject.transform) as GameObject;
-            button.SetActive(false);
+            isItem = false;
         }
         icon.transform.parent = gameObject.transform;
         icon.transform.SetAsFirstSibling();

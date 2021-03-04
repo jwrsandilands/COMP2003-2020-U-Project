@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2604221036249337673}
   m_Layer: 0
   m_Name: TestFish_flock
-  m_TagString: flock
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 3717820521443976939}
+  manager: {fileID: 3677380827834020228, guid: 7065c15ef7e03ca429541a729e6b4f66, type: 3}
   agentPrefab: {fileID: 3085577085432938060, guid: 0324b3f74a5782847a351a15e946a757,
     type: 3}
   fishLevel: 1

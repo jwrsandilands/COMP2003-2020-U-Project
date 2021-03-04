@@ -10,14 +10,11 @@ public class CameraFollow : MonoBehaviour
     public float smoothFloat = 0.125f;
     public Vector3 offset;
 
-    public static CameraFollow instance;
-
 
     // Start is called before the first frame update
     void Start()
     {
         camTrans = Camera.main.GetComponent<Transform>();
-        instance = this;
     }
 
     private void Update()
@@ -38,10 +35,5 @@ public class CameraFollow : MonoBehaviour
         {
             transform.position = target.position + offset;
         }
-    }
-
-    public void setTarget(GameObject T)
-    {
-        target = T.transform;
     }
 }

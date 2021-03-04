@@ -32,8 +32,16 @@ public class FishSpawner : MonoBehaviour
         //OutputData();
         /////////
 
-        spawn();
-        
+
+        int count = 1;
+        while (count <= maxSunFish)
+        {
+            Vector2 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f));
+            Quaternion rotate = new Quaternion(0, 0, 0, 0);
+            
+            Instantiate(flock, pos, rotate);
+            count++;
+        }
 
     }
 
@@ -48,22 +56,6 @@ public class FishSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindWithTag("flock") == null)
-      {
-           spawn();
-       }
-    }
-
-    public void spawn()
-    {
-        int count = 1;
-        while (count <= maxSunFish)
-        {
-            Vector2 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f));
-            Quaternion rotate = new Quaternion(0, 0, 0, 0);
-
-            Instantiate(flock, pos, rotate);
-            count++;
-        }
+        
     }
 }

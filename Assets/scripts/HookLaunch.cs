@@ -18,7 +18,6 @@ public class HookLaunch : MonoBehaviour
         speed = GameObject.Find("VelocitySlider").GetComponent<Slider>().value;
         rb.gravityScale = 1;
         rb.velocity = transform.right * speed;
-        CameraFollow.instance.setTarget(this.gameObject);
         
     }
 

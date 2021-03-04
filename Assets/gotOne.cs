@@ -26,7 +26,7 @@ public class gotOne : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, lureTo, 0.05f);
         }
-        if (Vector2.Distance(this.transform.position, lureTo ) < 3f && stateManager.instance.HasCaught == true)
+        if(Vector2.Distance(this.transform.position, lureTo) < 3f)
         {
             stateManager.instance.Success();
         }

@@ -18,8 +18,13 @@ public class HookLaunch : MonoBehaviour
         speed = GameObject.Find("VelocitySlider").GetComponent<Slider>().value;
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         rb.gravityScale = 1;
+<<<<<<< HEAD
         //rb.velocity = transform.right * speed;
         rb.velocity = transform.right * speed * playerStats.power;
+=======
+        rb.velocity = transform.right * speed;
+        CameraFollow.instance.setTarget(this.gameObject);
+>>>>>>> parent of 727fada (Revert "can now throw another hook when fish is caught")
         
     }
 

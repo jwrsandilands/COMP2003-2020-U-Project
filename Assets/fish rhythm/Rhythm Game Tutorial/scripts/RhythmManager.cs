@@ -53,7 +53,7 @@ public class RhythmManager : MonoBehaviour
             currentScore = 0;
             HB.GetComponent<Slider>().value = currentScore;
 
-            CancelInvoke("Deplete");
+            
             end();
             stateManager.instance.fishEscape();
             
@@ -134,7 +134,7 @@ public class RhythmManager : MonoBehaviour
         
         if(currentScore > 0)
         {
-            currentScore -= 50;
+            currentScore -= 25;
             if(currentScore < 0)
             {
                 currentScore = 0;
@@ -210,7 +210,7 @@ public class RhythmManager : MonoBehaviour
     {
         rhythmGenerator();
 
-        InvokeRepeating("Deplete", 3f, 1.0f);
+        InvokeRepeating("Deplete", 5f, 1.0f);
         startPlaying = true;
         bs.hasStarted = true;
 
@@ -229,6 +229,7 @@ public class RhythmManager : MonoBehaviour
 
     public void end()
     {
+        CancelInvoke("Deplete");
         GameObject[] arrows = GameObject.FindGameObjectsWithTag("arrow");
         foreach (GameObject arrow in arrows)
             GameObject.Destroy(arrow);

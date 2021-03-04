@@ -64,13 +64,22 @@ public class stateManager : MonoBehaviour
      rhythmStart = false;
     }
 
+    // code for when a fish is bought back successfully
     public void Success()
     {
         Destroy(caughtFish);
+        Destroy(GameObject.FindGameObjectWithTag("Hook"));
+
+        GameObject[] allFlock = GameObject.FindGameObjectsWithTag("flock");
+        foreach (GameObject flock in allFlock)
+            GameObject.Destroy(flock);
+
         Debug.Log("Fish Caught");
         Reset();
         RhythmManager.instance.endAudio();
         RhythmManager.instance.end();
+
+        
 
         //insert code for what happens when a fish is caught
     }

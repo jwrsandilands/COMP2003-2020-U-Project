@@ -28,10 +28,11 @@ public class Cast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false)
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
+                stateManager.instance.IsCast = true;
                 casting = true;
                 CastHookAnim();
             }

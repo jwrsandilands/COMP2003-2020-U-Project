@@ -6,7 +6,7 @@ public class Flock : MonoBehaviour
 {
     public Transform spawnPoint;
     GameObject hook;
-    public GameObject manager;
+    
     private bool chance = false;
 
     public FlockAgent agentPrefab;
@@ -36,7 +36,7 @@ public class Flock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager.GetComponent<stateManager>().CanLure = true;
+        
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neighborRadius * neighborRadius;
         squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
@@ -62,20 +62,20 @@ public class Flock : MonoBehaviour
         foreach (FlockAgent agent in agents)
         {
             
-            if(hook != null && manager.GetComponent<stateManager>().CanLure == true && Vector2.Distance(hook.transform.position, agent.transform.position) < range)
+            if(hook != null && stateManager.instance.CanLure == true && Vector2.Distance(hook.transform.position, agent.transform.position) < range)
             {
-                
+                stateManager.instance.CanLure = false;
                 chance = attractChance();
                 
                 if(chance == true)
                 {
-                    manager.GetComponent<stateManager>().CanLure = false;
+                    
                     agent.MoveTowards();
                     
                 }
-                if(chance == false) 
+                else if(chance == false) 
                 {
-                    manager.GetComponent<stateManager>().CanLure = false;
+                    
                     
                     Invoke("SetBoolBack", 0.5f);
 
@@ -136,7 +136,11 @@ public class Flock : MonoBehaviour
 
     private void SetBoolBack()
     {
-        manager.GetComponent<stateManager>().CanLure = true;
+        if (stateManager.instance.HasCaught == false && stateManager.instance.GotAway == false)
+        {
+            stateManager.instance.CanLure = true;
+        }
+        
     }
    
 }

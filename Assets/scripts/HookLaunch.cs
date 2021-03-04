@@ -32,6 +32,10 @@ public class HookLaunch : MonoBehaviour
             rb.gravityScale = 0f;
             rb.AddForce(new Vector2(-rb.velocity.x, -rb.velocity.y) * 0.0075f, ForceMode2D.Impulse);
         }
+        if (rb.velocity.x < 0.3f && rb.velocity.y < 0.3f && stateManager.instance.HasCaught == false && stateManager.instance.GotAway == false)
+        {
+            stateManager.instance.CanLure = true;
+        }
     }
 
 

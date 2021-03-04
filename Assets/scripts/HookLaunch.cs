@@ -9,15 +9,17 @@ public class HookLaunch : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     private bool startSlow = false;
-    
-    
+
+    private PlayerStats playerStats;
 
     // Start is called before the first frame update
     void Start()
     {
         speed = GameObject.Find("VelocitySlider").GetComponent<Slider>().value;
+        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         rb.gravityScale = 1;
-        rb.velocity = transform.right * speed;
+        //rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * speed * playerStats.power;
         
     }
 

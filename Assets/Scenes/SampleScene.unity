@@ -1893,7 +1893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -923, y: -29}
+  m_AnchoredPosition: {x: -50, y: -30}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199162564
@@ -2238,6 +2238,7 @@ GameObject:
   - component: {fileID: 2029121855}
   - component: {fileID: 2029121854}
   - component: {fileID: 2029121856}
+  - component: {fileID: 2029121857}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2394,14 +2395,28 @@ MonoBehaviour:
     items:
     - {fileID: 8889926005510088406, guid: d3b1e14781bfde44ba5cf3ad7c75ae61, type: 3}
     - {fileID: 8104662247988772071, guid: a86ab00c324d9cf409bade7320e91d1e, type: 3}
+    - {fileID: 6410011065118253485, guid: 25a05752e8f67ff4baf73aeb97670780, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 933561348}
+--- !u!114 &2029121857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029121849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e73c2a691d05940b852b49e7ed8ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 2029121856}
+  power: 1
 --- !u!4 &1699688886717266388
 Transform:
   m_ObjectHideFlags: 0

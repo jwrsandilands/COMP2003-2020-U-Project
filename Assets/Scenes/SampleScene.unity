@@ -1312,9 +1312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafaeef7e51b9534dab034dc8fa9889e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flock: {fileID: 300598667197484316, guid: a93aecfcf35b5e345ae0967c249cd4bd, type: 3}
+  flocks:
+  - {fileID: 300598667197484316, guid: 6edb4e847e574c94ba73b79059964fa8, type: 3}
+  - {fileID: 300598667197484316, guid: a93aecfcf35b5e345ae0967c249cd4bd, type: 3}
+  - {fileID: 300598667197484316, guid: 8e3d62ae2cb92d34693f79b1dfb9dc3f, type: 3}
+  - {fileID: 300598667197484316, guid: 7da5ef9c3c91bbf4b9c459ced1810fbf, type: 3}
+  - {fileID: 300598667197484316, guid: a3d716095ec1f9f479ef46151b98821b, type: 3}
   collider2: {fileID: 829134397}
-  maxSunFish: 5
 --- !u!1 &882199877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,7 +1895,7 @@ MonoBehaviour:
   scorePerMissedNote: -20
   currentMultiplier: 0
   multiplierTracker: 0
-  multiplierThreshholds: 
+  multiplierThreshholds: 050000000a0000000f00000014000000
 --- !u!114 &1119358628 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2618973260139068591, guid: 915f30c11c4a9604c845fc17d482f1e5,

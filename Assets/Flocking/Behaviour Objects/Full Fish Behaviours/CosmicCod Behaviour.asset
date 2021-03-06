@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed880b7b08851bf4bbc5b2b249beeac4, type: 3}
-  m_Name: StarFish Flock Behaviour
+  m_Name: SunFish Flock Behaviour 2
   m_EditorClassIdentifier: 
   behaviours:
   - {fileID: 11400000, guid: 21b4618105aabdd4db0a07d0195be402, type: 2}
   - {fileID: 11400000, guid: 7d8f2e7478757ea4ead47e41238c6561, type: 2}
   - {fileID: 11400000, guid: c5da86dbd361719499bdd325e8425ec0, type: 2}
-  - {fileID: 11400000, guid: 4d97bcb6c07c78449adaeb744acdb857, type: 2}
   - {fileID: 11400000, guid: 3514308a65429854d8a32a2133268402, type: 2}
+  - {fileID: 11400000, guid: 4d97bcb6c07c78449adaeb744acdb857, type: 2}
   weights:
-  - 1
-  - 5
   - 1
   - 2
   - 5
+  - 1
+  - 1

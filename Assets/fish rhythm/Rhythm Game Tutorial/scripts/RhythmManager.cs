@@ -47,6 +47,12 @@ public class RhythmManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentScore < 0)
+        {
+            currentScore = 0;
+        }
+
+        HB.GetComponent<Slider>().value = currentScore;
 
         if (currentScore == 0 && stateManager.instance.HasCaught == true)
         {
@@ -86,7 +92,7 @@ public class RhythmManager : MonoBehaviour
 
     public void NormalHit()
     {
-        currentScore += scorePerNote * currentMultiplier;
+        currentScore += scorePerNote;
         if(currentScore > 300)
         {
             currentScore = 300;
@@ -96,7 +102,7 @@ public class RhythmManager : MonoBehaviour
 
     public void GoodHit()
     {
-        currentScore += scorePerGoodNote * currentMultiplier;
+        currentScore += scorePerGoodNote;
         if (currentScore > 300)
         {
             currentScore = 300;
@@ -106,7 +112,7 @@ public class RhythmManager : MonoBehaviour
 
     public void PerfectHit()
     {
-        currentScore += scorePerPerfectNote * currentMultiplier;
+        currentScore += scorePerPerfectNote;
         if (currentScore > 300)
         {
             currentScore = 300;
@@ -135,11 +141,7 @@ public class RhythmManager : MonoBehaviour
         if(currentScore > 0)
         {
             currentScore -= 25;
-            if(currentScore < 0)
-            {
-                currentScore = 0;
-            }
-            HB.GetComponent<Slider>().value = currentScore;
+            
            // scoreText.text = "score: " + currentScore;
         }
     }
@@ -216,6 +218,7 @@ public class RhythmManager : MonoBehaviour
 
         theMusic.Play();
 
+        currentScore = 300;
         HB.GetComponent<Slider>().maxValue = currentScore;
         HB.GetComponent<Slider>().value = currentScore;
     }
@@ -233,5 +236,8 @@ public class RhythmManager : MonoBehaviour
         GameObject[] arrows = GameObject.FindGameObjectsWithTag("arrow");
         foreach (GameObject arrow in arrows)
             GameObject.Destroy(arrow);
+
+        currentMultiplier = 1;
+        multiplierTracker = 0;
     }
 }

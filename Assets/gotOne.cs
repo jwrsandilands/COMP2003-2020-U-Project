@@ -24,7 +24,7 @@ public class gotOne : MonoBehaviour
     {
         if(stateManager.instance.HasCaught == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, lureTo, 0.05f);
+            transform.position = Vector2.MoveTowards(transform.position, lureTo, 0.03f * RhythmManager.instance.currentMultiplier);
         }
         if (Vector2.Distance(this.transform.position, lureTo ) < 3f && stateManager.instance.HasCaught == true)
         {

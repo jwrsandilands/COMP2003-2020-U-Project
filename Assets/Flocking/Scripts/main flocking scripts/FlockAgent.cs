@@ -5,14 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class FlockAgent : MonoBehaviour
 {
-    
 
+    private bool isCaught = false;
 
     Flock agentFlock;
     public Flock AgentFlock { get { return agentFlock; } }
 
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +24,25 @@ public class FlockAgent : MonoBehaviour
 
     public void initialise(Flock flock)
     {
+        
         agentFlock = flock;
     }
 
     public void Move(Vector2 velocity)
     {
-        transform.up = velocity;
-        transform.position += (Vector3)velocity * Time.deltaTime;
+        if (!isCaught)
+        {
+            transform.up = velocity;
+            transform.position += (Vector3)velocity * Time.deltaTime;
+        }
     }
 
 
     //method: move towards hook
     public void MoveTowards()
     {
+        isCaught = true;
+        
         this.GetComponent<MoveTowardsHook>().enabled = true;
 
     }

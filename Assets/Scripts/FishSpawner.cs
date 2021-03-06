@@ -5,14 +5,14 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     //get fish to Spawn
-    public GameObject flock;
+    public GameObject[] flocks;
 
     //Set up colider variables
     public Collider2D collider2;
     Vector3 cMin, cMax;
 
     //Get Number of Fish to Spawn
-    public int maxSunFish;
+    private int maxFish;
     //set co-ordinates Fish Spawn in
     float xMin, xMax, yMin, yMax;
 
@@ -56,14 +56,19 @@ public class FishSpawner : MonoBehaviour
 
     public void spawn()
     {
-        int count = 1;
-        while (count <= maxSunFish)
+        for (int i = 0; i < flocks.Length; i++)
         {
-            Vector2 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f));
-            Quaternion rotate = new Quaternion(0, 0, 0, 0);
 
-            Instantiate(flock, pos, rotate);
-            count++;
+            maxFish = flocks[i].GetComponent<Flock>().amountOfFlock;
+            int count = 1;
+            while (count <= maxFish)
+            {
+                Vector2 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f));
+                Quaternion rotate = new Quaternion(0, 0, 0, 0);
+
+                Instantiate(flocks[i], pos, rotate);
+                count++;
+            }
         }
     }
 }

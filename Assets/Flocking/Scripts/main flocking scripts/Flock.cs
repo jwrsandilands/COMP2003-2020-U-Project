@@ -13,6 +13,7 @@ public class Flock : MonoBehaviour
     List<FlockAgent> agents = new List<FlockAgent>();
     public int fishLevel;
     public int range = 10;
+    public int amountOfFlock;
     public FlockBehaviour behaviour;
 
     [Range(1, 15)]

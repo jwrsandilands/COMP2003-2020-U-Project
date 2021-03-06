@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4449c00da948c184cb99a3be4611ca4b, type: 3}
   m_Name: Stay R30
   m_EditorClassIdentifier: 
-  center: {x: 18.981955, y: -47.814106}
+  center: {x: 55.244926, y: -21.797382}
   radius: 30

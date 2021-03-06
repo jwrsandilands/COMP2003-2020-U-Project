@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class stateManager : MonoBehaviour
 {
+    [SerializeField]
     private bool isCast = false;
+    [SerializeField]
     private bool canLure = false;
+    [SerializeField]
     private bool hasCaught = false;
+    [SerializeField]
     private bool gotAway = false;
 
     private GameObject caughtFish;
+
+    public Camera theCam;
     
     
 
@@ -54,33 +60,44 @@ public class stateManager : MonoBehaviour
         caughtFish.GetComponent<MoveTowardsHook>().enabled = false;
         caughtFish.GetComponent<FlockAgent>().enabled = true;
         RhythmManager.instance.endAudio();
+        
+
+        ResetScene();
+      
     }
 
-    public void Reset()
-    {
-     isCast = false;
-     canLure = false;
-     hasCaught = false;
-     rhythmStart = false;
-    }
+    
 
     // code for when a fish is bought back successfully
     public void Success()
     {
         Destroy(caughtFish);
-        Destroy(GameObject.FindGameObjectWithTag("Hook"));
 
-        GameObject[] allFlock = GameObject.FindGameObjectsWithTag("flock");
-        foreach (GameObject flock in allFlock)
-            GameObject.Destroy(flock);
-
+        ResetScene();
         Debug.Log("Fish Caught");
-        Reset();
+        
         RhythmManager.instance.endAudio();
         RhythmManager.instance.end();
 
         
 
         //insert code for what happens when a fish is caught
+    }
+
+    private void ResetScene()
+    {
+        theCam.GetComponent<MoveToOrigin>().enabled = true;
+        Destroy(GameObject.FindGameObjectWithTag("hookParent"));
+
+        GameObject[] allFlock = GameObject.FindGameObjectsWithTag("flock");
+        foreach (GameObject flock in allFlock)
+            GameObject.Destroy(flock);
+        
+        isCast = false;
+     canLure = false;
+     hasCaught = false;
+     rhythmStart = false;
+        gotAway = false;
+       
     }
 }

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class mapCreate : MonoBehaviour
 {
-    //Get Planet Object to spawn
-    public GameObject Planet;
+    //Get Planets
+    [SerializeField]
+    private GameObject[] planets;
 
     //Set up colider variables
+    [SerializeField]
     public Collider2D collider;
     Vector3 cMin, cMax;
 
     //Get Number of Planets to Spawn
-    public int maxPlanets;
+    [SerializeField]
+    private int maxPlanets;
+
     //set co-ordinates Planets Spawn in
     float xMin, xMax, yMin, yMax;
 
@@ -21,9 +25,6 @@ public class mapCreate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
-
         collider = GetComponent<Collider2D>();
         cMin = collider.bounds.min;
         cMax = collider.bounds.max;
@@ -42,8 +43,23 @@ public class mapCreate : MonoBehaviour
         {
             Vector3 pos = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
             Quaternion rotate = new Quaternion(0, 0, 0, 0);
-            
-            Instantiate(Planet, pos, rotate);
+
+            if (Random.Range(0, 4) == 0)
+            {
+                Instantiate(planets[0], pos, rotate);
+            }
+            else if (Random.Range(0, 4) == 1)
+            {
+                Instantiate(planets[1], pos, rotate);
+            }
+            else if (Random.Range(0, 4) == 2)
+            {
+                Instantiate(planets[2], pos, rotate);
+            }
+            else if (Random.Range(0, 4) == 3)
+            {
+                Instantiate(planets[3], pos, rotate);
+            }
             count++;
         }
 

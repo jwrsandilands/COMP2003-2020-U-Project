@@ -21,10 +21,8 @@ public class HookLaunch : MonoBehaviour
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         rb.gravityScale = 1;
 
-        //rb.velocity = transform.right * speed;
         rb.velocity = transform.right * speed * playerStats.power;
 
-        rb.velocity = transform.right * speed;
         CameraFollow.instance.setTarget(this.gameObject);
 
         

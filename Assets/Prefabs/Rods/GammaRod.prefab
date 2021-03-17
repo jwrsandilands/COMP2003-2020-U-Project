@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6908481102410133319}
   - component: {fileID: 7488355938858717117}
-  - component: {fileID: 2038406369689539357}
+  - component: {fileID: 1858429401607244456}
   - component: {fileID: 3480586216353403219}
   m_Layer: 0
-  m_Name: CometHook
+  m_Name: GammaRod
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2038406369689539357
+--- !u!114 &1858429401607244456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6410011065118253485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9e220bc64af8448ae9971502615cf0, type: 3}
+  m_Script: {fileID: 11500000, guid: e627919eed17c284daf58238b65da3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   invIcon: {fileID: 8765819319752564039, guid: 342c67ba5a3c5ba479d1ee6f468864ca, type: 3}

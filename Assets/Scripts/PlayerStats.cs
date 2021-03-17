@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
 
     void FixedUpdate()
     {
-        power = 1 * playerInventory.itemSelected.GetComponent<Hook>().power;
+        power = 1 * playerInventory.itemSelected.GetComponent<Rod>().power;
     }
 
 

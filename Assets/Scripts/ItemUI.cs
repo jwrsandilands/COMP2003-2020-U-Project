@@ -19,7 +19,7 @@ public class ItemUI : MonoBehaviour
     {
         if (!isNothing)
         {
-            icon = Instantiate(currentItem.GetComponent<Hook>().invIcon, gameObject.transform) as GameObject;
+            icon = Instantiate(currentItem.GetComponent<Rod>().invIcon, gameObject.transform) as GameObject;
             isItem = true;
         }
         else 

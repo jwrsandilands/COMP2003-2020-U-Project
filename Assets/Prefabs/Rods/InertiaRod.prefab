@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2823026225806242766}
   - component: {fileID: 2240894435064877876}
-  - component: {fileID: 3911758991854383250}
+  - component: {fileID: 858757190623604670}
   - component: {fileID: 5649926786978295809}
   m_Layer: 0
-  m_Name: GravityHook
+  m_Name: GravityRod
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3911758991854383250
+--- !u!114 &858757190623604670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2307622614230580516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9e220bc64af8448ae9971502615cf0, type: 3}
+  m_Script: {fileID: 11500000, guid: e627919eed17c284daf58238b65da3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   invIcon: {fileID: 7534920231103829539, guid: ce232a4654bf64940aa2a9a972102006, type: 3}

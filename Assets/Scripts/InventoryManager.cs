@@ -46,7 +46,7 @@ public class InventoryManager : MonoBehaviour
     {
         Destroy(selectedItem);
         playerInventory.itemSelected = newSelected;
-        selectedItem = Instantiate(newSelected.GetComponent<Hook>().invIcon, selectedUI.transform) as GameObject;
+        selectedItem = Instantiate(newSelected.GetComponent<Rod>().invIcon, selectedUI.transform) as GameObject;
         selectedItem.transform.parent = selectedUI.transform;
     }
 

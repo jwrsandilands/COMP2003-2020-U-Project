@@ -1,9 +1,8 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Hook : MonoBehaviour
+public class Rod : MonoBehaviour
 {
     public GameObject invIcon;
     public int power = 1;

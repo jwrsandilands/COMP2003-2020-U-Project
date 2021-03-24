@@ -49,16 +49,16 @@ public class FishSpawner : MonoBehaviour
     void Update()
     {
         if(GameObject.FindWithTag("flock") == null)
-      {
+        {
            spawn();
-       }
+        }
     }
 
     public void spawn()
     {
         for (int i = 0; i < flocks.Length; i++)
         {
-
+   
             maxFish = flocks[i].GetComponent<Flock>().amountOfFlock;
             int count = 1;
             while (count <= maxFish)

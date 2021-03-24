@@ -21,7 +21,7 @@ public class stateManager : MonoBehaviour
 
     private bool rhythmStart = false;
 
-    public static stateManager instance;
+    public static stateManager instance = null;
 
     public bool IsCast { get => isCast; set => isCast = value; }
     public bool CanLure { get => canLure; set => canLure = value; }
@@ -31,10 +31,21 @@ public class stateManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
+        if(instance != null)
+        {
+            Destroy(GetComponent<stateManager>());
+            return;
+        }
         instance = this;
+        
     }
+    //void Start()
+    //{
+    //    stateManagerInstance = this;
+    //}
 
     // Update is called once per frame
     void Update()

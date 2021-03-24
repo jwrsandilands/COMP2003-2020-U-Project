@@ -987,9 +987,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
         type: 3}
+      propertyPath: planets.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
       propertyPath: maxPlanets
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: planets.Array.data[0]
+      value: 
+      objectReference: {fileID: 8198450197147842257, guid: c5693d82088f7694385e32b650f495d9,
+        type: 3}
+    - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: planets.Array.data[1]
+      value: 
+      objectReference: {fileID: 8198450197147842257, guid: 58b6eca8331fab44ab6e00cd6810ff7f,
+        type: 3}
+    - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: planets.Array.data[2]
+      value: 
+      objectReference: {fileID: 8198450197147842257, guid: dc3b84d01efb2484d9c1ebf05fe77d76,
+        type: 3}
+    - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: planets.Array.data[3]
+      value: 
+      objectReference: {fileID: 8198450197147842257, guid: 0fe10d8996d0e0948956a7e0adc5913c,
+        type: 3}
+    - target: {fileID: 1622168955875068948, guid: d520e07fc17050f4dab42de91605ee67,
+        type: 3}
+      propertyPath: planets.Array.data[4]
+      value: 
+      objectReference: {fileID: 8198450197147842257, guid: d90e1133c84a8174591b7d28a24edbff,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d520e07fc17050f4dab42de91605ee67, type: 3}
 --- !u!1 &673317636
@@ -2249,7 +2284,7 @@ SpriteRenderer:
   m_SortingLayerID: -1546455569
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 99cf664cfcd798c4483d807497623e5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ceb9d13b139179a41b34ae459f5930ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

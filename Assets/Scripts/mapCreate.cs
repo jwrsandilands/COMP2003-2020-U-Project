@@ -44,21 +44,25 @@ public class mapCreate : MonoBehaviour
             Vector3 pos = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
             Quaternion rotate = new Quaternion(0, 0, 0, 0);
 
-            if (Random.Range(0, 4) == 0)
+            if (Random.Range(0, 5) == 0)
             {
                 Instantiate(planets[0], pos, rotate);
             }
-            else if (Random.Range(0, 4) == 1)
+            else if (Random.Range(0, 5) == 1)
             {
                 Instantiate(planets[1], pos, rotate);
             }
-            else if (Random.Range(0, 4) == 2)
+            else if (Random.Range(0, 5) == 2)
             {
                 Instantiate(planets[2], pos, rotate);
             }
-            else if (Random.Range(0, 4) == 3)
+            else if (Random.Range(0, 5) == 3)
             {
                 Instantiate(planets[3], pos, rotate);
+            }
+            else if (Random.Range(0, 5) == 3)
+            {
+                Instantiate(planets[4], pos, rotate);
             }
             count++;
         }

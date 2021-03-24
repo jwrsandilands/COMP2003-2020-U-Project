@@ -5,7 +5,12 @@ using UnityEngine;
 public class gotOne : MonoBehaviour
 {
     
-    public Vector2 lureTo = GameObject.FindGameObjectWithTag("castPoint").transform.position;
+    public Vector2 lureTo;
+
+    void Awake()
+    {
+        lureTo = GameObject.FindGameObjectWithTag("castPoint").transform.position;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -52,7 +52,7 @@ public class stateManager : MonoBehaviour
     {
         if (hasCaught == true && rhythmStart == false)
         {
-            RhythmManager.instance.startAudio();
+            RhythmManager.instance.startAudio(caughtFish.GetComponent<FlockAgent>().fishLevel);
             rhythmStart = true;
         }
     }

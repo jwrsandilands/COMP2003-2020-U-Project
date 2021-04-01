@@ -6,7 +6,7 @@ public class NoteObject : MonoBehaviour
 {   [SerializeField]
     private bool canBePressed;
 
-    public KeyCode keyToPress;
+    public  KeyCode keyToPress;
 
     public GameObject hitEffect, goodEffect, perfectEffect, missEffect;
 
@@ -23,6 +23,7 @@ public class NoteObject : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress))
         {
+            
             if (canBePressed)
             {
                 gameObject.gameObject.SetActive(false);
@@ -46,6 +47,7 @@ public class NoteObject : MonoBehaviour
                     Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
                 }
             }
+           
         }
     }
 

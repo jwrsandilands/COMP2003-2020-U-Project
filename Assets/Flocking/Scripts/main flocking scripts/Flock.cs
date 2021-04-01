@@ -11,7 +11,7 @@ public class Flock : MonoBehaviour
 
     public FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
-    public int fishLevel;
+    
     public int range = 10;
     public int amountOfFlock;
     public FlockBehaviour behaviour;

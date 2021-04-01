@@ -21,7 +21,7 @@ public class RhythmManager : MonoBehaviour
 
     public static RhythmManager instance;
 
-    public int currentScore = 300;
+    public float currentScore = 300;
     public int scorePerNote = 10;
     public int scorePerGoodNote = 15;
     public int scorePerPerfectNote = 25;
@@ -31,6 +31,7 @@ public class RhythmManager : MonoBehaviour
     public int multiplierTracker;
     public int[] multiplierThreshholds;
 
+    private int level;
 
     //public Text scoreText;
    // public Text multiText;
@@ -51,6 +52,12 @@ public class RhythmManager : MonoBehaviour
         {
             currentScore = 0;
         }
+        if (currentScore > 0 && stateManager.instance.HasCaught == true)
+        {
+            currentScore = Mathf.Lerp(currentScore, 0, level * Time.deltaTime  / 75f);
+
+
+        }
 
         HB.GetComponent<Slider>().value = currentScore;
 
@@ -66,6 +73,8 @@ public class RhythmManager : MonoBehaviour
 
 
         }
+
+        
     }
 
     public void NoteHit()
@@ -87,6 +96,20 @@ public class RhythmManager : MonoBehaviour
 
         //currentScore += scorePerNote * currentMultiplier;
        // scoreText.text = "score: " + currentScore;
+        
+    }
+
+    public void badNote()
+    {
+        Debug.Log("bad note");
+
+        //currentScore += scorePerMissedNote;
+
+        
+
+        currentMultiplier = 1;
+        multiplierTracker = 0;
+
         
     }
 
@@ -140,80 +163,294 @@ public class RhythmManager : MonoBehaviour
         
         if(currentScore > 0)
         {
-            currentScore -= 25;
+            currentScore = Mathf.Lerp(currentScore, 0, level * 5* Time.deltaTime);
             
-           // scoreText.text = "score: " + currentScore;
+           
         }
     }
 
-    void rhythmGenerator()
+    void rhythmGenerator(int fishLevel)
     {
-        int[] rhythm = new int[1000];
-        System.Random randNum = new System.Random();
-        for(int i = 0; i< rhythm.Length; i++)
+        if (fishLevel == 1)
         {
-            rhythm[i] = randNum.Next(1, 10);
+            int[] rhythm = new int[1000];
+            System.Random randNum = new System.Random();
+            for (int i = 0; i < rhythm.Length; i++)
+            {
+                rhythm[i] = randNum.Next(1, 4);
+            }
+            int count = 0;
+
+            foreach (int beat in rhythm)
+            {
+                if (beat == 1)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 2)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 3)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 4)
+                {
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                
+                
+                count++;
+            }
         }
-        int count = 0;
-        
-        foreach (int beat in rhythm)
+
+        if (fishLevel == 2)
         {
-            if(beat == 1)
+            int[] rhythm = new int[1000];
+            System.Random randNum = new System.Random();
+            for (int i = 0; i < rhythm.Length; i++)
             {
-                Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                rhythm[i] = randNum.Next(1, 5);
             }
-            if (beat == 2)
+            int count = 0;
+
+            foreach (int beat in rhythm)
             {
-                Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                if (beat == 1)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 2)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 3)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 4)
+                {
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 5)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+
+
+                count++;
             }
-            if (beat == 3)
+        }
+
+        if (fishLevel == 3)
+        {
+            int[] rhythm = new int[1000];
+            System.Random randNum = new System.Random();
+            for (int i = 0; i < rhythm.Length; i++)
             {
-                Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                rhythm[i] = randNum.Next(1, 6);
             }
-            if (beat == 4)
+            int count = 0;
+
+            foreach (int beat in rhythm)
             {
-                Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                if (beat == 1)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 2)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 3)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 4)
+                {
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 5)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if(beat == 6)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+
+                count++;
             }
-            if (beat == 5)
+        }
+
+        if (fishLevel == 4)
+        {
+            int[] rhythm = new int[1000];
+            System.Random randNum = new System.Random();
+            for (int i = 0; i < rhythm.Length; i++)
             {
-                Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
-                Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                rhythm[i] = randNum.Next(1, 10);
             }
-            if (beat == 6)
+            int count = 0;
+
+            foreach (int beat in rhythm)
             {
-                Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
-                Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                if (beat == 1)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 2)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 3)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 4)
+                {
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 5)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 6)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 7)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 8)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 9)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 10)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                count++;
             }
-            if (beat == 7)
+        }
+
+        if (fishLevel == 5)
+        {
+            int[] rhythm = new int[1000];
+            System.Random randNum = new System.Random();
+            for (int i = 0; i < rhythm.Length; i++)
             {
-                Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
-                Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                rhythm[i] = randNum.Next(1, 12);
             }
-            if (beat == 8)
+            int count = 0;
+
+            foreach (int beat in rhythm)
             {
-                Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
-                Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                if (beat == 1)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 2)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 3)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 4)
+                {
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 5)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 6)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 7)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 8)
+                {
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 9)
+                {
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 10)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 11)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[2], beatSpawn[2].transform.position + (beatSpawn[2].transform.up * count), arrows[2].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                if (beat == 12)
+                {
+                    Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
+                    Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
+                }
+                count++;
             }
-            if (beat == 9)
-            {
-                Instantiate(arrows[1], beatSpawn[1].transform.position + (beatSpawn[1].transform.up * count), arrows[1].transform.rotation, noteHolder.transform);
-                Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
-            }
-            if (beat == 10)
-            {
-                Instantiate(arrows[0], beatSpawn[0].transform.position + (beatSpawn[0].transform.up * count), arrows[0].transform.rotation, noteHolder.transform);
-                Instantiate(arrows[3], beatSpawn[3].transform.position + (beatSpawn[3].transform.up * count), arrows[3].transform.rotation, noteHolder.transform);
-            }
-            count++;
         }
     }
 
-    public void startAudio()
+    public void startAudio(int fishLevel)
     {
-        rhythmGenerator();
+        level = fishLevel;
+        rhythmGenerator(fishLevel);
 
-        InvokeRepeating("Deplete", 5f, 1.0f);
+        //InvokeRepeating("Deplete", 3f, 1.0f);
         startPlaying = true;
+        if(fishLevel == 1)
+        {
+            bs.beatTempo = 120 / 60;
+        }
+        if (fishLevel == 2)
+        {
+            bs.beatTempo = 135 / 60;
+        } 
+        if (fishLevel == 3)
+        {
+            bs.beatTempo = 150 / 60;
+        }
+        if (fishLevel == 4)
+        {
+            bs.beatTempo = 160 / 60;
+        }
+        if (fishLevel == 5)
+        {
+            bs.beatTempo = 180 / 60;
+        }
         bs.hasStarted = true;
 
         theMusic.Play();

@@ -5,23 +5,16 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     //get fish to Spawn
-    public GameObject[] allFlocks;
-
-    private int fishLvl;
-
-    private Vector2 pos;
+    public GameObject[] flocks;
 
     //Set up colider variables
-    public Collider2D colliderLvl1;
-    public Collider2D colliderLvl2;
-    public Collider2D colliderLvl3;
-    public Collider2D colliderLvl4;
-    public Collider2D colliderLvl5;
-
+    public Collider2D collider2;
+    Vector3 cMin, cMax;
 
     //Get Number of Fish to Spawn
     private int maxFish;
-    
+    //set co-ordinates Fish Spawn in
+    float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +37,13 @@ public class FishSpawner : MonoBehaviour
 
     }
 
-    
+    void OutputData()
+    {
+        Debug.Log("Fish Collider bound Minimum : " + cMin);
+        Debug.Log("Fish Collider bound Maximum : " + cMax);
+        Debug.Log("Fish Co-Ordinate bound Minimum : (" + xMin + ", " + yMin + ")");
+        Debug.Log("Fish Co-Ordinate bound Maximum : (" + xMax + ", " + yMax + ")");
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,37 +56,17 @@ public class FishSpawner : MonoBehaviour
 
     public void spawn()
     {
-        for (int i = 0; i < allFlocks.Length; i++)
+        for (int i = 0; i < flocks.Length; i++)
         {
-            fishLvl = allFlocks[i].GetComponent<Flock>().agentPrefab.fishLevel;
-            maxFish = allFlocks[i].GetComponent<Flock>().amountOfFlock;
+   
+            maxFish = flocks[i].GetComponent<Flock>().amountOfFlock;
             int count = 1;
             while (count <= maxFish)
             {
-                if(fishLvl == 1)
-                {
-                    pos = new Vector3(Random.Range(colliderLvl1.bounds.min.x, colliderLvl1.bounds.max.x), Random.Range(colliderLvl1.bounds.min.y, colliderLvl1.bounds.max.y));
-                }
-                if (fishLvl == 2)
-                {
-                    pos = new Vector3(Random.Range(colliderLvl2.bounds.min.x, colliderLvl2.bounds.max.x), Random.Range(colliderLvl2.bounds.min.y, colliderLvl2.bounds.max.y));
-                }
-                if (fishLvl == 3)
-                {
-                    pos = new Vector3(Random.Range(colliderLvl3.bounds.min.x, colliderLvl3.bounds.max.x), Random.Range(colliderLvl3.bounds.min.y, colliderLvl3.bounds.max.y));
-                }
-                if (fishLvl == 4)
-                {
-                    pos = new Vector3(Random.Range(colliderLvl4.bounds.min.x, colliderLvl4.bounds.max.x), Random.Range(colliderLvl4.bounds.min.y, colliderLvl4.bounds.max.y));
-                }
-                if (fishLvl == 5)
-                {
-                    pos = new Vector3(Random.Range(colliderLvl5.bounds.min.x, colliderLvl5.bounds.max.x), Random.Range(colliderLvl5.bounds.min.y, colliderLvl5.bounds.max.y));
-                }
-
+                Vector2 pos = new Vector3(Random.Range(0.5f, 144.388f), Random.Range(-65.2f, -1.199999f));
                 Quaternion rotate = new Quaternion(0, 0, 0, 0);
 
-                Instantiate(allFlocks[i], pos, rotate);
+                Instantiate(flocks[i], pos, rotate);
                 count++;
             }
         }

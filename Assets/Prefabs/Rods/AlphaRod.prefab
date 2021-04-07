@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4922703001233186658}
   - component: {fileID: 546453620076720849}
   m_Layer: 0
-  m_Name: SunRod
+  m_Name: AlphaRod
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invIcon: {fileID: 1848043856956267081, guid: 9cde2142fe9da7646adf5c6b94eda7e3, type: 3}
   power: 2
+  catchDifficulty: 2
 --- !u!61 &546453620076720849
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invIcon: {fileID: 8765819319752564039, guid: 342c67ba5a3c5ba479d1ee6f468864ca, type: 3}
   power: 4
+  catchDifficulty: 4
 --- !u!61 &3480586216353403219
 BoxCollider2D:
   m_ObjectHideFlags: 0

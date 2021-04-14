@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public void StartGame() 
     {
         SceneManager.LoadScene("SampleScene");
-
+        
     }
 
     public void EndGame() 

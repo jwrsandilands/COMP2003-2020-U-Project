@@ -60,3 +60,6 @@ TagManager:
   - name: arrow
     uniqueID: 1303487521
     locked: 0
+  - name: lifebar
+    uniqueID: 425625351
+    locked: 0

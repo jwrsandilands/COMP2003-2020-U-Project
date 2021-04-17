@@ -11,8 +11,8 @@ using System.IO;
 class SavedSettings
 {
     public float Volume;
-    public string resolution;
     public bool fullScreen;
+    public int resolutionIndex;
 }
 
 public class SettingsMenu : MonoBehaviour
@@ -23,6 +23,7 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown buttonPaddingDropdown;
 
     float currentVolume;
+    private int currentResolutionIndex;
     Resolution[] resolutions;
     bool FullScreen = false;
 
@@ -48,6 +49,7 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
+        Debug.Log(currentResolutionIndex);
     }
 
     public void SetVolume(float volume)
@@ -66,6 +68,8 @@ public class SettingsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Debug.Log(resolutionIndex);
+        currentResolutionIndex = resolutionIndex;
     }
 
     public void SaveSettings()
@@ -74,6 +78,8 @@ public class SettingsMenu : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/SavedSettings.dat");
         SavedSettings data = new SavedSettings();
         data.Volume = currentVolume;
+        data.fullScreen = FullScreen;
+        data.resolutionIndex = currentResolutionIndex;
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Settings has saved in " + file.Name);
@@ -89,6 +95,7 @@ public class SettingsMenu : MonoBehaviour
             file.Close();
             SetVolume(data.Volume);
             SetResolution(currentResolutionIndex);
+            SetFullScreen(data.fullScreen);
             Debug.Log("Game data is loaded!");
         }
         else

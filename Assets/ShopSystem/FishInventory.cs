@@ -7,6 +7,8 @@ public class FishInventory : MonoBehaviour
     public FishItem[] fishes;
     private int index;
 
+    public bool isFull;
+
     public void AddToArray(FishItem fishElement)
     {
         if(index != fishes.Length)
@@ -16,6 +18,7 @@ public class FishInventory : MonoBehaviour
         }
         else
         {
+            isFull = true;
             Debug.Log("You cannot hold anymore fish");
         }
     }

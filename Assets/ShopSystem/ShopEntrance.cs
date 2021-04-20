@@ -5,17 +5,13 @@ using UnityEngine;
 public class ShopEntrance : MonoBehaviour
 {
     public GameObject shopUI;
-    public GameObject scoreUI;
+    public GameObject shopEntranceButton;
+    public GameObject addFishButton;
 
-    private void OnTriggerEnter(Collider other)
+    public void EnterStore()
     {
-        if (other.CompareTag("Character"))
-        {
-            shopUI.SetActive(true); 
-            scoreUI.SetActive(true);
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-
-        }
+        shopUI.SetActive(true);
+        shopEntranceButton.SetActive(false);
+        addFishButton.SetActive(false);
     }
 }

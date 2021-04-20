@@ -8,6 +8,7 @@ public class FishItem : MonoBehaviour
     private int fishValue;
     private int fishPrice = 25;
     private FishManager manager;
+    private FishInventory inventory;
 
     [SerializeField]
     public Image fishImage;
@@ -15,6 +16,7 @@ public class FishItem : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<FishManager>();
+        inventory = FindObjectOfType<FishInventory>();
     }
 
     public int GetValue()
@@ -37,12 +39,22 @@ public class FishItem : MonoBehaviour
         return fishImage;
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    public void Collect()
     {
-        if (other.CompareTag("Character"))
+        if (inventory.isFull != true) 
         {
             manager.AddValue();
             gameObject.SetActive(false);
         }
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+       // if (other.CompareTag("Character"))
+       // {
+        //    manager.AddValue();
+        //    gameObject.SetActive(false);
+        //}
+    //}
 }

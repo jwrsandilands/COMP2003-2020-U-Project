@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5721427815686836983}
   - component: {fileID: 4922703001233186658}
   - component: {fileID: 546453620076720849}
+  - component: {fileID: 4647086908496277541}
   m_Layer: 0
   m_Name: AlphaRod
   m_TagString: Item
@@ -93,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e627919eed17c284daf58238b65da3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invIcon: {fileID: 1848043856956267081, guid: 9cde2142fe9da7646adf5c6b94eda7e3, type: 3}
   power: 2
   catchDifficulty: 2
 --- !u!61 &546453620076720849
@@ -122,3 +122,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4647086908496277541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104662247988772071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 1848043856956267081, guid: 9cde2142fe9da7646adf5c6b94eda7e3, type: 3}

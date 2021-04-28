@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bait : MonoBehaviour
 {
-    public GameObject invIcon;
     public float levelOnePercentage = 1f;
     public float levelTwoPercentage = 0.25f;
     public float levelThreePercentage = 0f;

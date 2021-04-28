@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1972066735551864558}
   - component: {fileID: 4103656924594765466}
   - component: {fileID: 8989162577557537643}
+  - component: {fileID: 5099705105287267891}
   m_Layer: 0
   m_Name: LaserRod
   m_TagString: Item
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1fe37f5d33b6c2c4287867a405cb60f0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0, g: 0.10163808, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e627919eed17c284daf58238b65da3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invIcon: {fileID: 1529823593112611220, guid: 7c52f797252450c4a89d962cd5f0079f, type: 3}
   power: 5
   catchDifficulty: 5
 --- !u!61 &8989162577557537643
@@ -122,3 +122,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5099705105287267891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018448374078575521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 1529823593112611220, guid: 7c52f797252450c4a89d962cd5f0079f, type: 3}

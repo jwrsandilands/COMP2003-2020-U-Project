@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2240894435064877876}
   - component: {fileID: 858757190623604670}
   - component: {fileID: 5649926786978295809}
+  - component: {fileID: 199536366472493609}
   m_Layer: 0
   m_Name: InertiaRod
   m_TagString: Item
@@ -93,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e627919eed17c284daf58238b65da3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invIcon: {fileID: 7534920231103829539, guid: ce232a4654bf64940aa2a9a972102006, type: 3}
   power: 3
   catchDifficulty: 3
 --- !u!61 &5649926786978295809
@@ -122,3 +122,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &199536366472493609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307622614230580516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 7534920231103829539, guid: ce232a4654bf64940aa2a9a972102006, type: 3}

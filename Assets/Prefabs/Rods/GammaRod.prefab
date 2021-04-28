@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7488355938858717117}
   - component: {fileID: 1858429401607244456}
   - component: {fileID: 3480586216353403219}
+  - component: {fileID: 8858977441741603109}
   m_Layer: 0
   m_Name: GammaRod
   m_TagString: Item
@@ -93,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e627919eed17c284daf58238b65da3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invIcon: {fileID: 8765819319752564039, guid: 342c67ba5a3c5ba479d1ee6f468864ca, type: 3}
   power: 4
   catchDifficulty: 4
 --- !u!61 &3480586216353403219
@@ -122,3 +122,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8858977441741603109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410011065118253485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 8765819319752564039, guid: 342c67ba5a3c5ba479d1ee6f468864ca, type: 3}

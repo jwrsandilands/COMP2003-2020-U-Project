@@ -5,24 +5,39 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
-    public GameObject[] items = new GameObject[9];
+    public GameObject[] rods = new GameObject[9];
+    public GameObject[] bait = new GameObject[9];
+    public GameObject[] hooks = new GameObject[9];
+    public GameObject[] fish = new GameObject[9];
 
     public Inventory() 
     { 
         
     }
 
-    public GameObject[] GetItems() 
+    public GameObject[] GetRods() 
     {
-        return items;
+        return rods;
+    }
+    public GameObject[] GetBait()
+    {
+        return bait;
+    }
+    public GameObject[] GetHooks()
+    {
+        return hooks;
+    }
+    public GameObject[] GetFish()
+    {
+        return fish;
     }
 
     public void AddItem(GameObject newItem) 
     {
         int nextNullItemSlot = -1;
-        for (int n = 0; n < items.Length; n++) 
+        for (int n = 0; n < rods.Length; n++) 
         {        
-            if (items[n] == null) 
+            if (rods[n] == null) 
             {
                 nextNullItemSlot = n;
                 break;
@@ -30,7 +45,7 @@ public class Inventory
         }
         if (nextNullItemSlot != -1) 
         {
-            items[nextNullItemSlot] = newItem;
+            rods[nextNullItemSlot] = newItem;
         }
     }
 }

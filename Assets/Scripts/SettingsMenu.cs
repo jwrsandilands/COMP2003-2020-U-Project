@@ -52,10 +52,11 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log(currentResolutionIndex);
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume(float sliderValue)
     {
-        audioMixer.SetFloat("MusicVol", volume);
-        currentVolume = volume;
+        Debug.Log("Volumes has changed" + sliderValue);
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+        currentVolume = sliderValue;
     }
 
     public void SetFullScreen(bool isFullScreen)

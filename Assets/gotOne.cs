@@ -14,7 +14,7 @@ public class gotOne : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "fish" && stateManager.instance.CanLure == true)
+        if (collision.gameObject.tag == "caughtfish" && stateManager.instance.CanLure == true)
         {
             stateManager.instance.setCaughtFish(collision.gameObject);
 
@@ -29,7 +29,7 @@ public class gotOne : MonoBehaviour
     {
         if(stateManager.instance.HasCaught == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, lureTo, 0.03f * RhythmManager.instance.currentMultiplier);
+            transform.position = Vector2.MoveTowards(transform.position, lureTo, 0.06f);
         }
         if (Vector2.Distance(this.transform.position, lureTo ) < 3f && stateManager.instance.HasCaught == true)
         {

@@ -70,7 +70,7 @@ public class Flock : MonoBehaviour
                 
                 if(chance == true)
                 {
-                    
+                   
                     agent.MoveTowards();
                     
                 }
@@ -78,7 +78,7 @@ public class Flock : MonoBehaviour
                 {
                     
                     
-                    Invoke("SetBoolBack", 0.5f);
+                    Invoke("SetBoolBack", 0f);
 
                     List<Transform> context = getNearbyObjects(agent);
                     Vector2 move = behaviour.calculateMove(agent, context, this);

@@ -43,6 +43,7 @@ public class FlockAgent : MonoBehaviour
     //method: move towards hook
     public void MoveTowards()
     {
+        gameObject.tag = "caughtfish";
         isCaught = true;
         
         this.GetComponent<MoveTowardsHook>().enabled = true;

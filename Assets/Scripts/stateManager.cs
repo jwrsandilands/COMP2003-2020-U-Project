@@ -16,10 +16,11 @@ public class stateManager : MonoBehaviour
     private GameObject caughtFish;
 
     public Camera theCam;
-    
+
+    public GameObject minigame;
     
 
-    private bool rhythmStart = false;
+    private bool miniGameStart = false;
 
     public static stateManager instance = null;
 
@@ -50,10 +51,10 @@ public class stateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasCaught == true && rhythmStart == false)
+        if (hasCaught == true && miniGameStart == false)
         {
-            RhythmManager.instance.startAudio(caughtFish.GetComponent<FlockAgent>().fishLevel);
-            rhythmStart = true;
+            minigame.GetComponent<FishingMiniGame>().enabled = true; 
+            miniGameStart = true;
         }
     }
 
@@ -62,6 +63,11 @@ public class stateManager : MonoBehaviour
         caughtFish = fish;
     }
 
+   
+    public GameObject GetFish()
+    {
+        return caughtFish;
+    }
     
 
     public void fishEscape()
@@ -70,8 +76,9 @@ public class stateManager : MonoBehaviour
         gotAway = true;
         caughtFish.GetComponent<MoveTowardsHook>().enabled = false;
         caughtFish.GetComponent<FlockAgent>().enabled = true;
-        RhythmManager.instance.endAudio();
-        
+
+        minigame.GetComponent<FishingMiniGame>().success();
+
 
         ResetScene();
       
@@ -86,9 +93,8 @@ public class stateManager : MonoBehaviour
 
         ResetScene();
         Debug.Log("Fish Caught");
-        
-        RhythmManager.instance.endAudio();
-        RhythmManager.instance.end();
+
+        minigame.GetComponent<FishingMiniGame>().success();
 
         
 
@@ -105,10 +111,10 @@ public class stateManager : MonoBehaviour
             GameObject.Destroy(flock);
         
         isCast = false;
-     canLure = false;
-     hasCaught = false;
-     rhythmStart = false;
+        canLure = false;
+         hasCaught = false;
+         miniGameStart = false;
         gotAway = false;
-       
+        
     }
 }

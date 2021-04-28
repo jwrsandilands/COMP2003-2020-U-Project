@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FishingMiniGame : MonoBehaviour
 {
+    [SerializeField] private Animator ani;
+
     [SerializeField] Transform topPivot;
     [SerializeField] Transform bottomPivot;
 
@@ -35,11 +37,73 @@ public class FishingMiniGame : MonoBehaviour
 
     bool pause = false;
 
+    [SerializeField] AudioSource theMusic;
 
-    private void Start()
+
+    private void OnEnable()
     {
+        ani.SetTrigger("start");
+        theMusic.Play();
+        hookProgress = 1f;
+        
+
+        if(stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 1) {
+            timerMultiplicator = 3.5f;
+            fishSpeed = 2.5f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 2)
+        {
+            timerMultiplicator = 3f;
+            fishSpeed = 3f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 3)
+        {
+            timerMultiplicator = 2.5f;
+            fishSpeed = 3.5f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 4)
+        {
+            timerMultiplicator = 2;
+            fishSpeed = 4;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 5)
+        {
+            timerMultiplicator = 1.5f;
+            fishSpeed = 5;
+        }
+        //code for hook area based on rod equipped goes below
+        if (PlayerStats.instance.catchDifficulty == 1)
+        {
+            hookSize = 0.12f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 2)
+        {
+            hookSize = 0.18f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 3)
+        {
+            hookSize = 0.21f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 4)
+        {
+            hookSize = 0.24f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 5)
+        {
+            hookSize = 0.3f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 6)
+        {
+
+        }
         Resize();
     }
+    private void Awake()
+    {
+        ani = gameObject.GetComponent<Animator>();
+    }
+
+    
 
     
     private void Update()
@@ -48,11 +112,14 @@ public class FishingMiniGame : MonoBehaviour
         Fish();
         Hook();
         LifeCheck();
-        Debug.Log(hookPosition);
+        
     }
 
     private void Resize()
     {
+        Vector3 scale = new Vector3(40f, 1f, 1f); ;
+        hook.localScale = scale;
+        Debug.Log(hook.localScale);
         Bounds b = hookSpriteRenderer.bounds;
         float ySize = b.size.y;
 
@@ -61,6 +128,8 @@ public class FishingMiniGame : MonoBehaviour
 
         ls.y = (distance / ySize * hookSize) / 4;
         hook.localScale = ls;
+        Debug.Log(ls);
+        
     }
 
     void Hook()
@@ -100,10 +169,10 @@ public class FishingMiniGame : MonoBehaviour
 
     void LifeCheck()
     {
-        Vector3 ls = lifeBarContainer.localScale;
+        Vector3 ls2 = lifeBarContainer.localScale;
 
-        ls.y = hookProgress;
-        lifeBarContainer.localScale = ls;
+        ls2.y = hookProgress;
+        lifeBarContainer.localScale = ls2;
 
         float min = hookPosition - hookSize / 2;
         float max = hookPosition + hookSize / 2;
@@ -123,10 +192,19 @@ public class FishingMiniGame : MonoBehaviour
 
         if(hookProgress <= 0f)
         {
-            // code for losing and fish escapes
+            theMusic.Stop();
+            stateManager.instance.fishEscape();
         }
 
         
+    }
+
+    public void success()
+    {
+        ani.SetTrigger("end");
+        theMusic.Stop();
+        
+        this.enabled = false;
     }
 
 }

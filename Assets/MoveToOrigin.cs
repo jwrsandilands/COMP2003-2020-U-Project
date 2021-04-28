@@ -19,9 +19,9 @@ public class MoveToOrigin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Time.deltaTime);
+        transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Time.deltaTime * 1.5f);
 
-        if(transform.position == endMarker.position)
+        if(Vector2.Distance(transform.position, endMarker.position) < 0.1f)
         {
             this.enabled = false;
             GetComponent<CameraFollow>().enabled = true;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 public class Cast : MonoBehaviour
 {
 
@@ -11,6 +11,8 @@ public class Cast : MonoBehaviour
     private bool casting;
     private float atHookTime = 0.9f;
     private float atHook;
+
+    private float holdDownStartTime;
 
 
     public Transform castPoint;
@@ -28,15 +30,30 @@ public class Cast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false)
+        if (Input.GetMouseButtonDown(0) && stateManager.instance.IsCast == false)
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
+            
+            holdDownStartTime = Time.time;
+        }
+        if (Input.GetMouseButton(0) && stateManager.instance.IsCast == false)
+        {
+            float holdDownTime = Time.time - holdDownStartTime;
+            showForce(holdDownTime);
+        }
+
+        if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false)
             {
-                stateManager.instance.IsCast = true;
-                casting = true;
-                CastHookAnim();
-            }
-            // Check if the mouse was clicked over a UI element
+                
+                float holdDownTime = Time.time - holdDownStartTime;
+                calculateForce(holdDownTime);
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    stateManager.instance.IsCast = true;
+                    casting = true;
+                    CastHookAnim();
+                }
+                // Check if the mouse was clicked over a UI element
+            
         }
 
         if (casting && Time.time > atHook)
@@ -61,6 +78,20 @@ public class Cast : MonoBehaviour
         angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.Euler(0f, 0f, angle);
 
+
+
         Instantiate(hookprefab, castPoint.position, q);
+    }
+
+    private void calculateForce(float time)
+    {
+        float maxForce = 2f;
+        float holdTime = Mathf.Clamp01(time / maxForce);
+        GameObject.Find("VelocitySlider").GetComponent<Slider>().value = holdTime;
+    }
+
+    private void showForce(float time)
+    {
+
     }
 }

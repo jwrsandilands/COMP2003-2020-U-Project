@@ -55,8 +55,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310622389497694321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 250, y: 400, z: 1}
+  m_LocalPosition: {x: 1.29, y: 0, z: 0}
+  m_LocalScale: {x: 143.42345, y: 376, z: 0.94}
   m_Children: []
   m_Father: {fileID: 1310622391132842712}
   m_RootOrder: 0
@@ -99,7 +99,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f7b5ecca4bdd234588d915889045418, type: 3}
-  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  m_Color: {r: 0.5176471, g: 0.36862746, b: 0.7607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f7b5ecca4bdd234588d915889045418, type: 3}
-  m_Color: {r: 0.11931156, g: 0.7735849, b: 0, a: 1}
+  m_Color: {r: 0.3019608, g: 0.5019608, b: 0.46274513, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -288,7 +288,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f7b5ecca4bdd234588d915889045418, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20392159, g: 0.62352943, b: 0.69803923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -433,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310622390914266399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029249625, y: 6.78, z: 0.069573686}
+  m_LocalPosition: {x: 0, y: 6.78, z: 0.069573686}
   m_LocalScale: {x: 14.624999, y: 340, z: 1}
   m_Children: []
   m_Father: {fileID: 1310622390767707340}
@@ -477,7 +477,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f7b5ecca4bdd234588d915889045418, type: 3}
-  m_Color: {r: 0.19558865, g: 0.4716981, b: 0.18022428, a: 1}
+  m_Color: {r: 0.3019608, g: 0.5019608, b: 0.46274513, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -556,7 +556,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f7b5ecca4bdd234588d915889045418, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20392159, g: 0.62352943, b: 0.69803923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -617,6 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd747f40874798847ba8afff35799e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ani: {fileID: 0}
   topPivot: {fileID: 1310622391323340332}
   bottomPivot: {fileID: 1310622389449528429}
   fishMarker: {fileID: 1310622390185220841}
@@ -630,6 +631,7 @@ MonoBehaviour:
   hookDegredationPower: 0.1
   hookSpriteRenderer: {fileID: 1310622389769689387}
   lifeBarContainer: {fileID: 1310622390767707340}
+  theMusic: {fileID: 0}
 --- !u!1 &1310622391323340335
 GameObject:
   m_ObjectHideFlags: 0

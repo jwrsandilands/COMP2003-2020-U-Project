@@ -37,7 +37,7 @@ public class Flock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnPoint = gameObject.transform;
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neighborRadius * neighborRadius;
         squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;

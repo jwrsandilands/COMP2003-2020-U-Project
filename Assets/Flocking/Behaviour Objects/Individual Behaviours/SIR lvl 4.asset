@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4449c00da948c184cb99a3be4611ca4b, type: 3}
-  m_Name: Stay R15
+  m_Name: SIR lvl 4
   m_EditorClassIdentifier: 
-  center: {x: 0, y: 0}
-  radius: 15
+  center: {x: 190.96078, y: 11.629427}
+  radius: 22.5

@@ -26,22 +26,8 @@ public class FishSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //////could not get this code to work so hard to harcode variables
-        //collider2 = GetComponent<Collider2D>();
-        //cMin = collider2.bounds.min;
-        //cMax = collider2.bounds.max;
-
-        //xMin = cMin.x;
-        //xMax = cMax.x;
-        //yMin = cMin.y;
-        //yMax = cMax.y;
-
-        //OutputData();
-        /////////
-
         spawn();
         
-
     }
 
     
@@ -57,6 +43,11 @@ public class FishSpawner : MonoBehaviour
 
     public void spawn()
     {
+        colliderLvl1.enabled = true;
+        colliderLvl2.enabled = true;
+        colliderLvl3.enabled = true;
+        colliderLvl4.enabled = true;
+        colliderLvl5.enabled = true;
         for (int i = 0; i < allFlocks.Length; i++)
         {
             fishLvl = allFlocks[i].GetComponent<Flock>().agentPrefab.fishLevel;
@@ -91,5 +82,10 @@ public class FishSpawner : MonoBehaviour
                 count++;
             }
         }
+        colliderLvl1.enabled = false;
+        colliderLvl2.enabled = false;
+        colliderLvl3.enabled = false;
+        colliderLvl4.enabled = false;
+        colliderLvl5.enabled = false;
     }
 }

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7456174020945264705}
   - component: {fileID: 4100453111222992983}
   m_Layer: 0
-  m_Name: SunFishSprite
+  m_Name: GalacticGuppySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,9 +165,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5658032073112285571}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81fe4889c6ade1c43b27a83914ad8843, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c03a34f80d00c54d927b254d7e5e346, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

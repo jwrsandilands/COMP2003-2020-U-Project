@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     GameObject selectedHook;
     GameObject[,] itemUis = new GameObject[4, 9];
 
-    int[] currentItemIndex = {0, 0, 0};
+    //int[] currentItemIndex = {0, 0, 0};
 
     private void Start()
     { 
@@ -50,12 +50,12 @@ public class InventoryManager : MonoBehaviour
                 if (tempInventory[j] == null)
                 {
                     itemUis[i, j].GetComponent<ItemUI>().currentItem = noItemIcon;
-                    itemUis[i, j].GetComponent<ItemUI>().Draw(true);
+                    itemUis[i, j].GetComponent<ItemUI>().Draw(true, i);
                 }
                 else
                 {
                     itemUis[i, j].GetComponent<ItemUI>().currentItem = tempInventory[j]; //.GetComponent<Hook>().invIcon;
-                    itemUis[i, j].GetComponent<ItemUI>().Draw(false);
+                    itemUis[i, j].GetComponent<ItemUI>().Draw(false, i);
                 }
             }
         }
@@ -65,21 +65,21 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Switch(0);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            Switch(1);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Switch(2);
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        Switch(0);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.W))
+    //    {
+    //        Switch(1);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        Switch(2);
+    //    }
+    //}
 
     public void ChangeSelectedRod(GameObject newSelected)
     {
@@ -121,40 +121,40 @@ public class InventoryManager : MonoBehaviour
             if (tempInventory[i] == null)
             {
                 itemUis[0, i].GetComponent<ItemUI>().currentItem = noItemIcon;
-                itemUis[0, i].GetComponent<ItemUI>().Draw(true);
+                itemUis[0, i].GetComponent<ItemUI>().Draw(true, 0);
             }
             else
             {
                 itemUis[0, i].GetComponent<ItemUI>().currentItem = tempInventory[i]; //.GetComponent<Hook>().invIcon;
-                itemUis[0, i].GetComponent<ItemUI>().Draw(false);
+                itemUis[0, i].GetComponent<ItemUI>().Draw(false, 0);
             }
         }
     }
 
-    private void Switch(int index)
-    {
-        currentItemIndex[index] += 1;
-        if (currentItemIndex[index] == 9)
-        {
-            currentItemIndex[index] = 0;
-        }
-        if (itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().isItem == false)
-        {
-            currentItemIndex[index] = 0;
-        }
+    //private void Switch(int index)
+    //{
+    //    currentItemIndex[index] += 1;
+    //    if (currentItemIndex[index] == 9)
+    //    {
+    //        currentItemIndex[index] = 0;
+    //    }
+    //    if (itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().isItem == false)
+    //    {
+    //        currentItemIndex[index] = 0;
+    //    }
 
-        if (index == 0)
-        {
-            this.ChangeSelectedRod(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
-        }
-        else if (index == 1)
-        {
-            this.ChangeSelectedBait(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
-        }
-        else 
-        {
-            this.ChangeSelectedHook(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
-        }
-    }
+    //    if (index == 0)
+    //    {
+    //        this.ChangeSelectedRod(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
+    //    }
+    //    else if (index == 1)
+    //    {
+    //        this.ChangeSelectedBait(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
+    //    }
+    //    else 
+    //    {
+    //        this.ChangeSelectedHook(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
+    //    }
+    //}
 
 }

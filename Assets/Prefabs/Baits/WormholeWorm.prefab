@@ -62,4 +62,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invIcon: {fileID: 3894140951416111050, guid: 45131d7012500a84cacda90a9cb6233f, type: 3}
+  invIcon: {fileID: 8829916012358321522, guid: e1b295df020887b49bbb62393d002ca5, type: 3}

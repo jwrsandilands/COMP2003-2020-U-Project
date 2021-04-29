@@ -14,18 +14,15 @@ public class InventoryManager : MonoBehaviour
     [Header("Grid Layouts")]
     public GameObject[] gridLayouts = new GameObject[4];
 
-    GameObject selectedItem;
+    GameObject selectedRod;
+    GameObject selectedBait;
+    GameObject selectedHook;
     GameObject[,] itemUis = new GameObject[4, 9];
 
-    //GameObject[] rodsItemUis = new GameObject[9];
-    //GameObject[] baitsItemUis = new GameObject[9];
-    //GameObject[] hooksItemUis = new GameObject[9];
-    //GameObject[] fishItemUis = new GameObject[9];
-
-    int currentItemIndex = 0;
+    int[] currentItemIndex = {0, 0, 0};
 
     private void Start()
-    {
+    { 
         GameObject[] tempInventory;
 
         for (int i = 0; i < itemUis.GetLength(0); i++)
@@ -62,7 +59,9 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        this.ChangeSelected(itemUis[0, 0].GetComponent<ItemUI>().currentItem);
+        this.ChangeSelectedRod(itemUis[0, 0].GetComponent<ItemUI>().currentItem);
+        this.ChangeSelectedBait(itemUis[1, 0].GetComponent<ItemUI>().currentItem);
+        this.ChangeSelectedHook(itemUis[2, 0].GetComponent<ItemUI>().currentItem);
 
     }
 
@@ -70,19 +69,43 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Switch();
+            Switch(0);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Switch(1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Switch(2);
         }
     }
 
-    public void ChangeSelected(GameObject newSelected)
+    public void ChangeSelectedRod(GameObject newSelected)
     {
-        Destroy(selectedItem);
+        Destroy(selectedRod);
         playerInventory.itemSelected = newSelected;
-        selectedItem = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.transform) as GameObject;
-        selectedItem.transform.parent = selectedUI.transform;
+        selectedRod = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedRod.transform) as GameObject;
+        selectedRod.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedRod.transform;
     }
 
-    public void AddItem()
+    public void ChangeSelectedBait(GameObject newSelected)
+    {
+        Destroy(selectedBait);
+        playerInventory.itemSelected = newSelected;
+        selectedBait = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedBait.transform) as GameObject;
+        selectedBait.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedBait.transform;
+    }
+
+    public void ChangeSelectedHook(GameObject newSelected)
+    {
+        Destroy(selectedHook);
+        playerInventory.itemSelected = newSelected;
+        selectedHook = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedHook.transform) as GameObject;
+        selectedHook.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedHook.transform;
+    }
+
+    public void AddRod()
     {
         GameObject[] tempUI = GameObject.FindGameObjectsWithTag("ItemUI");
         foreach (GameObject obj in tempUI)
@@ -108,18 +131,30 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void Switch()
+    private void Switch(int index)
     {
-        currentItemIndex += 1;
-        if (currentItemIndex == 9)
+        currentItemIndex[index] += 1;
+        if (currentItemIndex[index] == 9)
         {
-            currentItemIndex = 0;
+            currentItemIndex[index] = 0;
         }
-        if (itemUis[0, currentItemIndex].GetComponent<ItemUI>().isItem == false)
+        if (itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().isItem == false)
         {
-            currentItemIndex = 0;
+            currentItemIndex[index] = 0;
         }
-        this.ChangeSelected(itemUis[0, currentItemIndex].GetComponent<ItemUI>().currentItem);
+
+        if (index == 0)
+        {
+            this.ChangeSelectedRod(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
+        }
+        else if (index == 1)
+        {
+            this.ChangeSelectedBait(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
+        }
+        else 
+        {
+            this.ChangeSelectedHook(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
+        }
     }
 
 }

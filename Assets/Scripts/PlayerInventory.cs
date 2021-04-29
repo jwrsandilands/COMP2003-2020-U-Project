@@ -16,6 +16,6 @@ public class PlayerInventory : MonoBehaviour
         {
             inventory.AddItem(pickUp);
         }
-        inventoryManager.AddItem();
+        inventoryManager.AddRod();
     }
 }

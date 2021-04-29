@@ -33,6 +33,6 @@ public class ItemUI : MonoBehaviour
 
     public void OnSelected()
     {
-        InventoryManager.ChangeSelected(currentItem);
+        InventoryManager.ChangeSelectedRod(currentItem);
     }
 }

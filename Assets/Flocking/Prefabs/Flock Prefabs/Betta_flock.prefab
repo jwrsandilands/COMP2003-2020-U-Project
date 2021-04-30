@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3717820521443976939}
   - component: {fileID: 2604221036249337673}
   m_Layer: 0
-  m_Name: RoboFish_flock
+  m_Name: Betta_flock
   m_TagString: flock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 3717820521443976939}
-  agentPrefab: {fileID: 3085577085432938060, guid: d61a5b409c532f6478611fac1184a3c1,
+  agentPrefab: {fileID: 4080844158238040315, guid: 2ef39cc93f9515d4394dcab964ed630e,
     type: 3}
   range: 10
-  amountOfFlock: 2
-  behaviour: {fileID: 11400000, guid: dec0b704d21072c4f8767f787fa51b8d, type: 2}
-  startingCount: 3
+  amountOfFlock: 1
+  behaviour: {fileID: 11400000, guid: 9f06e21550feae74ea67a1d69a09f1ba, type: 2}
+  startingCount: 9
   driveFactor: 100
   maxSpeed: 5
-  neighborRadius: 3.9
+  neighborRadius: 1.5
   avoidanceRadiusMultiplier: 0.5

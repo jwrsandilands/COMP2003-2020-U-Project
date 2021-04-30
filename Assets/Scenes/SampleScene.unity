@@ -2008,11 +2008,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allFlocks:
-  - {fileID: 300598667197484316, guid: a93aecfcf35b5e345ae0967c249cd4bd, type: 3}
-  - {fileID: 300598667197484316, guid: 6edb4e847e574c94ba73b79059964fa8, type: 3}
-  - {fileID: 300598667197484316, guid: a3d716095ec1f9f479ef46151b98821b, type: 3}
-  - {fileID: 300598667197484316, guid: 7da5ef9c3c91bbf4b9c459ced1810fbf, type: 3}
+  - {fileID: 300598667197484316, guid: 49d5112a4aac9254492d4228f6538541, type: 3}
+  - {fileID: 300598667197484316, guid: 74a92a5a3cb1de34cb55d326eaad3f12, type: 3}
+  - {fileID: 300598667197484316, guid: e5a5e352d8feb6f4abebcf8f85c081ad, type: 3}
   - {fileID: 300598667197484316, guid: 8e3d62ae2cb92d34693f79b1dfb9dc3f, type: 3}
+  - {fileID: 300598667197484316, guid: 7da5ef9c3c91bbf4b9c459ced1810fbf, type: 3}
+  - {fileID: 300598667197484316, guid: 5ef635ea6bb1b194bb60130f28665ba4, type: 3}
+  - {fileID: 300598667197484316, guid: a3d716095ec1f9f479ef46151b98821b, type: 3}
+  - {fileID: 300598667197484316, guid: 6edb4e847e574c94ba73b79059964fa8, type: 3}
+  - {fileID: 300598667197484316, guid: a93aecfcf35b5e345ae0967c249cd4bd, type: 3}
+  - {fileID: 300598667197484316, guid: 9de18724cfbefec48950c4f95f5cae8b, type: 3}
   colliderLvl1: {fileID: 871467061}
   colliderLvl2: {fileID: 1454157608}
   colliderLvl3: {fileID: 476969681}
@@ -3319,6 +3324,11 @@ PrefabInstance:
       propertyPath: theMusic
       value: 
       objectReference: {fileID: 882199878}
+    - target: {fileID: 1310622391132842715, guid: fa01261dcd771a841806c8b9f1bc07d4,
+        type: 3}
+      propertyPath: hookDegredationPower
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1310622389497694321, guid: fa01261dcd771a841806c8b9f1bc07d4,
         type: 3}
       propertyPath: m_IsActive

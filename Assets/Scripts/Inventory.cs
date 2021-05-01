@@ -8,6 +8,7 @@ public class Inventory
     public GameObject[] rods = new GameObject[9];
     public GameObject[] bait = new GameObject[9];
     public GameObject[] hooks = new GameObject[9];
+    public GameObject[] reels = new GameObject[9];
     public GameObject[] fish = new GameObject[9];
 
     public Inventory() 
@@ -30,6 +31,11 @@ public class Inventory
     public GameObject[] GetFish()
     {
         return fish;
+    }
+
+    public GameObject[] GetReels()
+    {
+        return reels;
     }
 
     public void AddItem(GameObject newItem) 

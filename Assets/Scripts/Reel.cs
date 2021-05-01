@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rod : MonoBehaviour
+public class Reel : MonoBehaviour
 {
-    public int power = 1;
+    public int speed = 1;
 }
-

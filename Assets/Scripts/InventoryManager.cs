@@ -12,12 +12,13 @@ public class InventoryManager : MonoBehaviour
     public GameObject selectedUI;
 
     [Header("Grid Layouts")]
-    public GameObject[] gridLayouts = new GameObject[4];
+    public GameObject[] gridLayouts = new GameObject[5];
 
     GameObject selectedRod;
     GameObject selectedBait;
     GameObject selectedHook;
-    GameObject[,] itemUis = new GameObject[4, 9];
+    GameObject selectedReel;
+    GameObject[,] itemUis = new GameObject[5, 9];
 
     //int[] currentItemIndex = {0, 0, 0};
 
@@ -38,6 +39,10 @@ public class InventoryManager : MonoBehaviour
             else if (i == 2) 
             { 
                 tempInventory = playerInventory.inventory.GetHooks(); 
+            }
+            else if (i == 3)
+            {
+                tempInventory = playerInventory.inventory.GetReels();
             }
             else 
             { 
@@ -62,6 +67,7 @@ public class InventoryManager : MonoBehaviour
         this.ChangeSelectedRod(itemUis[0, 0].GetComponent<ItemUI>().currentItem);
         this.ChangeSelectedBait(itemUis[1, 0].GetComponent<ItemUI>().currentItem);
         this.ChangeSelectedHook(itemUis[2, 0].GetComponent<ItemUI>().currentItem);
+        this.ChangeSelectedReel(itemUis[3, 0].GetComponent<ItemUI>().currentItem);
 
     }
 
@@ -84,7 +90,7 @@ public class InventoryManager : MonoBehaviour
     public void ChangeSelectedRod(GameObject newSelected)
     {
         Destroy(selectedRod);
-        playerInventory.itemSelected = newSelected;
+        playerInventory.rodSelected = newSelected;
         selectedRod = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedRod.transform) as GameObject;
         selectedRod.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedRod.transform;
     }
@@ -92,7 +98,7 @@ public class InventoryManager : MonoBehaviour
     public void ChangeSelectedBait(GameObject newSelected)
     {
         Destroy(selectedBait);
-        playerInventory.itemSelected = newSelected;
+        playerInventory.baitSelected = newSelected;
         selectedBait = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedBait.transform) as GameObject;
         selectedBait.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedBait.transform;
     }
@@ -100,9 +106,17 @@ public class InventoryManager : MonoBehaviour
     public void ChangeSelectedHook(GameObject newSelected)
     {
         Destroy(selectedHook);
-        playerInventory.itemSelected = newSelected;
+        playerInventory.hookSelected = newSelected;
         selectedHook = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedHook.transform) as GameObject;
         selectedHook.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedHook.transform;
+    }
+
+    public void ChangeSelectedReel(GameObject newSelected)
+    {
+        Destroy(selectedReel);
+        playerInventory.reelSelected = newSelected;
+        selectedReel = Instantiate(newSelected.GetComponent<InventoryItemHolder>().invIcon, selectedUI.GetComponent<InventorySelected>().SelectedReel.transform) as GameObject;
+        selectedReel.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedReel.transform;
     }
 
     public void AddRod()

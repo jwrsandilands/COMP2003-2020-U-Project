@@ -45,9 +45,13 @@ public class ItemUI : MonoBehaviour
         {
             InventoryManager.ChangeSelectedBait(currentItem);
         }
-        else 
+        else if (type == 2)
         {
             InventoryManager.ChangeSelectedHook(currentItem);
+        }
+        else 
+        {
+            InventoryManager.ChangeSelectedReel(currentItem);
         }
 
     }

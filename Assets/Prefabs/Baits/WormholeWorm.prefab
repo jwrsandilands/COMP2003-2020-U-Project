@@ -50,6 +50,7 @@ MonoBehaviour:
   levelFourPercentage: 0
   levelFivePercentage: 0
   robotPercentage: 0
+  attraction: 2
 --- !u!114 &1563749111566508873
 MonoBehaviour:
   m_ObjectHideFlags: 0

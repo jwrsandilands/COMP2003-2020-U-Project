@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class FlockAgent : MonoBehaviour
 {
-
+    public string fishName;
     private bool isCaught = false;
 
     Flock agentFlock;
@@ -36,6 +36,14 @@ public class FlockAgent : MonoBehaviour
         {
             transform.up = velocity;
             transform.position += (Vector3)velocity * Time.deltaTime;
+            if(velocity.x > 0)
+            {
+                this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = true;
+            }
+            if (velocity.x < 0)
+            {
+                this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = false;
+            }
         }
     }
 

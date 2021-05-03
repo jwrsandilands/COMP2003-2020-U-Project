@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public PlayerInventory playerInventory;
-    public int power = 1;
-    public int attraction = 1;
-    public int catchDifficulty = 1;
-    public int speed = 1;
+    public float power = 1;
+    public float attraction = 1;
+    public float catchDifficulty = 1;
+    public float speed = 1;
 
     public static PlayerStats instance;
 
@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
 
     void FixedUpdate()
     {
-        power = 1 * playerInventory.rodSelected.GetComponent<Rod>().power;
+        power = 1 * playerInventory.rodSelected.GetComponent<Rods>().power;
         attraction = 1 * playerInventory.baitSelected.GetComponent<Bait>().attraction;
         catchDifficulty = 1 * playerInventory.hookSelected.GetComponent<HookItem>().catchDifficulty;
         speed = 1 * playerInventory.reelSelected.GetComponent<Reel>().speed;

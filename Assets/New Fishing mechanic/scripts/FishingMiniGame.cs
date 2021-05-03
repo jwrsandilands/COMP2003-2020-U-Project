@@ -48,7 +48,7 @@ public class FishingMiniGame : MonoBehaviour
         
 
         if(stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 1) {
-            timerMultiplicator = 2.3f;
+            timerMultiplicator = 1f;
             fishSpeed = 2.5f;
             hookDegredationPower = 0.22f;
         }
@@ -60,22 +60,24 @@ public class FishingMiniGame : MonoBehaviour
         }
         if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 3)
         {
-            timerMultiplicator = 1.3f;
+            timerMultiplicator = 2.4f;
             fishSpeed = 3.5f;
             hookDegredationPower = 0.26f;
         }
         if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 4)
         {
-            timerMultiplicator = 0.7f;
+            timerMultiplicator = 3f;
             fishSpeed = 4;
             hookDegredationPower = 0.28f;
         }
         if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 5)
         {
-            timerMultiplicator = 0.5f;
+            timerMultiplicator = 3.5f;
             fishSpeed = 5;
             hookDegredationPower = 0.3f;
         }
+
+
         //code for hook area based on rod equipped goes below
         if (PlayerStats.instance.catchDifficulty == 1)
         {
@@ -102,6 +104,8 @@ public class FishingMiniGame : MonoBehaviour
 
         }
         Resize();
+        fishPosition = 0;
+        hookPosition = hookSize / 2;
     }
     private void Awake()
     {

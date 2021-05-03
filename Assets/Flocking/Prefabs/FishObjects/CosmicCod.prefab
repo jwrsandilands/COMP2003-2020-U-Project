@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa0beb0b892db8428ce78f82d1e19a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishName: Cosmic Cod
   fishLevel: 2
 --- !u!114 &2747372123674967249
 MonoBehaviour:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class stateManager : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class stateManager : MonoBehaviour
     public Camera theCam;
 
     public GameObject minigame;
+
+    public GameObject canvas;
+    public GameObject allText;
+    public Transform textSpawn;
+    public bool End = false;
+    private GameObject curText;
     
 
     private bool miniGameStart = false;
@@ -43,10 +50,7 @@ public class stateManager : MonoBehaviour
         instance = this;
         
     }
-    //void Start()
-    //{
-    //    stateManagerInstance = this;
-    //}
+   
 
     // Update is called once per frame
     void Update()
@@ -55,6 +59,15 @@ public class stateManager : MonoBehaviour
         {
             minigame.GetComponent<FishingMiniGame>().enabled = true; 
             miniGameStart = true;
+        }
+        if (End == true)
+        {
+            if(Input.GetMouseButtonUp(0)){
+                Destroy(curText);
+                Destroy(caughtFish);
+                Invoke("ResetScene", 0.1f);
+                End = false;
+            }
         }
     }
 
@@ -78,26 +91,29 @@ public class stateManager : MonoBehaviour
         caughtFish.GetComponent<FlockAgent>().enabled = true;
 
         minigame.GetComponent<FishingMiniGame>().success();
+        allText.transform.GetChild(0).GetComponent<Text>().text = "Better Luck Next Time";
+        curText = Instantiate(allText, textSpawn.position, Quaternion.identity, canvas.transform);
+        Invoke("end", 1);
 
 
-        ResetScene();
-      
+        
+
     }
 
     
 
     // code for when a fish is bought back successfully
     public void Success()
-    {
-        Destroy(caughtFish);
-
-        ResetScene();
-        Debug.Log("Fish Caught");
-
+    {   
         minigame.GetComponent<FishingMiniGame>().success();
+        Debug.Log("Fish Caught");
+        allText.transform.GetChild(0).GetComponent<Text>().text = "Congratulations You Caught A " + caughtFish.GetComponent<FlockAgent>().fishName;
+        curText = Instantiate(allText, textSpawn.position, Quaternion.identity,canvas.transform );
+        Invoke("end", 1);
+
+
 
         
-
         //insert code for what happens when a fish is caught
     }
 
@@ -116,5 +132,10 @@ public class stateManager : MonoBehaviour
          miniGameStart = false;
         gotAway = false;
         
+    }
+
+    private void end()
+    {
+        End = true;
     }
 }

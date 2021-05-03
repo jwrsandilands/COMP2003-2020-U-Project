@@ -27,7 +27,7 @@ public class MoveTowardsHook : MonoBehaviour
             LookAt2D(this.transform, finalPos);
 
 
-            transform.position = Vector2.MoveTowards(transform.position, finalPos, 0.1f);
+            transform.position = Vector2.MoveTowards(transform.position, finalPos, 0.06f * PlayerStats.instance.speed) ;
             
         }
 

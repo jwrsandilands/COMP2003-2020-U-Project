@@ -30,18 +30,18 @@ public class Cast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && stateManager.instance.IsCast == false)
+        if (Input.GetMouseButtonDown(0) && stateManager.instance.IsCast == false && stateManager.instance.End == false)
         {
             
             holdDownStartTime = Time.time;
         }
-        if (Input.GetMouseButton(0) && stateManager.instance.IsCast == false)
+        if (Input.GetMouseButton(0) && stateManager.instance.IsCast == false && stateManager.instance.End == false)
         {
             float holdDownTime = Time.time - holdDownStartTime;
             showForce(holdDownTime);
         }
 
-        if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false)
+        if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false && stateManager.instance.End == false)
             {
                 
                 float holdDownTime = Time.time - holdDownStartTime;

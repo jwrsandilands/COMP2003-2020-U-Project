@@ -22,17 +22,17 @@ public class SettingsMenu : MonoBehaviour
     public Slider volumeSlider;
     public Dropdown buttonPaddingDropdown;
 
-    float currentVolume;
+    private float currentVolume;
     private int currentResolutionIndex;
-    Resolution[] resolutions;
-    bool FullScreen = false;
+    private Resolution[] resolutions;
+    private bool FullScreen = false;
 
     void Start()
     {
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
-        int currentResolutionIndex = 0;
+        int resolutionIndex = 0;
 
         for(int i = 0; i < resolutions.Length; i++)
         {
@@ -42,19 +42,25 @@ public class SettingsMenu : MonoBehaviour
             if (resolutions[i].width == Screen.currentResolution.width
                     && resolutions[i].height == Screen.currentResolution.height)
             {
-                currentResolutionIndex = i;
+                resolutionIndex = i;
             }
         }
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
-        LoadSettings(currentResolutionIndex);
-        Debug.Log(currentResolutionIndex);
+        LoadSettings(resolutionIndex);
+        //Debug.Log(currentResolutionIndex);
+    }
+
+    private void ToFillResolutionDropDown()
+    {
+
     }
 
     public void SetVolume(float sliderValue)
     {
-        Debug.Log("Volumes has changed" + sliderValue);
+        // Testing purposes
+        // Debug.Log("Volumes has changed" + sliderValue);
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         currentVolume = sliderValue;
     }
@@ -69,8 +75,8 @@ public class SettingsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        Debug.Log(resolutionIndex);
         currentResolutionIndex = resolutionIndex;
+        Debug.Log(currentResolutionIndex);
     }
 
     public void SaveSettings()
@@ -80,6 +86,7 @@ public class SettingsMenu : MonoBehaviour
         SavedSettings data = new SavedSettings();
         data.Volume = currentVolume;
         data.fullScreen = FullScreen;
+        Debug.Log("ResolutionIndex in SaveSettings" + currentResolutionIndex);
         data.resolutionIndex = currentResolutionIndex;
         bf.Serialize(file, data);
         file.Close();
@@ -94,10 +101,13 @@ public class SettingsMenu : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/SavedSettings.dat", FileMode.Open);
             SavedSettings data = (SavedSettings)bf.Deserialize(file);
             file.Close();
-            SetVolume(data.Volume);
-            SetResolution(currentResolutionIndex);
-            SetFullScreen(data.fullScreen);
-            Debug.Log("Game data is loaded!");
+            // SetVolume(data.Volume);
+            volumeSlider.value = data.Volume;
+            // SetResolution(currentResolutionIndex);
+            resolutionDropdown.value = data.resolutionIndex;
+            // SetFullScreen(data.fullScreen);
+            Screen.fullScreen = data.fullScreen;
+            Debug.Log("Game data is loaded!" + "fullScreen" + data.fullScreen + "volume" + data.Volume + "ri" + currentResolutionIndex);
         }
         else
             Debug.Log("There is no saved data!");

@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 [Serializable]
-class SavedSettings
+public class SavedSettings
 {
     public float Volume;
     public bool fullScreen;
@@ -27,7 +27,7 @@ public class SettingsMenu : MonoBehaviour
     private Resolution[] resolutions;
     private bool FullScreen = false;
 
-    void Start()
+    public void Start()
     {
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
@@ -52,16 +52,12 @@ public class SettingsMenu : MonoBehaviour
         //Debug.Log(currentResolutionIndex);
     }
 
-    private void ToFillResolutionDropDown()
-    {
-
-    }
-
     public void SetVolume(float sliderValue)
     {
         // Testing purposes
         // Debug.Log("Volumes has changed" + sliderValue);
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+        audioMixer.SetFloat("BackgroundVolume", Mathf.Log10(sliderValue) * 20);
         currentVolume = sliderValue;
     }
 
@@ -104,7 +100,7 @@ public class SettingsMenu : MonoBehaviour
             // SetVolume(data.Volume);
             volumeSlider.value = data.Volume;
             // SetResolution(currentResolutionIndex);
-            resolutionDropdown.value = data.resolutionIndex;
+            //resolutionDropdown.value = data.resolutionIndex;
             // SetFullScreen(data.fullScreen);
             Screen.fullScreen = data.fullScreen;
             Debug.Log("Game data is loaded!" + "fullScreen" + data.fullScreen + "volume" + data.Volume + "ri" + currentResolutionIndex);

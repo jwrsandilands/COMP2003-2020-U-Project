@@ -6,14 +6,6 @@ public class InventoryTab : MonoBehaviour
 {
     public Animator anim;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I)) 
-        {
-            OnPress();
-        }
-    }
-
     public void OnPress() 
     {
         if (anim.GetBool("isOpen") == false)

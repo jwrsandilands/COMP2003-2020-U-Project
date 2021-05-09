@@ -20,9 +20,11 @@ public class SettingsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public TMPro.TMP_Dropdown resolutionDropdown;
     public Slider volumeSlider;
+    public Slider miniGameVolumeSlider;
     public Dropdown buttonPaddingDropdown;
 
     private float currentVolume;
+    private float currentMiniGameVolume;
     private int currentResolutionIndex;
     private Resolution[] resolutions;
     private bool FullScreen = false;
@@ -59,6 +61,12 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         audioMixer.SetFloat("BackgroundVolume", Mathf.Log10(sliderValue) * 20);
         currentVolume = sliderValue;
+    }
+
+    public void SetMiniGameVolume(float sliderValue)
+    {
+        audioMixer.SetFloat("MiniGameVol", Mathf.Log10(sliderValue) * 20);
+        currentMiniGameVolume = sliderValue;
     }
 
     public void SetFullScreen(bool isFullScreen)

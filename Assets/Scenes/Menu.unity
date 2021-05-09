@@ -4460,8 +4460,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 46921d94c8eca06409d1bc577aec27d4, type: 2}
   resolutionDropdown: {fileID: 1187297724}
   volumeSlider: {fileID: 1355440502}
-  miniGameVolumeSlider: {fileID: 0}
-  buttonPaddingDropdown: {fileID: 0}
+  miniGameVolumeSlider: {fileID: 1621573100}
 --- !u!82 &1964287535
 AudioSource:
   m_ObjectHideFlags: 0

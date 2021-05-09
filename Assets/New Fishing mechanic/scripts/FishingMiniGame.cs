@@ -40,12 +40,15 @@ public class FishingMiniGame : MonoBehaviour
 
     private AudioSource theMusic;
 
+    [SerializeField]
+    private AudioLogic audioLogic;
     
 
     private void OnEnable()
     {
         ani.SetTrigger("start");
         theMusic.Play();
+        audioLogic.StopBackgroundMusic();
         hookProgress = 1f;
         
 
@@ -205,6 +208,8 @@ public class FishingMiniGame : MonoBehaviour
         if(hookProgress <= 0f)
         {
             theMusic.Stop();
+            audioLogic.StopMiniGameMusic();
+            audioLogic.StartBackgroundMusic();
             stateManager.instance.fishEscape();
         }
 
@@ -215,6 +220,8 @@ public class FishingMiniGame : MonoBehaviour
     {
         ani.SetTrigger("end");
         theMusic.Stop();
+        audioLogic.StopMiniGameMusic();
+        audioLogic.StartBackgroundMusic();
         
         this.enabled = false;
     }

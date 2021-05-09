@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof (AudioSource))]
 public class FishingMiniGame : MonoBehaviour
 {
     [SerializeField] private Animator ani;
@@ -37,8 +38,9 @@ public class FishingMiniGame : MonoBehaviour
 
     bool pause = false;
 
-    [SerializeField] AudioSource theMusic;
+    private AudioSource theMusic;
 
+    
 
     private void OnEnable()
     {
@@ -110,6 +112,7 @@ public class FishingMiniGame : MonoBehaviour
     private void Awake()
     {
         ani = gameObject.GetComponent<Animator>();
+        theMusic = GetComponent<AudioSource>();
     }
 
     

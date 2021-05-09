@@ -11,6 +11,7 @@ using System.IO;
 public class SavedSettings
 {
     public float Volume;
+    public float MiniGameVolume;
     public bool fullScreen;
     public int resolutionIndex;
 }
@@ -21,7 +22,6 @@ public class SettingsMenu : MonoBehaviour
     public TMPro.TMP_Dropdown resolutionDropdown;
     public Slider volumeSlider;
     public Slider miniGameVolumeSlider;
-    public Dropdown buttonPaddingDropdown;
 
     private float currentVolume;
     private float currentMiniGameVolume;
@@ -36,16 +36,14 @@ public class SettingsMenu : MonoBehaviour
         resolutions = Screen.resolutions;
         int resolutionIndex = 0;
 
-        for(int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
-            if (resolutions[i].width == Screen.currentResolution.width
-                    && resolutions[i].height == Screen.currentResolution.height)
-            {
-                resolutionIndex = i;
-            }
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+                currentResolutionIndex = i;
+
         }
 
         resolutionDropdown.AddOptions(options);
@@ -92,6 +90,7 @@ public class SettingsMenu : MonoBehaviour
         data.fullScreen = FullScreen;
         Debug.Log("ResolutionIndex in SaveSettings" + currentResolutionIndex);
         data.resolutionIndex = currentResolutionIndex;
+        data.MiniGameVolume = currentMiniGameVolume;
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Settings has saved in " + file.Name);
@@ -107,6 +106,7 @@ public class SettingsMenu : MonoBehaviour
             file.Close();
             // SetVolume(data.Volume);
             volumeSlider.value = data.Volume;
+            miniGameVolumeSlider.value = data.MiniGameVolume;
             // SetResolution(currentResolutionIndex);
             //resolutionDropdown.value = data.resolutionIndex;
             // SetFullScreen(data.fullScreen);

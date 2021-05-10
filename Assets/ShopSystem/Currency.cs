@@ -5,30 +5,26 @@ using UnityEngine.UI;
 
 public class Currency : MonoBehaviour
 {
-    public int currency;
-    public Text currencyText;
+    public int currency; //this is the currency amount
+    public Text currencyText; //this is for showing the currency onscreen
 
-    //public Text sellingMenuCurrency;
-
-    //private void Start()
-    //{
-       // SetCurrency(20);
-   // }
+    
 
     public int GetCurrency()
     {
-        return currency;
+        return currency; //returns the current currency
     }
 
     public void SetCurrency(int inCurrency)
     {
-        currency = currency + inCurrency;
-        currencyText.text = currency.ToString();
+        currency = currency + inCurrency; //adds the currency with the parameter
+        currencyText.text = currency.ToString(); //updates the UI
     }
 
+    public void SubtractCurrency(int inCurrency)
+    {
+        currency = currency - inCurrency; //subtracts the currency with the parameter
+        currencyText.text = currency.ToString(); //updates the UI
+    }
 
-    //public void ShowCurrency()
-    //{
-    //    sellingMenuCurrency.text = currency.ToString();
-    //}
 }

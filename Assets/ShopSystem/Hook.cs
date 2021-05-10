@@ -4,33 +4,30 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
-    public string hookname;
-    public int hookPrice;
-    public string hookInfo;
-    public int hookLevel;
+    public string hookname; //this is the hook's name
+    public int hookPrice; //this is the hook's price
+    public Sprite hookImage; //this is the hook's image
+    public int hookLevel; //this is the hook's level
 
-    //private void Start()
-    //{
-     //   Debug.Log(getName() + getPrice() + getInfo() + getLevel());
-    //}
+
     public string getName()
     {
-        return hookname;
+        return hookname; //returns the hook's name
 
     }
 
     public int getPrice()
     {
-        return hookPrice;
+        return hookPrice; //returns the hook's price 
     }
 
-    public string getInfo()
+    public Sprite getImage()
     {
-        return hookInfo;
+        return hookImage; //returns the hook's image
     }
 
     public int getLevel()
-    {
-        return hookLevel;
+    { 
+        return hookLevel; //returns the hook's level
     }
 }

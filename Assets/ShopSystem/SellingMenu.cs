@@ -19,18 +19,19 @@ public class SellingMenu : MonoBehaviour
     public Text totalCostText;
     public Text shopNotification;
 
-
     private void OnBecameVisible()
     {
         shopNotification.enabled = false;
     }
+
+    
     public void Increase()
     {
         if (numberOfFishToSell != fishInventory.fishes.Length )
         {
             numberOfFishToSell++;
-            IncrementIndex();
-            CalculateCost();
+            IncrementIndex(); //runs this function
+            CalculateCost(); //runs this function
             numberText.text = numberOfFishToSell.ToString();
         }
         else
@@ -44,7 +45,7 @@ public class SellingMenu : MonoBehaviour
         if (numberOfFishToSell > 0)
         {
             numberOfFishToSell--;
-            CalculateCost();
+            CalculateCost(); //runs this function
             numberText.text = numberOfFishToSell.ToString();
         }
         else
@@ -64,17 +65,24 @@ public class SellingMenu : MonoBehaviour
 
     public void CalculateCost()
     {
-        int totalCost = numberOfFishToSell * fishInventory.fishes[fishIndex].GetPrice();
-        totalCostText.text = totalCost.ToString();
+        int totalCost = 0;
+
+        for(int i = 0; i < numberOfFishToSell; i++)
+        {
+            totalCost += fishInventory.fishes[i].GetPrice();
+            totalCostText.text = totalCost.ToString();
+        }
     }
 
     public void SellFish()
     {
         int size = fishInventory.fishes.Length;
         Array.Resize(ref fishInventory.fishes, size - numberOfFishToSell);
+
         fishManager.SubtractValue(numberOfFishToSell);
         currencyManager.SetCurrency(int.Parse(totalCostText.text));
         currencyManager.currencyText.text = currencyManager.GetCurrency().ToString();
+
         ResetValues();
         shopNotification.enabled = true;
         shopNotification.text = "Thanks for selling your fish";
@@ -84,6 +92,10 @@ public class SellingMenu : MonoBehaviour
     {
         numberOfFishToSell = 0;
         int totalcost = 0;
+        fishInventory.index = 0;
+
+        fishInventory.isFull = false;
+        Array.Resize(ref fishInventory.fishes, fishInventory.fishes.Length + 7);
         numberText.text = numberOfFishToSell.ToString();
         totalCostText.text = totalcost.ToString();
     }

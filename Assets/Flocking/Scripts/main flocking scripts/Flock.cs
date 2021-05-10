@@ -37,7 +37,7 @@ public class Flock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnPoint = gameObject.transform;
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neighborRadius * neighborRadius;
         squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
@@ -70,7 +70,7 @@ public class Flock : MonoBehaviour
                 
                 if(chance == true)
                 {
-                    
+                   
                     agent.MoveTowards();
                     
                 }
@@ -78,7 +78,7 @@ public class Flock : MonoBehaviour
                 {
                     
                     
-                    Invoke("SetBoolBack", 0.5f);
+                    Invoke("SetBoolBack", 0f);
 
                     List<Transform> context = getNearbyObjects(agent);
                     Vector2 move = behaviour.calculateMove(agent, context, this);

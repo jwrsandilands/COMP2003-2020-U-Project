@@ -6,6 +6,7 @@ public class PlayerCast : MonoBehaviour
 {
     private Camera theCam;
     public GameObject CrossHair;
+    public Vector2 pivotPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +28,12 @@ public class PlayerCast : MonoBehaviour
         Vector2 offset = new Vector2(aim.x - screenPoint.x, aim.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
-        if( angle < 0)
+        if( angle < -15)
         {
-            angle = 0;
-        }else if(angle > 60)
+            angle = -15;
+        }else if(angle > 30)
         {
-            angle = 60;
+            angle =30;
         }else
         {
             CrossHair.transform.rotation = Quaternion.Euler(0f, 0f, angle);   

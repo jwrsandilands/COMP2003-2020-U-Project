@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof (AudioSource))]
 public class FishingMiniGame : MonoBehaviour
 {
+    [SerializeField] private Animator ani;
+
     [SerializeField] Transform topPivot;
     [SerializeField] Transform bottomPivot;
 
@@ -35,11 +38,87 @@ public class FishingMiniGame : MonoBehaviour
 
     bool pause = false;
 
+    private AudioSource theMusic;
 
-    private void Start()
+    [SerializeField]
+    private AudioLogic audioLogic;
+    
+
+    private void OnEnable()
     {
+        ani.SetTrigger("start");
+        theMusic.Play();
+        audioLogic.StopBackgroundMusic();
+        hookProgress = 1f;
+        
+
+        if(stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 1) {
+            timerMultiplicator = 1f;
+            fishSpeed = 2.5f;
+            hookDegredationPower = 0.22f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 2)
+        {
+            timerMultiplicator = 1.8f;
+            fishSpeed = 3f;
+            hookDegredationPower = 0.24f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 3)
+        {
+            timerMultiplicator = 2.4f;
+            fishSpeed = 3.5f;
+            hookDegredationPower = 0.26f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 4)
+        {
+            timerMultiplicator = 3f;
+            fishSpeed = 4;
+            hookDegredationPower = 0.28f;
+        }
+        if (stateManager.instance.GetFish().GetComponent<FlockAgent>().fishLevel == 5)
+        {
+            timerMultiplicator = 3.5f;
+            fishSpeed = 5;
+            hookDegredationPower = 0.3f;
+        }
+
+
+        //code for hook area based on rod equipped goes below
+        if (PlayerStats.instance.catchDifficulty == 1)
+        {
+            hookSize = 0.12f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 2)
+        {
+            hookSize = 0.18f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 3)
+        {
+            hookSize = 0.21f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 4)
+        {
+            hookSize = 0.24f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 5)
+        {
+            hookSize = 0.3f;
+        }
+        if (PlayerStats.instance.catchDifficulty == 6)
+        {
+
+        }
         Resize();
+        fishPosition = 0;
+        hookPosition = hookSize / 2;
     }
+    private void Awake()
+    {
+        ani = gameObject.GetComponent<Animator>();
+        theMusic = GetComponent<AudioSource>();
+    }
+
+    
 
     
     private void Update()
@@ -48,11 +127,14 @@ public class FishingMiniGame : MonoBehaviour
         Fish();
         Hook();
         LifeCheck();
-        Debug.Log(hookPosition);
+        
     }
 
     private void Resize()
     {
+        Vector3 scale = new Vector3(40f, 1f, 1f); ;
+        hook.localScale = scale;
+        Debug.Log(hook.localScale);
         Bounds b = hookSpriteRenderer.bounds;
         float ySize = b.size.y;
 
@@ -61,6 +143,8 @@ public class FishingMiniGame : MonoBehaviour
 
         ls.y = (distance / ySize * hookSize) / 4;
         hook.localScale = ls;
+        Debug.Log(ls);
+        
     }
 
     void Hook()
@@ -100,10 +184,10 @@ public class FishingMiniGame : MonoBehaviour
 
     void LifeCheck()
     {
-        Vector3 ls = lifeBarContainer.localScale;
+        Vector3 ls2 = lifeBarContainer.localScale;
 
-        ls.y = hookProgress;
-        lifeBarContainer.localScale = ls;
+        ls2.y = hookProgress;
+        lifeBarContainer.localScale = ls2;
 
         float min = hookPosition - hookSize / 2;
         float max = hookPosition + hookSize / 2;
@@ -123,10 +207,23 @@ public class FishingMiniGame : MonoBehaviour
 
         if(hookProgress <= 0f)
         {
-            // code for losing and fish escapes
+            theMusic.Stop();
+            audioLogic.StopMiniGameMusic();
+            audioLogic.StartBackgroundMusic();
+            stateManager.instance.fishEscape();
         }
 
         
+    }
+
+    public void success()
+    {
+        ani.SetTrigger("end");
+        theMusic.Stop();
+        audioLogic.StopMiniGameMusic();
+        audioLogic.StartBackgroundMusic();
+        
+        this.enabled = false;
     }
 
 }

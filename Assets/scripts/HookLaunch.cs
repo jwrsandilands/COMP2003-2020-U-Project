@@ -21,7 +21,7 @@ public class HookLaunch : MonoBehaviour
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         rb.gravityScale = 1;
 
-        rb.velocity = transform.right * speed * playerStats.power;
+        rb.velocity = transform.right * speed * playerStats.power * 15;
 
         CameraFollow.instance.setTarget(this.gameObject);
 
@@ -31,13 +31,13 @@ public class HookLaunch : MonoBehaviour
     private void Update()
     {
         
-        if (transform.position.y < 0f)
+        if (transform.position.x > 0f || transform.position.y < 0f)
         {
             startSlow = true;
         }
         if (startSlow == true)
         {
-            rb.gravityScale = 0f;
+            
             rb.AddForce(new Vector2(-rb.velocity.x, -rb.velocity.y) * 0.0075f, ForceMode2D.Impulse);
         }
         if (rb.velocity.x < 0.3f && rb.velocity.y < 0.3f && stateManager.instance.HasCaught == false && stateManager.instance.GotAway == false)
@@ -59,6 +59,19 @@ public class HookLaunch : MonoBehaviour
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             hookRotatePoint.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
+        if(transform.position.y > 60f )
+        {
+            rb.gravityScale = 1;
+        }
+        else if (transform.position.y < -60f)
+        {
+            rb.gravityScale = -1;
+        }
+        else
+        {
+            rb.gravityScale = 0;
+        }
+        
     }
 
 

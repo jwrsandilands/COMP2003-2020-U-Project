@@ -17,6 +17,7 @@ TagManager:
   - castPoint
   - flock
   - hookParent
+  - caughtfish
   layers:
   - Default
   - TransparentFX

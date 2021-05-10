@@ -46,12 +46,11 @@ MonoBehaviour:
   spawnPoint: {fileID: 3717820521443976939}
   agentPrefab: {fileID: 3085577085432938060, guid: d61a5b409c532f6478611fac1184a3c1,
     type: 3}
-  fishLevel: 1
   range: 10
-  amountOfFlock: 5
+  amountOfFlock: 2
   behaviour: {fileID: 11400000, guid: dec0b704d21072c4f8767f787fa51b8d, type: 2}
   startingCount: 3
-  driveFactor: 10
+  driveFactor: 100
   maxSpeed: 5
   neighborRadius: 3.9
   avoidanceRadiusMultiplier: 0.5

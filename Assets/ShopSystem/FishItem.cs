@@ -5,56 +5,40 @@ using UnityEngine.UI;
 
 public class FishItem : MonoBehaviour
 {
-    private int fishValue;
-    private int fishPrice = 25;
-    private FishManager manager;
-    private FishInventory inventory;
+    private int fishValue; //this is for the number that are currently caught
+    public int fishPrice; //the price the fish will sell for
+    private FishManager manager; //a reference to the fishmanager script
+    private FishInventory inventory; //a reference to the fishinventory script 
 
-    [SerializeField]
-    public Image fishImage;
-
+   
     private void Start()
     {
-        manager = FindObjectOfType<FishManager>();
-        inventory = FindObjectOfType<FishInventory>();
+        manager = FindObjectOfType<FishManager>(); //gets the component with the fishmanager script
+        inventory = FindObjectOfType<FishInventory>(); //gets the component with the inventory script 
     }
 
     public int GetValue()
     {
-        return fishValue;
+        return fishValue; //returns the fish value
     }
 
     public int GetPrice()
     {
-        return fishPrice;
+        return fishPrice; //returns the fish price
     }
 
     public void SetValue(int inValue)
     {
-        fishValue = inValue;
+        fishValue = inValue; //sets the value by the inValue parameter
     }
 
-    public Image GetImage()
-    {
-        return fishImage;
-    }
-
-
+    
     public void Collect()
     {
-        if (inventory.isFull != true) 
+        if (inventory.isFull != true) //if the inventory is not full
         {
-            manager.AddValue();
-            gameObject.SetActive(false);
+            manager.AddValue(); //call this function
+            gameObject.SetActive(false); //disable visibility of the fish object 
         }
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-       // if (other.CompareTag("Character"))
-       // {
-        //    manager.AddValue();
-        //    gameObject.SetActive(false);
-        //}
-    //}
 }

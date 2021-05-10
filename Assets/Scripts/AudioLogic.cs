@@ -13,7 +13,7 @@ public class AudioLogic : MonoBehaviour
         float value = 0;
         audioMixer.GetFloat("BackgroundVolume",out value);
         currentVolumeBack = value;
-        audioMixer.SetFloat("BackgroundVolume", 0f);
+        audioMixer.SetFloat("BackgroundVolume", -80f);
     }
 
     public void StopMiniGameMusic()

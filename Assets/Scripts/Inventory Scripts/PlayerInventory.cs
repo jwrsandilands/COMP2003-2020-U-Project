@@ -12,13 +12,9 @@ public class PlayerInventory : MonoBehaviour
     [System.NonSerialized] public GameObject reelSelected;
     public InventoryManager inventoryManager;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void AddFish(GameObject newFish) 
     {
-        GameObject pickUp = other.gameObject;
-        if (other.tag == "Item")
-        {
-            inventory.AddItem(pickUp);
-        }
-        inventoryManager.AddRod();
+        inventory.AddFish(newFish);
+        inventoryManager.AddFish();
     }
 }

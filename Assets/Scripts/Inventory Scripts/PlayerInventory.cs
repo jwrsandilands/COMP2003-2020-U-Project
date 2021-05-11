@@ -17,4 +17,28 @@ public class PlayerInventory : MonoBehaviour
         inventory.AddFish(newFish);
         inventoryManager.AddFish();
     }
+
+    public void AddRod(GameObject newRod) 
+    {
+        inventory.AddRod(newRod);
+        inventoryManager.AddItem(0);
+    }
+
+    public void AddBait(GameObject newBait)
+    {
+        inventory.AddBait(newBait);
+        inventoryManager.AddItem(1);
+    }
+
+    public void AddHook(GameObject newHook)
+    {
+        inventory.AddHook(newHook);
+        inventoryManager.AddItem(2);
+    }
+
+    public void AddReel(GameObject newReel)
+    {
+        inventory.AddReel(newReel);
+        inventoryManager.AddItem(3);
+    }
 }

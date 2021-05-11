@@ -45,23 +45,6 @@ public class Inventory
         return reels;
     }
 
-    //public void AddItem(GameObject newItem) 
-    //{
-    //    int nextNullItemSlot = -1;
-    //    for (int n = 0; n < rods.Length; n++) 
-    //    {        
-    //        if (rods[n] == null) 
-    //        {
-    //            nextNullItemSlot = n;
-    //            break;
-    //        }
-    //    }
-    //    if (nextNullItemSlot != -1) 
-    //    {
-    //        rods[nextNullItemSlot] = newItem;
-    //    }
-    //}
-
     public void AddFish(GameObject newFish)
     {
         newFish.GetComponentInChildren<SpriteRenderer>().enabled = false;
@@ -92,6 +75,74 @@ public class Inventory
         if (nextNullItemSlot != -1)
         {
             fish[nextNullItemSlot] = newFish;
+        }
+    }
+
+    public void AddRod(GameObject newRod) 
+    {
+        int nextnullitemslot = -1;
+        for (int n = 0; n < rods.Length; n++)
+        {
+            if (rods[n] == null)
+            {
+                nextnullitemslot = n;
+                break;
+            }
+        }
+        if (nextnullitemslot != -1)
+        {
+            rods[nextnullitemslot] = newRod;
+        }
+    }
+
+    public void AddBait(GameObject newBait)
+    {
+        int nextnullitemslot = -1;
+        for (int n = 0; n < bait.Length; n++)
+        {
+            if (bait[n] == null)
+            {
+                nextnullitemslot = n;
+                break;
+            }
+        }
+        if (nextnullitemslot != -1)
+        {
+            bait[nextnullitemslot] = newBait;
+        }
+    }
+
+    public void AddHook(GameObject newHook)
+    {
+        int nextnullitemslot = -1;
+        for (int n = 0; n < hooks.Length; n++)
+        {
+            if (hooks[n] == null)
+            {
+                nextnullitemslot = n;
+                break;
+            }
+        }
+        if (nextnullitemslot != -1)
+        {
+            hooks[nextnullitemslot] = newHook;
+        }
+    }
+
+    public void AddReel(GameObject newReel)
+    {
+        int nextnullitemslot = -1;
+        for (int n = 0; n < reels.Length; n++)
+        {
+            if (reels[n] == null)
+            {
+                nextnullitemslot = n;
+                break;
+            }
+        }
+        if (nextnullitemslot != -1)
+        {
+            reels[nextnullitemslot] = newReel;
         }
     }
 }

@@ -116,4 +116,35 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void AddItem(int type) 
+    {
+        GameObject[] tempInventory;
+        if (type == 0)
+        {
+            tempInventory = playerInventory.inventory.GetRods();
+        }
+        else if (type == 1)
+        {
+            tempInventory = playerInventory.inventory.GetBait();
+        }
+        else if (type == 2)
+        {
+            tempInventory = playerInventory.inventory.GetHooks();
+        }
+        else
+        {
+            tempInventory = playerInventory.inventory.GetReels();
+        }
+
+        for (int i = 0; i < itemUis.GetLength(1); i++)
+        {
+            if (tempInventory[i] != null)
+            {
+                Destroy(itemUis[type, i].GetComponent<ItemUI>().icon);
+                itemUis[type, i].GetComponent<ItemUI>().currentItem = tempInventory[i];
+                itemUis[type, i].GetComponent<ItemUI>().Draw(false, type);
+            }
+        }
+    }
+
 }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3041617402205774146}
   - component: {fileID: 4080844158238040315}
   - component: {fileID: 3769686908148769382}
+  - component: {fileID: 1003113829037612423}
+  - component: {fileID: 1399068037946721110}
   m_Layer: 0
   m_Name: BionicBetta
   m_TagString: fish
@@ -78,6 +80,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouth: {fileID: 7517107508028595702}
+--- !u!114 &1003113829037612423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396184152095393540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 8127897879451216461, guid: 0804fe44992d89944b6c078dbaa30f90, type: 3}
+--- !u!114 &1399068037946721110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396184152095393540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4315273d69f9b6549930af1c8c30743e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Bionic Betta
+  stackLevel: 1
 --- !u!1 &3960808866717127858
 GameObject:
   m_ObjectHideFlags: 0

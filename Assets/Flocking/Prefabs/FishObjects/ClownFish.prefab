@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 4148605619499960430}
   - component: {fileID: 3099921409919584727}
   - component: {fileID: 2879962317494602570}
+  - component: {fileID: 6903728381714616674}
+  - component: {fileID: 4514241806132526472}
   m_Layer: 0
   m_Name: ClownFish
   m_TagString: fish
@@ -108,6 +110,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouth: {fileID: 8932064465417172186}
+--- !u!114 &6903728381714616674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361344002278436392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 453571881024366625, guid: 862cd5587ff22124bbd79de47c0fddf1, type: 3}
+--- !u!114 &4514241806132526472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361344002278436392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4315273d69f9b6549930af1c8c30743e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Chaotic Clown Fish
+  stackLevel: 1
 --- !u!1 &5715719020958565912
 GameObject:
   m_ObjectHideFlags: 0

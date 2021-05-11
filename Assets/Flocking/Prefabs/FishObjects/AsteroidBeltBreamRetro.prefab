@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: 2493064088108172324}
   - component: {fileID: 2848138222236921349}
   - component: {fileID: 1509507286498981887}
+  - component: {fileID: 8888162429276514637}
+  - component: {fileID: 1626340830832542885}
   m_Layer: 0
   m_Name: AsteroidBeltBreamRetro
   m_TagString: fish
@@ -207,3 +209,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouth: {fileID: 4189507257061621142}
+--- !u!114 &8888162429276514637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781275224111637065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08fdf5a60cc874eb38722bf332bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invIcon: {fileID: 7396428383376667882, guid: 308dbfe3cd89ae14c8f6a6eaed624882, type: 3}
+--- !u!114 &1626340830832542885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781275224111637065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4315273d69f9b6549930af1c8c30743e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Retro Asteroid Belt Breem
+  stackLevel: 1

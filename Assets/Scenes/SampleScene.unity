@@ -4472,6 +4472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory:
+    stackLimit: 5
     rods:
     - {fileID: 8889926005510088406, guid: d3b1e14781bfde44ba5cf3ad7c75ae61, type: 3}
     - {fileID: 8104662247988772071, guid: a86ab00c324d9cf409bade7320e91d1e, type: 3}

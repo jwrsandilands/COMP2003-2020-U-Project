@@ -5,13 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
+    public static Inventory instance;
+    public int stackLimit;
+
     public GameObject[] rods = new GameObject[9];
     public GameObject[] bait = new GameObject[9];
     public GameObject[] hooks = new GameObject[9];
     public GameObject[] reels = new GameObject[9];
     public GameObject[] fish = new GameObject[9];
-
-    public static Inventory instance;
 
     void start()
     {
@@ -64,6 +65,8 @@ public class Inventory
     public void AddFish(GameObject newFish)
     {
         newFish.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        newFish.GetComponent<FlockAgent>().enabled = false;
+        newFish.GetComponent<MoveTowardsHook>().enabled = false;
 
         int nextNullItemSlot = -1;
         for (int n = 0; n < fish.Length; n++)
@@ -72,6 +75,18 @@ public class Inventory
             {
                 nextNullItemSlot = n;
                 break;
+            }
+            else 
+            {
+                if (fish[n].GetComponent<Fish>().fishName == newFish.GetComponent<Fish>().fishName) 
+                {
+                    if (!(fish[n].GetComponent<Fish>().stackLevel == stackLimit))
+                    {
+                        fish[n].GetComponent<Fish>().stackLevel += 1;
+                        nextNullItemSlot = -1;
+                        break;
+                    }
+                }
             }
         }
         if (nextNullItemSlot != -1)

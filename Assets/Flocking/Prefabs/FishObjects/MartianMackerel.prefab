@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4547587722777383661}
   - component: {fileID: 3742151067198460016}
   - component: {fileID: 5722301737021940294}
+  - component: {fileID: 4200976267221930572}
   m_Layer: 0
   m_Name: MartianMackerel
   m_TagString: fish
@@ -92,6 +93,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invIcon: {fileID: 9142561379879373100, guid: 64734bfd2cdce82499c43aacc210c242, type: 3}
+--- !u!114 &4200976267221930572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2927339390770771218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4315273d69f9b6549930af1c8c30743e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Martian Mackeral
+  stackLevel: 1
 --- !u!1 &3551592403296528036
 GameObject:
   m_ObjectHideFlags: 0

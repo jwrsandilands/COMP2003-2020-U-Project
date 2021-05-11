@@ -10,6 +10,7 @@ public class ItemUI : MonoBehaviour
     InventoryManager InventoryManager;
     [System.NonSerialized] public bool isItem = false;
     public GameObject buttonObject;
+    public GameObject textObject;
     [System.NonSerialized] public int type;
 
     private void Start()
@@ -24,6 +25,11 @@ public class ItemUI : MonoBehaviour
         {
             icon = Instantiate(currentItem.GetComponent<InventoryItemHolder>().invIcon, gameObject.transform) as GameObject;
             isItem = true;
+            if (inputType == 4)
+            {
+                textObject.SetActive(true);
+                textObject.GetComponent<Text>().text = currentItem.GetComponent<Fish>().stackLevel.ToString();
+            }
         }
         else 
         {

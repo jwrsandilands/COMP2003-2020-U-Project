@@ -2,11 +2,6 @@
 
 public class Fish : MonoBehaviour
 {
-    public FlockAgent flockagent;
-    public int level = 0;
-
-    void Start()
-    {
-        this.level = flockagent.fishLevel;
-    }
+    public string fishName;
+    public int stackLevel = 1;
 }

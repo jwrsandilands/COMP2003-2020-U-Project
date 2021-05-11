@@ -31,6 +31,8 @@ public class stateManager : MonoBehaviour
 
     public static stateManager instance = null;
 
+    public PlayerInventory playerInventory;
+
     public bool IsCast { get => isCast; set => isCast = value; }
     public bool CanLure { get => canLure; set => canLure = value; }
     public bool HasCaught { get => hasCaught; set => hasCaught = value; }
@@ -113,7 +115,7 @@ public class stateManager : MonoBehaviour
 
 
 
-        
+        playerInventory.AddFish(Instantiate(caughtFish, new Vector3(-32, -8, 0), Quaternion.identity) as GameObject);
         //insert code for what happens when a fish is caught
     }
 

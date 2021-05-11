@@ -44,20 +44,39 @@ public class Inventory
         return reels;
     }
 
-    public void AddItem(GameObject newItem) 
+    //public void AddItem(GameObject newItem) 
+    //{
+    //    int nextNullItemSlot = -1;
+    //    for (int n = 0; n < rods.Length; n++) 
+    //    {        
+    //        if (rods[n] == null) 
+    //        {
+    //            nextNullItemSlot = n;
+    //            break;
+    //        }
+    //    }
+    //    if (nextNullItemSlot != -1) 
+    //    {
+    //        rods[nextNullItemSlot] = newItem;
+    //    }
+    //}
+
+    public void AddFish(GameObject newFish)
     {
+        newFish.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
         int nextNullItemSlot = -1;
-        for (int n = 0; n < rods.Length; n++) 
-        {        
-            if (rods[n] == null) 
+        for (int n = 0; n < fish.Length; n++)
+        {
+            if (fish[n] == null)
             {
                 nextNullItemSlot = n;
                 break;
             }
         }
-        if (nextNullItemSlot != -1) 
+        if (nextNullItemSlot != -1)
         {
-            rods[nextNullItemSlot] = newItem;
+            fish[nextNullItemSlot] = newFish;
         }
     }
 }

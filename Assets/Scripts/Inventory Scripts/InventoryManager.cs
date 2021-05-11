@@ -20,7 +20,6 @@ public class InventoryManager : MonoBehaviour
     GameObject selectedReel;
     GameObject[,] itemUis = new GameObject[5, 9];
 
-    //int[] currentItemIndex = {0, 0, 0};
 
     private void Start()
     { 
@@ -71,22 +70,6 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Q))
-    //    {
-    //        Switch(0);
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.W))
-    //    {
-    //        Switch(1);
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.E))
-    //    {
-    //        Switch(2);
-    //    }
-    //}
-
     public void ChangeSelectedRod(GameObject newSelected)
     {
         Destroy(selectedRod);
@@ -119,56 +102,18 @@ public class InventoryManager : MonoBehaviour
         selectedReel.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedReel.transform;
     }
 
-    public void AddRod()
+    public void AddFish()
     {
-        GameObject[] tempUI = GameObject.FindGameObjectsWithTag("ItemUI");
-        foreach (GameObject obj in tempUI)
-        {
-            Destroy(obj);
-        }
-
-        GameObject[] tempInventory = playerInventory.inventory.GetRods();
+        GameObject[] tempInventory = playerInventory.inventory.GetFish();
         for (int i = 0; i < itemUis.GetLength(1); i++)
         {
-            itemUis[0, i] = Instantiate(itemUI) as GameObject;
-            itemUis[0, i].transform.parent = gridLayouts[i].transform;
-            if (tempInventory[i] == null)
+            if (tempInventory[i] != null)
             {
-                itemUis[0, i].GetComponent<ItemUI>().currentItem = noItemIcon;
-                itemUis[0, i].GetComponent<ItemUI>().Draw(true, 0);
-            }
-            else
-            {
-                itemUis[0, i].GetComponent<ItemUI>().currentItem = tempInventory[i]; //.GetComponent<Hook>().invIcon;
-                itemUis[0, i].GetComponent<ItemUI>().Draw(false, 0);
+                Destroy(itemUis[4, i].GetComponent<ItemUI>().icon);
+                itemUis[4, i].GetComponent<ItemUI>().currentItem = tempInventory[i]; //.GetComponent<Hook>().invIcon;
+                itemUis[4, i].GetComponent<ItemUI>().Draw(false, 4);
             }
         }
     }
-
-    //private void Switch(int index)
-    //{
-    //    currentItemIndex[index] += 1;
-    //    if (currentItemIndex[index] == 9)
-    //    {
-    //        currentItemIndex[index] = 0;
-    //    }
-    //    if (itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().isItem == false)
-    //    {
-    //        currentItemIndex[index] = 0;
-    //    }
-
-    //    if (index == 0)
-    //    {
-    //        this.ChangeSelectedRod(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
-    //    }
-    //    else if (index == 1)
-    //    {
-    //        this.ChangeSelectedBait(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
-    //    }
-    //    else 
-    //    {
-    //        this.ChangeSelectedHook(itemUis[index, currentItemIndex[index]].GetComponent<ItemUI>().currentItem);
-    //    }
-    //}
 
 }

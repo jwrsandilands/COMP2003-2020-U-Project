@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Robo Fish
+  baitable: 1
+  isRobot: 1
   fishLevel: 3
 --- !u!114 &2747372123674967249
 MonoBehaviour:

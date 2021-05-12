@@ -90,19 +90,19 @@ public class FishingMiniGame : MonoBehaviour
         }
         if (PlayerStats.instance.catchDifficulty == 2)
         {
-            hookSize = 0.18f;
+            hookSize = 0.15f;
         }
         if (PlayerStats.instance.catchDifficulty == 3)
         {
-            hookSize = 0.21f;
+            hookSize = 0.18f;
         }
         if (PlayerStats.instance.catchDifficulty == 4)
         {
-            hookSize = 0.24f;
+            hookSize = 0.21f;
         }
         if (PlayerStats.instance.catchDifficulty == 5)
         {
-            hookSize = 0.3f;
+            hookSize = 0.24f;
         }
         if (PlayerStats.instance.catchDifficulty == 6)
         {

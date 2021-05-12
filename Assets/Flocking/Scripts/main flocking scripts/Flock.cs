@@ -62,13 +62,13 @@ public class Flock : MonoBehaviour
         hook = GameObject.FindGameObjectWithTag("Hook");
         foreach (FlockAgent agent in agents)
         {
-            
-            if(hook != null && stateManager.instance.CanLure == true && Vector2.Distance(hook.transform.position, agent.transform.position) < range)
+
+            if (hook != null && stateManager.instance.CanLure == true && Vector2.Distance(hook.transform.position, agent.transform.position) < range && agent.baitable == true)
             {
                 stateManager.instance.CanLure = false;
-                chance = attractChance();
-                
-                if(chance == true)
+                chance = attractChance(agent.fishLevel, agent.isRobot);
+
+                if (chance == true)
                 {
                    
                     agent.MoveTowards();
@@ -76,9 +76,9 @@ public class Flock : MonoBehaviour
                 }
                 else if(chance == false) 
                 {
-                    
-                    
-                    Invoke("SetBoolBack", 0f);
+
+                    agent.baitable = false;
+                    Invoke("SetBoolBack", 3f);
 
                     List<Transform> context = getNearbyObjects(agent);
                     Vector2 move = behaviour.calculateMove(agent, context, this);
@@ -126,19 +126,78 @@ public class Flock : MonoBehaviour
         return context;
     }
 
-    private bool attractChance()
+     private bool attractChance(int fishLevel, bool isRobot)
     {
-        int randomNum = Random.Range(0, 9);
-        bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
-        return isLured[randomNum];
+        if (PlayerStats.instance.attraction == 1)
+        {
+            if (fishLevel == 1)
+            {
+                int randomNum = Random.Range(0, 9);
+                bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
+                return isLured[randomNum];
+            }
 
-        
+        }
+        if (PlayerStats.instance.attraction == 2)
+        {
+
+            if (fishLevel == 2 || fishLevel == 1)
+            {
+                int randomNum = Random.Range(0, 9);
+                bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
+                return isLured[randomNum];
+            }
+        }
+        if (PlayerStats.instance.attraction == 3)
+        {
+
+
+            if (fishLevel == 3 || fishLevel == 2)
+            {
+                int randomNum = Random.Range(0, 9);
+                bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
+                return isLured[randomNum];
+            }
+
+        }
+        if (PlayerStats.instance.attraction == 4)
+        {
+            if (isRobot)
+            {
+                int randomNum = Random.Range(0, 9);
+                bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
+                return isLured[randomNum];
+            }
+        }
+        if (PlayerStats.instance.attraction == 5)
+        {
+
+            if (fishLevel == 4 || fishLevel == 3)
+            {
+                int randomNum = Random.Range(0, 9);
+                bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
+                return isLured[randomNum];
+            }
+
+        }
+        if (PlayerStats.instance.attraction == 6)
+        {
+
+            if (fishLevel == 5)
+            {
+                int randomNum = Random.Range(0, 9);
+                bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
+                return isLured[randomNum];
+            }
+        }
+        return false;
     }
 
     private void SetBoolBack()
     {
-        if (stateManager.instance.HasCaught == false && stateManager.instance.GotAway == false)
+        if (stateManager.instance.GotAway == false)
         {
+            agentPrefab.baitable = true;
             stateManager.instance.CanLure = true;
         }
         

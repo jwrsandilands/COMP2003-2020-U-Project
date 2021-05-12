@@ -66,8 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Bionic Betta
-  baitable: 1
-  isRobot: 1
   fishLevel: 4
 --- !u!114 &3769686908148769382
 MonoBehaviour:

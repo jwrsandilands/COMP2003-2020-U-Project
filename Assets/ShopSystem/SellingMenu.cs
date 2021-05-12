@@ -19,15 +19,18 @@ public class SellingMenu : MonoBehaviour
     public Text totalCostText;
     public Text shopNotification;
 
+   
     private void OnBecameVisible()
     {
         shopNotification.enabled = false;
     }
 
-    
+   
+
+
     public void Increase()
     {
-        if (numberOfFishToSell != fishInventory.fishes.Length )
+        if (numberOfFishToSell != fishInventory.fishes.Length && fishInventory.fishes[fishIndex] != null)
         {
             numberOfFishToSell++;
             IncrementIndex(); //runs this function
@@ -57,7 +60,7 @@ public class SellingMenu : MonoBehaviour
 
     private void IncrementIndex() 
     {
-        if(fishIndex != 0)
+        if(fishIndex != 0 && fishInventory.fishes.Length != 0)
         {
            fishIndex++;
         }
@@ -69,8 +72,12 @@ public class SellingMenu : MonoBehaviour
 
         for(int i = 0; i < numberOfFishToSell; i++)
         {
-            totalCost += fishInventory.fishes[i].GetPrice();
-            totalCostText.text = totalCost.ToString();
+            if(fishInventory.fishes[i] != null)
+            {
+                totalCost += fishInventory.fishes[i].GetPrice();
+                totalCostText.text = totalCost.ToString();
+            }
+           
         }
     }
 
@@ -82,7 +89,6 @@ public class SellingMenu : MonoBehaviour
         fishManager.SubtractValue(numberOfFishToSell);
         currencyManager.SetCurrency(int.Parse(totalCostText.text));
         currencyManager.currencyText.text = currencyManager.GetCurrency().ToString();
-
         ResetValues();
         shopNotification.enabled = true;
         shopNotification.text = "Thanks for selling your fish";

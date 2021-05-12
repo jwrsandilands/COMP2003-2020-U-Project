@@ -11,6 +11,8 @@ public class BuyingMenu : MonoBehaviour
 
     public BaitItem[] baits;
 
+    public ReelItem[] reels;
+
 
     public Image[] images;
 
@@ -23,6 +25,7 @@ public class BuyingMenu : MonoBehaviour
     public static bool isHook;
     public static bool isRod;
     public static bool isBait;
+    public static bool isReel;
 
 
     private void OnEnable()
@@ -35,6 +38,7 @@ public class BuyingMenu : MonoBehaviour
         isRod = true;
         isHook = false;
         isBait = false;
+        isReel = false;
 
         for(int i = 0; i < rods.Length; i++)
         {
@@ -48,6 +52,7 @@ public class BuyingMenu : MonoBehaviour
         isRod = false;
         isHook = false;
         isBait = true;
+        isReel = false;
 
         for (int i = 0; i < baits.Length; i++)
         {
@@ -62,11 +67,26 @@ public class BuyingMenu : MonoBehaviour
         isHook = true;
         isRod = false;
         isBait = false;
+        isReel = false;
 
         for (int i = 0; i < hooks.Length; i++)
         {
             images[i].sprite = hooks[i].getImage();
             textPrices[i].text = hooks[i].getPrice().ToString();
+        }
+    }
+
+    public void DisplayReelProducts()
+    {
+        isHook = false;
+        isRod = false;
+        isBait = false;
+        isReel = true;
+
+        for (int i = 0; i < reels.Length; i++)
+        {
+            images[i].sprite = reels[i].getImage();
+            textPrices[i].text = reels[i].getPrice().ToString();
         }
     }
 
@@ -90,6 +110,12 @@ public class BuyingMenu : MonoBehaviour
             buyingMenuPanel.SetActive(false);
             transactionMenu.menuPanel.SetActive(true);
             transactionMenu.DisplayBaitData(baits, index);
+        }
+        else if(isReel)
+        {
+            buyingMenuPanel.SetActive(false);
+            transactionMenu.menuPanel.SetActive(true);
+            transactionMenu.DisplayReelData(reels, index);
         }
         
     }

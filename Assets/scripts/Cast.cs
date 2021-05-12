@@ -21,10 +21,16 @@ public class Cast : MonoBehaviour
     private float angle;
     private Quaternion q;
 
+    //visual UI Slider
+    public Slider CastSlider;
+    public CanvasGroup ChargeCanvas;
+    public float sliderAlpha;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //UI Slider Update
+        ChargeCanvas.alpha = sliderAlpha;
     }
 
     // Update is called once per frame
@@ -34,27 +40,44 @@ public class Cast : MonoBehaviour
         {
             
             holdDownStartTime = Time.time;
+
+            // UI Slider Update
+            // Check if the mouse was clicked over a UI element
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                ChargeCanvas.alpha = 1;
+            }
         }
         if (Input.GetMouseButton(0) && stateManager.instance.IsCast == false && stateManager.instance.End == false)
         {
             float holdDownTime = Time.time - holdDownStartTime;
-            showForce(holdDownTime);
-        }
 
-        if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false && stateManager.instance.End == false)
+            // UI Slider Update
+            // Check if the mouse was clicked over a UI element
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                
-                float holdDownTime = Time.time - holdDownStartTime;
+                //CastSlider.value = holdDownTime;
                 calculateForce(holdDownTime);
-                if (!EventSystem.current.IsPointerOverGameObject())
-                {
-                    stateManager.instance.IsCast = true;
-                    casting = true;
-                    CastHookAnim();
-                }
-                // Check if the mouse was clicked over a UI element
-            
-        }
+            }
+
+         }
+         if (Input.GetMouseButtonUp(0) && stateManager.instance.IsCast == false && stateManager.instance.End == false)
+         {
+            float holdDownTime = Time.time - holdDownStartTime;
+            calculateForce(holdDownTime);
+
+            // Check if the mouse was clicked over a UI element
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                stateManager.instance.IsCast = true;
+                casting = true;
+                CastHookAnim();
+            }
+                
+
+            // UI Slider Update
+            CastSlider.value = 0;
+         }
 
         if (casting && Time.time > atHook)
         {
@@ -67,8 +90,9 @@ public class Cast : MonoBehaviour
         castAnimation.Play("Cast");
         atHook = Time.time + atHookTime;
         casting = true;
-        
-        
+
+        //UI Slider Update
+        ChargeCanvas.alpha = sliderAlpha;
     }
 
     void CastHook()
@@ -87,11 +111,8 @@ public class Cast : MonoBehaviour
     {
         float maxForce = 2f;
         float holdTime = Mathf.Clamp01(time / maxForce);
+        CastSlider.value = holdTime;
         GameObject.Find("VelocitySlider").GetComponent<Slider>().value = holdTime;
     }
 
-    private void showForce(float time)
-    {
-
-    }
 }

@@ -7,6 +7,8 @@ public class FlockAgent : MonoBehaviour
 {
     public string fishName;
     private bool isCaught = false;
+    public bool baitable = true;
+    public bool isRobot;
 
     Flock agentFlock;
     public Flock AgentFlock { get { return agentFlock; } }

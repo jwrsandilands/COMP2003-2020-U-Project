@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e136489367aae4d98a08c48f47194c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baitName: Mooncheese
+  price: 200
+  level: 4
   attraction: 5
 --- !u!114 &580348618437498054
 MonoBehaviour:

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class BuyingMenu : MonoBehaviour
 {
-    public HookItem[] hooks;
+    public Hook[] hooks;
 
-    public RodItem[] rods;
+    public Rods[] rods;
 
-    public BaitItem[] baits;
+    public Bait[] baits;
 
-    public ReelItem[] reels;
+    public Reel[] reels;
 
 
     public Image[] images;
@@ -42,8 +42,8 @@ public class BuyingMenu : MonoBehaviour
 
         for(int i = 0; i < rods.Length; i++)
         {
-            images[i].sprite = rods[i].getImage();
-            textPrices[i].text = rods[i].getPrice().ToString();
+            images[i].sprite = rods[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
+            textPrices[i].text = rods[i].price.ToString();
         }
     }
 
@@ -56,8 +56,8 @@ public class BuyingMenu : MonoBehaviour
 
         for (int i = 0; i < baits.Length; i++)
         {
-            images[i].sprite = baits[i].getImage();
-            textPrices[i].text = baits[i].getPrice().ToString();
+            images[i].sprite = baits[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
+            textPrices[i].text = baits[i].price.ToString();
         }
     }
 
@@ -71,8 +71,8 @@ public class BuyingMenu : MonoBehaviour
 
         for (int i = 0; i < hooks.Length; i++)
         {
-            images[i].sprite = hooks[i].getImage();
-            textPrices[i].text = hooks[i].getPrice().ToString();
+            images[i].sprite = hooks[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
+            textPrices[i].text = hooks[i].price.ToString();
         }
     }
 
@@ -85,8 +85,8 @@ public class BuyingMenu : MonoBehaviour
 
         for (int i = 0; i < reels.Length; i++)
         {
-            images[i].sprite = reels[i].getImage();
-            textPrices[i].text = reels[i].getPrice().ToString();
+            images[i].sprite = reels[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
+            textPrices[i].text = reels[i].price.ToString();
         }
     }
 

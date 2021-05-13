@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87237382c122e7042a93b5ace5d824d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hookName: Red Dwarf
+  price: 200
+  level: 3
   catchDifficulty: 3
 --- !u!114 &9014165435976294805
 MonoBehaviour:

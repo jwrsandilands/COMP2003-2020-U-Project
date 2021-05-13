@@ -26,27 +26,29 @@ public class TransactionMenu : MonoBehaviour
     private int productIndex; //this is for current element of the array
     
     //these arrays are used for the buy function 
-    private HookItem[] hookArray; 
-    private RodItem[] rodArray;
-    private BaitItem[] baitArray;
-    private ReelItem[] reelArray;
+    private Hook[] hookArray; 
+    private Rods[] rodArray;
+    private Bait[] baitArray;
+    private Reel[] reelArray;
 
     //used for enabling and disabling the acceptButton
     public Button acceptButton;
 
+    //used for interacting with the players inventory
+    public PlayerInventory playerInventory;
 
   
-    public void DisplayHookData(HookItem[] hooks, int index)
+    public void DisplayHookData(Hook[] hooks, int index)
     {
         //gets the image and name of the product
-        itemNameText.text = hooks[index].getName();
-        productImage.sprite = hooks[index].getImage();
+        itemNameText.text = hooks[index].hookName;
+        productImage.sprite = hooks[index].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
 
         //displays the number of stars based on the player's level (if level is at 2, it will display two stars)
 
-        for(int i = 0; i < hooks[index].getLevel(); i++)
+        for (int i = 0; i < hooks[index].level; i++)
         {
-            if (i < hooks[index].getLevel())
+            if (i < hooks[index].level)
             {
                 stars[i].sprite = goldStar;
             }
@@ -54,7 +56,7 @@ public class TransactionMenu : MonoBehaviour
 
         //the hook's level goes into this level variable
 
-        int level = hooks[index].getLevel();
+        int level = hooks[index].level;
 
         //the rest of the stars are given the blackstar sprite (if level is at 2, the last three will be the blackstar sprite)
 
@@ -64,30 +66,30 @@ public class TransactionMenu : MonoBehaviour
         }
 
         //displays this text
-        buyItemPrompt.text = "This item costs: " + hooks[index].getPrice() + " coins. " + " Do you want to buy it?";
+        buyItemPrompt.text = "This item costs: " + hooks[index].price + " coins. " + " Do you want to buy it?";
 
         //stores these parameters into these variables 
         productIndex = index;
         hookArray = hooks;
     }
 
-    public void DisplayRodData(RodItem[] rods, int index)
+    public void DisplayRodData(Rods[] rods, int index)
     {
         //gets the image and name of the product
-        itemNameText.text = rods[index].getName();
-        productImage.sprite = rods[index].getImage();
+        itemNameText.text = rods[index].rodName;
+        productImage.sprite = rods[index].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
 
         //displays the number of stars based on the product's level (if level is at 2, it will display two stars)
-        for (int i = 0; i < rods[index].getLevel(); i++)
+        for (int i = 0; i < rods[index].level; i++)
         {
-            if (i < rods[index].getLevel())
+            if (i < rods[index].level)
             {
                 stars[i].sprite = goldStar;
             }
         }
 
         //the rod's level goes into this level variable
-        int level = rods[index].getLevel();
+        int level = rods[index].level;
 
         //the rest of the stars are given the blackstar sprite (if level is at 2, the last three will be the blackstar sprite)
 
@@ -97,30 +99,30 @@ public class TransactionMenu : MonoBehaviour
         }
 
         //displays this text
-        buyItemPrompt.text = "This item costs: " + rods[index].getPrice() + " coins. " + " Do you want to buy it?";
+        buyItemPrompt.text = "This item costs: " + rods[index].price + " coins. " + " Do you want to buy it?";
 
         //stores these parameters into these variables 
         productIndex = index;
         rodArray = rods;
     }
 
-    public void DisplayBaitData(BaitItem[] baits, int index)
+    public void DisplayBaitData(Bait[] baits, int index)
     {
         //gets the image and name of the product
-        itemNameText.text = baits[index].getName();
-        productImage.sprite = baits[index].getImage();
+        itemNameText.text = baits[index].baitName;
+        productImage.sprite = baits[index].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
 
         //displays the number of stars based on the product's level (if level is at 2, it will display two stars)
-        for (int i = 0; i < baits[index].getLevel(); i++)
+        for (int i = 0; i < baits[index].level; i++)
         {
-            if (i < baits[index].getLevel())
+            if (i < baits[index].level)
             {
                 stars[i].sprite = goldStar;
             }
         }
 
         //the bait's level goes into this level variable
-        int level = baits[index].getLevel();
+        int level = baits[index].level;
 
         //the rest of the stars are given the blackstar sprite (if level is at 2, the last three will be the blackstar sprite)
         for (int i = level; i < stars.Length; i++)
@@ -129,24 +131,24 @@ public class TransactionMenu : MonoBehaviour
         }
 
         //displays this text
-        buyItemPrompt.text = "This item costs: " + baits[index].getPrice() + " coins. " + " Do you want to buy it?";
+        buyItemPrompt.text = "This item costs: " + baits[index].price + " coins. " + " Do you want to buy it?";
 
         //stores these parameters into these variables 
         productIndex = index;
         baitArray = baits;
     }
 
-    public void DisplayReelData(ReelItem[] reels, int index)
+    public void DisplayReelData(Reel[] reels, int index)
     {
         //gets the image and name of the product
-        itemNameText.text = reels[index].getName();
-        productImage.sprite = reels[index].getImage();
+        itemNameText.text = reels[index].reelName;
+        productImage.sprite = reels[index].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
 
         //displays the number of stars based on the player's level (if level is at 2, it will display two stars)
 
-        for (int i = 0; i < reels[index].getLevel(); i++)
+        for (int i = 0; i < reels[index].level; i++)
         {
-            if (i < reels[index].getLevel())
+            if (i < reels[index].level)
             {
                 stars[i].sprite = goldStar;
             }
@@ -154,7 +156,7 @@ public class TransactionMenu : MonoBehaviour
 
         //the hook's level goes into this level variable
 
-        int level = reels[index].getLevel();
+        int level = reels[index].level;
 
         //the rest of the stars are given the blackstar sprite (if level is at 2, the last three will be the blackstar sprite)
 
@@ -164,7 +166,7 @@ public class TransactionMenu : MonoBehaviour
         }
 
         //displays this text
-        buyItemPrompt.text = "This item costs: " + reels[index].getPrice() + " coins. " + " Do you want to buy it?";
+        buyItemPrompt.text = "This item costs: " + reels[index].price + " coins. " + " Do you want to buy it?";
 
         //stores these parameters into these variables 
         productIndex = index;
@@ -189,13 +191,14 @@ public class TransactionMenu : MonoBehaviour
             //Debug.Log(cost);
 
             //if the currency is greatyr than the product price
-            if (currencyManager.GetCurrency() >= hookArray[productIndex].getPrice())
+            if (currencyManager.GetCurrency() >= hookArray[productIndex].price)
             {
                 buyItemPrompt.text = "Thank you for your purchase.";
-                currencyManager.SubtractCurrency(hookArray[productIndex].getPrice()); //subtract the currency by the product's price
+                currencyManager.SubtractCurrency(hookArray[productIndex].price); //subtract the currency by the product's price
                 acceptButton.enabled = false; //disable the accept button
 
                 //INSERT INVENTORY CODE HERE//// HOOK
+                playerInventory.AddHook(hookArray[productIndex].gameObject);
 
             }
             else
@@ -210,13 +213,16 @@ public class TransactionMenu : MonoBehaviour
             // Debug.Log(cost);
 
             //if the currency is greatyr than the product price
-            if (currencyManager.GetCurrency() >= rodArray[productIndex].getPrice())
+            if (currencyManager.GetCurrency() >= rodArray[productIndex].price)
             {
                 buyItemPrompt.text = "Thank you for your purchase.";
-                currencyManager.SubtractCurrency(rodArray[productIndex].getPrice()); //subtract the currency by the product's price
+                currencyManager.SubtractCurrency(rodArray[productIndex].price); //subtract the currency by the product's price
                 acceptButton.enabled = false; //disable the accept button
 
                 //INSERT INVENTORY CODE HERE//// ROD
+                playerInventory.AddRod(rodArray[productIndex].gameObject);
+
+
             }
             else
             {
@@ -229,13 +235,15 @@ public class TransactionMenu : MonoBehaviour
             //Debug.Log(cost);
 
             //if the currency is greatyr than the product price
-            if (currencyManager.GetCurrency() >= baitArray[productIndex].getPrice())
+            if (currencyManager.GetCurrency() >= baitArray[productIndex].price)
             {
                 buyItemPrompt.text = "Thank you for your purchase.";
-                currencyManager.SubtractCurrency(baitArray[productIndex].getPrice()); //subtract the currency by the product's price
+                currencyManager.SubtractCurrency(baitArray[productIndex].price); //subtract the currency by the product's price
                 acceptButton.enabled = false; //disable the accept button
 
                 //INSERT INVENTORY CODE HERE//// BAIT
+                playerInventory.AddBait(baitArray[productIndex].gameObject);
+
             }
             else
             {
@@ -244,13 +252,15 @@ public class TransactionMenu : MonoBehaviour
         }
         else if (BuyingMenu.isReel)
         {
-            if (currencyManager.GetCurrency() >= reelArray[productIndex].getPrice())
+            if (currencyManager.GetCurrency() >= reelArray[productIndex].price)
             {
                 buyItemPrompt.text = "Thank you for your purchase.";
-                currencyManager.SubtractCurrency(reelArray[productIndex].getPrice()); //subtract the currency by the product's price
+                currencyManager.SubtractCurrency(reelArray[productIndex].price); //subtract the currency by the product's price
                 acceptButton.enabled = false; //disable the accept button
 
                 //INSERT INVENTORY CODE HERE//// BAIT
+                playerInventory.AddReel(reelArray[productIndex].gameObject);
+
             }
             else
             {

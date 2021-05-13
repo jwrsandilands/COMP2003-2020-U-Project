@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Rods : MonoBehaviour
 {
-    public float power = 1f;
+    public string rodName;
+    public int price;
+    public int level;
 
+    public float power = 1f;
 }
 

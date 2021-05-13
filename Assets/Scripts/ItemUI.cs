@@ -25,6 +25,7 @@ public class ItemUI : MonoBehaviour
         {
             icon = Instantiate(currentItem.GetComponent<InventoryItemHolder>().invIcon, gameObject.transform) as GameObject;
             isItem = true;
+            buttonObject.SetActive(true);
             if (inputType == 4)
             {
                 textObject.SetActive(true);

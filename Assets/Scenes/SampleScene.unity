@@ -112,53 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &5878065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5878066}
-  - component: {fileID: 5878067}
-  m_Layer: 0
-  m_Name: Rod 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5878066
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5878065}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5878067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5878065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 2
-  rodPrice: 150
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 1
 --- !u!1 &13503929
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,53 +939,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &81492875
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 81492876}
-  - component: {fileID: 81492877}
-  m_Layer: 0
-  m_Name: Rod 8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &81492876
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81492875}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &81492877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81492875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 8
-  rodPrice: 999
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 5
 --- !u!1 &101865268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,53 +1097,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121094073}
   m_CullTransparentMesh: 0
---- !u!1 &132204606
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 132204607}
-  - component: {fileID: 132204608}
-  m_Layer: 0
-  m_Name: Rod 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &132204607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132204606}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &132204608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132204606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 1
-  rodPrice: 10
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 1
 --- !u!1 &141937790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,41 +1590,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hooks:
-  - {fileID: 1992065285}
-  - {fileID: 737283204}
-  - {fileID: 1620784302}
-  - {fileID: 1369704517}
-  - {fileID: 1494469373}
-  - {fileID: 1929266945}
-  - {fileID: 399137857}
-  - {fileID: 902730463}
+  - {fileID: 5000690825761330601, guid: a1fcadd6b5c546b4d86f2216835862d1, type: 3}
+  - {fileID: 7931105169789581523, guid: 56cfd84920b88c64880afee5a9807a0d, type: 3}
+  - {fileID: 7931105169789581523, guid: f686a4c1b26b443499bf8e57fc8e6a39, type: 3}
+  - {fileID: 7931105169789581523, guid: add4d2fe247806e4fafe5a8502fc3ee8, type: 3}
+  - {fileID: 7931105169789581523, guid: fe4b060588577a343ae6daaad6934121, type: 3}
+  - {fileID: 5000690825761330601, guid: a1fcadd6b5c546b4d86f2216835862d1, type: 3}
+  - {fileID: 7931105169789581523, guid: 56cfd84920b88c64880afee5a9807a0d, type: 3}
+  - {fileID: 7931105169789581523, guid: f686a4c1b26b443499bf8e57fc8e6a39, type: 3}
   rods:
-  - {fileID: 132204608}
-  - {fileID: 5878067}
-  - {fileID: 523960503}
-  - {fileID: 1793423722}
-  - {fileID: 1951659699}
-  - {fileID: 177436800}
-  - {fileID: 1718063893}
-  - {fileID: 81492877}
+  - {fileID: 8047724200301730456, guid: d3b1e14781bfde44ba5cf3ad7c75ae61, type: 3}
+  - {fileID: 1145647442362752026, guid: a86ab00c324d9cf409bade7320e91d1e, type: 3}
+  - {fileID: 983951136516731174, guid: fd2f11112e0def94d9c7a3d378db253d, type: 3}
+  - {fileID: 6170302702829009940, guid: 25a05752e8f67ff4baf73aeb97670780, type: 3}
+  - {fileID: 727545854027280714, guid: e674af9ebd2b50e4eb5b648b8d5824da, type: 3}
+  - {fileID: 3917383101671386313, guid: 605c2a4739794a94d833ed9e05d0d6b6, type: 3}
+  - {fileID: 8047724200301730456, guid: d3b1e14781bfde44ba5cf3ad7c75ae61, type: 3}
+  - {fileID: 1145647442362752026, guid: a86ab00c324d9cf409bade7320e91d1e, type: 3}
   baits:
-  - {fileID: 1510069326}
-  - {fileID: 746722497}
-  - {fileID: 1381254619}
-  - {fileID: 900608438}
-  - {fileID: 1819986735}
-  - {fileID: 2119861583}
-  - {fileID: 169205548}
-  - {fileID: 563018539}
+  - {fileID: 926617461792224110, guid: 5bc80bf6b1c36e84babdc0a1a0e55747, type: 3}
+  - {fileID: 926617461792224110, guid: 48ea46af230c8074daffa32ced60062e, type: 3}
+  - {fileID: 5976927424203689760, guid: 6c1206d9d8f39494f83becc7ec012b68, type: 3}
+  - {fileID: 5976927424203689760, guid: 4139c0826cc57ad40af5a430a318ec92, type: 3}
+  - {fileID: 5976927424203689760, guid: 1d15f7ae1de26814d8aec39cd49cd314, type: 3}
+  - {fileID: 5976927424203689760, guid: 3e7d8740e2905a44a9c906c7b0a8a0dc, type: 3}
+  - {fileID: 926617461792224110, guid: 48ea46af230c8074daffa32ced60062e, type: 3}
+  - {fileID: 5976927424203689760, guid: 6c1206d9d8f39494f83becc7ec012b68, type: 3}
   reels:
-  - {fileID: 1009872651}
-  - {fileID: 1974338508}
-  - {fileID: 600085625}
-  - {fileID: 350323830}
-  - {fileID: 561170761}
-  - {fileID: 177568605}
-  - {fileID: 280155742}
-  - {fileID: 1379155432}
+  - {fileID: 7186068464159640430, guid: 841e7b5a78ee81f4f9bbd2367f765cee, type: 3}
+  - {fileID: 7186068464159640430, guid: 6ee598f88084db0418ef2cc79a5842f9, type: 3}
+  - {fileID: 7186068464159640430, guid: e7e5fd8477f8c8c4cb1ab0ffe985a69c, type: 3}
+  - {fileID: 7186068464159640430, guid: f537848a9f4317c4e9e1265d9705d4fe, type: 3}
+  - {fileID: 7186068464159640430, guid: d51bb0690d6bc6f43ada4a8355460773, type: 3}
+  - {fileID: 7186068464159640430, guid: 841e7b5a78ee81f4f9bbd2367f765cee, type: 3}
+  - {fileID: 7186068464159640430, guid: 6ee598f88084db0418ef2cc79a5842f9, type: 3}
+  - {fileID: 7186068464159640430, guid: e7e5fd8477f8c8c4cb1ab0ffe985a69c, type: 3}
   images:
   - {fileID: 772438134}
   - {fileID: 1682322055}
@@ -1823,53 +1682,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &177436798
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 177436799}
-  - component: {fileID: 177436800}
-  m_Layer: 0
-  m_Name: Rod 6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &177436799
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177436798}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &177436800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177436798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 6
-  rodPrice: 500
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 3
 --- !u!1 &177568603
 GameObject:
   m_ObjectHideFlags: 0
@@ -3131,7 +2943,7 @@ MonoBehaviour:
   hookname: Hook 7
   hookPrice: 750
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 7
+  hookLevel: 4
 --- !u!1 &403865430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,53 +3577,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.8899994, y: -0.22}
   m_SizeDelta: {x: 11.473, y: 49.92}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &523960501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 523960502}
-  - component: {fileID: 523960503}
-  m_Layer: 0
-  m_Name: Rod 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &523960502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523960501}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &523960503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523960501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 3
-  rodPrice: 150
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 2
 --- !u!1 &533137247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4439,7 +4204,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 940438955}
-  - {fileID: 1045194233}
   - {fileID: 602289470}
   - {fileID: 1937500212}
   m_Father: {fileID: 0}
@@ -4572,7 +4336,7 @@ Transform:
   - {fileID: 169205547}
   - {fileID: 563018538}
   m_Father: {fileID: 583149161}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &603499872
 PrefabInstance:
@@ -5269,7 +5033,7 @@ MonoBehaviour:
   hookname: Hook 2
   hookPrice: 50
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 2
+  hookLevel: 1
 --- !u!1 &746722495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6608,7 +6372,7 @@ MonoBehaviour:
   hookname: Hook 8
   hookPrice: 999
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 8
+  hookLevel: 5
 --- !u!1 &906862624
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,44 +7731,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1322065663}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1045194232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1045194233}
-  m_Layer: 0
-  m_Name: Rods
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1045194233
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045194232}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -226.2782, y: -169.48697, z: 11.531406}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 132204607}
-  - {fileID: 5878066}
-  - {fileID: 523960502}
-  - {fileID: 1793423721}
-  - {fileID: 1951659698}
-  - {fileID: 177436799}
-  - {fileID: 1718063892}
-  - {fileID: 81492876}
-  m_Father: {fileID: 583149161}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060966768
 GameObject:
@@ -9464,6 +9190,7 @@ MonoBehaviour:
   buyingMenu: {fileID: 175212856}
   currencyManager: {fileID: 1656890169}
   acceptButton: {fileID: 937992007}
+  playerInventory: {fileID: 2029121856}
 --- !u!1 &1322065662
 GameObject:
   m_ObjectHideFlags: 0
@@ -9577,7 +9304,7 @@ MonoBehaviour:
   hookname: Hook 4
   hookPrice: 200
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 4
+  hookLevel: 2
 --- !u!1 &1375227404
 GameObject:
   m_ObjectHideFlags: 0
@@ -10497,7 +10224,7 @@ MonoBehaviour:
   hookname: Hook 5
   hookPrice: 350
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 5
+  hookLevel: 3
 --- !u!1 &1505163754
 GameObject:
   m_ObjectHideFlags: 0
@@ -11286,7 +11013,7 @@ MonoBehaviour:
   hookname: Hook 3
   hookPrice: 100
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 3
+  hookLevel: 2
 --- !u!1 &1656890168
 GameObject:
   m_ObjectHideFlags: 0
@@ -11614,53 +11341,6 @@ RectTransform:
   m_AnchoredPosition: {x: -435, y: -10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1718063891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1718063892}
-  - component: {fileID: 1718063893}
-  m_Layer: 0
-  m_Name: Rod 7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1718063892
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718063891}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1718063893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718063891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 4
-  rodPrice: 500
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 4
 --- !u!1 &1726126155
 GameObject:
   m_ObjectHideFlags: 0
@@ -12303,53 +11983,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785370440}
   m_CullTransparentMesh: 0
---- !u!1 &1793423720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1793423721}
-  - component: {fileID: 1793423722}
-  m_Layer: 0
-  m_Name: Rod 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1793423721
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793423720}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1793423722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793423720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 4
-  rodPrice: 200
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 2
 --- !u!1 &1798134686
 GameObject:
   m_ObjectHideFlags: 0
@@ -13039,7 +12672,7 @@ MonoBehaviour:
   hookname: Hook 6
   hookPrice: 500
   hookImage: {fileID: 21300000, guid: 3e2ea2d810716834d9cca03905a3d17f, type: 3}
-  hookLevel: 6
+  hookLevel: 3
 --- !u!1 &1929367339
 GameObject:
   m_ObjectHideFlags: 0
@@ -13155,7 +12788,7 @@ Transform:
   - {fileID: 280155741}
   - {fileID: 1379155433}
   m_Father: {fileID: 583149161}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946355010
 GameObject:
@@ -13222,53 +12855,6 @@ MonoBehaviour:
   numberText: {fileID: 1689143466}
   totalCostText: {fileID: 885663325}
   shopNotification: {fileID: 1443094107}
---- !u!1 &1951659697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1951659698}
-  - component: {fileID: 1951659699}
-  m_Layer: 0
-  m_Name: Rod 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1951659698
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951659697}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1045194233}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1951659699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951659697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e839d0cf9825c5458a80ed497ac1496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodName: Rod 5
-  rodPrice: 350
-  rodImage: {fileID: 21300000, guid: c05f81fe87db6af45a75e68636245318, type: 3}
-  rodLevel: 3
 --- !u!1 &1961399940
 GameObject:
   m_ObjectHideFlags: 0

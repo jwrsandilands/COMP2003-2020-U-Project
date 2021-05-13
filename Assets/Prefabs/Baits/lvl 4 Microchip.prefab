@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e136489367aae4d98a08c48f47194c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baitName: Microchip
+  price: 150
+  level: 3
   attraction: 4
 --- !u!114 &5148125827702668982
 MonoBehaviour:

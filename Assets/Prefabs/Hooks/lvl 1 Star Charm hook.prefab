@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87237382c122e7042a93b5ace5d824d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hookName: Star Charm
+  price: 25
+  level: 1
   catchDifficulty: 1
 --- !u!114 &1096978041909966742
 MonoBehaviour:

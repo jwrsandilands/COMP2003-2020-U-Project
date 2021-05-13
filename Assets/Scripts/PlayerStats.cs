@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     {
         power = 1 * playerInventory.rodSelected.GetComponent<Rods>().power;
         attraction = 1 * playerInventory.baitSelected.GetComponent<Bait>().attraction;
-        catchDifficulty = 1 * playerInventory.hookSelected.GetComponent<HookItem>().catchDifficulty;
+        catchDifficulty = 1 * playerInventory.hookSelected.GetComponent<Hook>().catchDifficulty;
         speed = 1 * playerInventory.reelSelected.GetComponent<Reel>().speed;
     }
 

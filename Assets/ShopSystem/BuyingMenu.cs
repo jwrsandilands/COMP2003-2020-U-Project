@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BuyingMenu : MonoBehaviour
 {
-    public Hook[] hooks;
+    public HookItem[] hooks;
 
     public RodItem[] rods;
 

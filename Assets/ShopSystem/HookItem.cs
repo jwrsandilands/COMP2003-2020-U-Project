@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hook : MonoBehaviour
+public class HookItem : MonoBehaviour
 {
     public string hookname; //this is the hook's name
     public int hookPrice; //this is the hook's price

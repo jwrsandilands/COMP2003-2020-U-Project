@@ -26,7 +26,7 @@ public class TransactionMenu : MonoBehaviour
     private int productIndex; //this is for current element of the array
     
     //these arrays are used for the buy function 
-    private Hook[] hookArray; 
+    private HookItem[] hookArray; 
     private RodItem[] rodArray;
     private BaitItem[] baitArray;
     private ReelItem[] reelArray;
@@ -36,7 +36,7 @@ public class TransactionMenu : MonoBehaviour
 
 
   
-    public void DisplayHookData(Hook[] hooks, int index)
+    public void DisplayHookData(HookItem[] hooks, int index)
     {
         //gets the image and name of the product
         itemNameText.text = hooks[index].getName();
@@ -196,6 +196,7 @@ public class TransactionMenu : MonoBehaviour
                 acceptButton.enabled = false; //disable the accept button
 
                 //INSERT INVENTORY CODE HERE//// HOOK
+
             }
             else
             {

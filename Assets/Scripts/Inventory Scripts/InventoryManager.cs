@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
+    public Currency currencyManager;
 
     [Header("Needed Gameobjects")]
     public GameObject itemUI;
@@ -54,12 +55,12 @@ public class InventoryManager : MonoBehaviour
                 if (tempInventory[j] == null)
                 {
                     itemUis[i, j].GetComponent<ItemUI>().currentItem = noItemIcon;
-                    itemUis[i, j].GetComponent<ItemUI>().Draw(true, i);
+                    itemUis[i, j].GetComponent<ItemUI>().Draw(true, i, j);
                 }
                 else
                 {
                     itemUis[i, j].GetComponent<ItemUI>().currentItem = tempInventory[j]; //.GetComponent<Hook>().invIcon;
-                    itemUis[i, j].GetComponent<ItemUI>().Draw(false, i);
+                    itemUis[i, j].GetComponent<ItemUI>().Draw(false, i, j);
                 }
             }
         }
@@ -102,6 +103,12 @@ public class InventoryManager : MonoBehaviour
         selectedReel.transform.parent = selectedUI.GetComponent<InventorySelected>().SelectedReel.transform;
     }
 
+    public void SellFish(int inputIndex) 
+    {
+        playerInventory.SellFish(inputIndex);
+        AddFish();
+    }
+
     public void AddFish()
     {
         GameObject[] tempInventory = playerInventory.inventory.GetFish();
@@ -111,7 +118,13 @@ public class InventoryManager : MonoBehaviour
             {
                 Destroy(itemUis[4, i].GetComponent<ItemUI>().icon);
                 itemUis[4, i].GetComponent<ItemUI>().currentItem = tempInventory[i]; //.GetComponent<Hook>().invIcon;
-                itemUis[4, i].GetComponent<ItemUI>().Draw(false, 4);
+                itemUis[4, i].GetComponent<ItemUI>().Draw(false, 4, i);
+            }
+            else 
+            {
+                Destroy(itemUis[4, i].GetComponent<ItemUI>().icon);
+                itemUis[4, i].GetComponent<ItemUI>().currentItem = noItemIcon;
+                itemUis[4, i].GetComponent<ItemUI>().Draw(true, 4, i);
             }
         }
     }
@@ -142,9 +155,14 @@ public class InventoryManager : MonoBehaviour
             {
                 Destroy(itemUis[type, i].GetComponent<ItemUI>().icon);
                 itemUis[type, i].GetComponent<ItemUI>().currentItem = tempInventory[i];
-                itemUis[type, i].GetComponent<ItemUI>().Draw(false, type);
+                itemUis[type, i].GetComponent<ItemUI>().Draw(false, type, i);
             }
         }
+    }
+
+    public void AddCurrency(int newCurrency) 
+    {
+        currencyManager.SetCurrency(newCurrency);
     }
 
 }

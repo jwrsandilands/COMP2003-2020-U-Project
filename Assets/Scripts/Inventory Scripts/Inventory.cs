@@ -78,6 +78,19 @@ public class Inventory
         }
     }
 
+    public int SellFish(int index) 
+    {
+        int output;
+        fish[index].GetComponent<Fish>().stackLevel -= 1;
+        output = fish[index].GetComponent<Fish>().fishPrice;
+        if (fish[index].GetComponent<Fish>().stackLevel == 0) 
+        {
+            fish[index] = null;
+        }
+
+        return output;
+    }
+
     public void AddRod(GameObject newRod) 
     {
         int nextnullitemslot = -1;

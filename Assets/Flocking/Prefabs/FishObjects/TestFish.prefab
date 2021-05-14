@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Reality Reem
+  baitable: 1
+  isRobot: 0
   fishLevel: 1
 --- !u!114 &2747372123674967249
 MonoBehaviour:
@@ -137,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Reality Reem
   stackLevel: 1
+  fishPrice: 25
 --- !u!1 &5658032073112285571
 GameObject:
   m_ObjectHideFlags: 0

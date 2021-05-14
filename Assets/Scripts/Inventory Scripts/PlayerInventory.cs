@@ -18,6 +18,12 @@ public class PlayerInventory : MonoBehaviour
         inventoryManager.AddFish();
     }
 
+    public void SellFish(int index) 
+    {
+        int sellingPrice = inventory.SellFish(index);
+        inventoryManager.AddCurrency(sellingPrice);
+    }
+
     public void AddRod(GameObject newRod) 
     {
         inventory.AddRod(newRod);

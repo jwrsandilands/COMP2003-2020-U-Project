@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Shadey Sun Fish
+  baitable: 1
+  isRobot: 0
   fishLevel: 5
 --- !u!114 &1509507286498981887
 MonoBehaviour:
@@ -236,3 +238,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Shadey Sun Fish
   stackLevel: 1
+  fishPrice: 250

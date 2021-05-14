@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Galactic Guppy
+  baitable: 1
+  isRobot: 0
   fishLevel: 2
 --- !u!114 &2747372123674967249
 MonoBehaviour:
@@ -107,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Galactic Guppy
   stackLevel: 1
+  fishPrice: 16
 --- !u!1 &5658032073112285571
 GameObject:
   m_ObjectHideFlags: 0

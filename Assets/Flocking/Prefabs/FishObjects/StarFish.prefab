@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Star Fish
+  baitable: 1
+  isRobot: 0
   fishLevel: 4
 --- !u!114 &3127713751438860742
 MonoBehaviour:
@@ -125,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Star Fish
   stackLevel: 1
+  fishPrice: 100
 --- !u!114 &7484831061112313036
 MonoBehaviour:
   m_ObjectHideFlags: 0

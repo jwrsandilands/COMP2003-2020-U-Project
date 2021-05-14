@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Asteroid Belt Breem
+  baitable: 1
+  isRobot: 0
   fishLevel: 3
 --- !u!114 &3715425631561420806
 MonoBehaviour:
@@ -107,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Asteroid Belt Breem
   stackLevel: 1
+  fishPrice: 75
 --- !u!1 &3542317527157188306
 GameObject:
   m_ObjectHideFlags: 0

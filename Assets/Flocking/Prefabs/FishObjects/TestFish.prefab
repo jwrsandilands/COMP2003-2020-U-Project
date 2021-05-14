@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Reality Reem
   stackLevel: 1
-  fishPrice: 25
+  fishPrice: 4
 --- !u!1 &5658032073112285571
 GameObject:
   m_ObjectHideFlags: 0

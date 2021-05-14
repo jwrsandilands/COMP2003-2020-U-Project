@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishName: Martian Mackeral
+  baitable: 1
+  isRobot: 0
   fishLevel: 1
 --- !u!114 &3742151067198460016
 MonoBehaviour:
@@ -107,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Martian Mackeral
   stackLevel: 1
+  fishPrice: 4
 --- !u!1 &3551592403296528036
 GameObject:
   m_ObjectHideFlags: 0

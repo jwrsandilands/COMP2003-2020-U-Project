@@ -45,6 +45,8 @@ public class BuyingMenu : MonoBehaviour
             images[i].sprite = rods[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
             textPrices[i].text = rods[i].price.ToString();
         }
+
+        images[4].gameObject.transform.parent.gameObject.SetActive(true);
     }
 
     public void DisplayBaitProducts()
@@ -59,6 +61,8 @@ public class BuyingMenu : MonoBehaviour
             images[i].sprite = baits[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
             textPrices[i].text = baits[i].price.ToString();
         }
+
+        images[4].gameObject.transform.parent.gameObject.SetActive(true);
     }
 
 
@@ -74,6 +78,8 @@ public class BuyingMenu : MonoBehaviour
             images[i].sprite = hooks[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
             textPrices[i].text = hooks[i].price.ToString();
         }
+
+        images[4].gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     public void DisplayReelProducts()
@@ -88,6 +94,8 @@ public class BuyingMenu : MonoBehaviour
             images[i].sprite = reels[i].gameObject.GetComponent<InventoryItemHolder>().invIcon.GetComponent<Image>().sprite;
             textPrices[i].text = reels[i].price.ToString();
         }
+
+        images[4].gameObject.transform.parent.gameObject.SetActive(false);
     }
 
 

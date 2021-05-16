@@ -23,8 +23,7 @@ public class FishSpawner : MonoBehaviour
     private int maxFish;
     
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         spawn();
         
@@ -33,7 +32,7 @@ public class FishSpawner : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(GameObject.FindWithTag("flock") == null)
         {
@@ -41,7 +40,7 @@ public class FishSpawner : MonoBehaviour
         }
     }
 
-    public void spawn()
+    private void spawn()
     {
         colliderLvl1.enabled = true;
         colliderLvl2.enabled = true;

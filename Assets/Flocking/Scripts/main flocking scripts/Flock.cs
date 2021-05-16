@@ -29,13 +29,12 @@ public class Flock : MonoBehaviour
     [Range(0f, 1f)]
     public float avoidanceRadiusMultiplier = 0.5f;
 
-    float squareMaxSpeed;
-    float squareNeighbourRadius;
-    float squareAvoidanceRadius;
+    private float squareMaxSpeed;
+    private float squareNeighbourRadius;
+    private float squareAvoidanceRadius;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         spawnPoint = gameObject.transform;
         squareMaxSpeed = maxSpeed * maxSpeed;
@@ -56,8 +55,8 @@ public class Flock : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void Update()
     {
         hook = GameObject.FindGameObjectWithTag("Hook");
         foreach (FlockAgent agent in agents)
@@ -110,7 +109,7 @@ public class Flock : MonoBehaviour
         }
     }
 
-    List<Transform> getNearbyObjects(FlockAgent agent)
+    private List<Transform> getNearbyObjects(FlockAgent agent)
     {
         
         List<Transform> context = new List<Transform>();

@@ -11,19 +11,19 @@ public class mapCreate : MonoBehaviour
     //Set up colider variables
     [SerializeField]
     public Collider2D collider;
-    Vector3 cMin, cMax;
+    private Vector3 cMin, cMax;
 
     //Get Number of Planets to Spawn
     [SerializeField]
     private int maxPlanets;
 
     //set co-ordinates Planets Spawn in
-    float xMin, xMax, yMin, yMax;
+    private float xMin, xMax, yMin, yMax;
 
     
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         collider = GetComponent<Collider2D>();
         cMin = collider.bounds.min;

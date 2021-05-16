@@ -9,8 +9,7 @@ public class Planet_Spin : MonoBehaviour
     public float minSize, MaxSize;
     public float sizeNumber;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         spinNumber = Random.Range(minSpin, maxSpin);
         sizeNumber = Random.Range(minSize, MaxSize);
@@ -18,8 +17,7 @@ public class Planet_Spin : MonoBehaviour
         transform.localScale = scale;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
         transform.Rotate(0, 0, spinNumber);
     }

@@ -10,18 +10,15 @@ public class FlockAgent : MonoBehaviour
     public bool baitable = true;
     public bool isRobot;
 
-    Flock agentFlock;
+    private Flock agentFlock;
     public Flock AgentFlock { get { return agentFlock; } }
 
-    Collider2D agentCollider;
+    private Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
 
     public int fishLevel;
 
-    
-
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         agentCollider = GetComponent<Collider2D>();
     }

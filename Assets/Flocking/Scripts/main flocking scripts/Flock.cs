@@ -129,7 +129,7 @@ public class Flock : MonoBehaviour
     {
         if (PlayerStats.instance.attraction == 1)
         {
-            if (fishLevel == 1)
+            if (fishLevel <= 1)
             {
                 int randomNum = Random.Range(0, 9);
                 bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
@@ -140,7 +140,7 @@ public class Flock : MonoBehaviour
         if (PlayerStats.instance.attraction == 2)
         {
 
-            if (fishLevel == 2 || fishLevel == 1)
+            if (fishLevel <= 2)
             {
                 int randomNum = Random.Range(0, 9);
                 bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
@@ -151,7 +151,7 @@ public class Flock : MonoBehaviour
         {
 
 
-            if (fishLevel == 3 || fishLevel == 2)
+            if (fishLevel <= 3 )
             {
                 int randomNum = Random.Range(0, 9);
                 bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
@@ -171,7 +171,7 @@ public class Flock : MonoBehaviour
         if (PlayerStats.instance.attraction == 5)
         {
 
-            if (fishLevel == 4 || fishLevel == 3)
+            if (fishLevel <= 4)
             {
                 int randomNum = Random.Range(0, 9);
                 bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };
@@ -182,7 +182,7 @@ public class Flock : MonoBehaviour
         if (PlayerStats.instance.attraction == 6)
         {
 
-            if (fishLevel == 5)
+            if (fishLevel <= 5)
             {
                 int randomNum = Random.Range(0, 9);
                 bool[] isLured = new bool[10] { true, false, false, false, false, false, false, false, false, false };

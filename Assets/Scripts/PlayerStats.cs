@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
         instance = this;
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         power = 1 * playerInventory.rodSelected.GetComponent<Rods>().power;
         attraction = 1 * playerInventory.baitSelected.GetComponent<Bait>().attraction;

@@ -7,21 +7,21 @@ public class PlayerCast : MonoBehaviour
     private Camera theCam;
     public GameObject CrossHair;
     public Vector2 pivotPoint;
-    // Start is called before the first frame update
-    void Start()
+    
+    public void Start()
     {
         theCam = Camera.main; 
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void Update()
     {
         MoveCrossHair();    
     }
 
     
 
-    public void MoveCrossHair()
+    private void MoveCrossHair()
     {
         Vector3 aim = Input.mousePosition;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);

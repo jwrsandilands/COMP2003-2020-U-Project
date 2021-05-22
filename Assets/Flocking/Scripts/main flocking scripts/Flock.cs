@@ -10,7 +10,7 @@ public class Flock : MonoBehaviour
     private bool chance = false;
 
     public FlockAgent agentPrefab;
-    List<FlockAgent> agents = new List<FlockAgent>();
+    private List<FlockAgent> agents = new List<FlockAgent>();
     
     public int range = 10;
     public int amountOfFlock;

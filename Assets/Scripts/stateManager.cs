@@ -119,7 +119,7 @@ public class stateManager : MonoBehaviour
         //insert code for what happens when a fish is caught
     }
 
-    private void ResetScene()
+    public void ResetScene()
     {
         theCam.GetComponent<MoveToOrigin>().enabled = true;
         Destroy(GameObject.FindGameObjectWithTag("hookParent"));

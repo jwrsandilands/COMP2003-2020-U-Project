@@ -9,7 +9,11 @@ public class Currency : MonoBehaviour
     public Text currencyText; //this is for showing the currency onscreen
     public Text gamePlayCurrencyText; //for gameplay viewing
 
-    
+    private void Start()
+    {
+        currencyText.text = currency.ToString();
+        gamePlayCurrencyText.text = "Money: \n" + currency.ToString();
+    }
 
     public int GetCurrency()
     {

@@ -47,7 +47,7 @@ MonoBehaviour:
   agentPrefab: {fileID: 4547587722777383661, guid: 38bd722cabf81eb45b8fba7ba5abee79,
     type: 3}
   range: 10
-  amountOfFlock: 3
+  amountOfFlock: 4
   behaviour: {fileID: 11400000, guid: 93cc17ab4a23fbc49907c9ec3819393e, type: 2}
   startingCount: 9
   driveFactor: 100

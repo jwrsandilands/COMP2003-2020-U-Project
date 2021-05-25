@@ -7148,7 +7148,7 @@ PrefabInstance:
     - target: {fileID: 1310622391132842712, guid: fa01261dcd771a841806c8b9f1bc07d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.86
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 1310622391132842712, guid: fa01261dcd771a841806c8b9f1bc07d4,
         type: 3}
@@ -10441,6 +10441,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: StateManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: theCame
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: theCam
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 1306320146}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 757010494}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: allText
+      value: 
+      objectReference: {fileID: 2173645257135469054, guid: cb4c49927b8ebc047918d08c83ff0a84,
+        type: 3}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: textSpawn
+      value: 
+      objectReference: {fileID: 1341497138}
+    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
+        type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 2029121856}
     - target: {fileID: 3677380827834020230, guid: 7065c15ef7e03ca429541a729e6b4f66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10496,42 +10532,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: theCame
-      value: 
-      objectReference: {fileID: 534669904}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: theCam
-      value: 
-      objectReference: {fileID: 534669904}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: minigame
-      value: 
-      objectReference: {fileID: 1306320146}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 757010494}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: allText
-      value: 
-      objectReference: {fileID: 2173645257135469054, guid: cb4c49927b8ebc047918d08c83ff0a84,
-        type: 3}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: textSpawn
-      value: 
-      objectReference: {fileID: 1341497138}
-    - target: {fileID: 3677380827834020231, guid: 7065c15ef7e03ca429541a729e6b4f66,
-        type: 3}
-      propertyPath: playerInventory
-      value: 
-      objectReference: {fileID: 2029121856}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7065c15ef7e03ca429541a729e6b4f66, type: 3}
 --- !u!114 &4496990715610156786

@@ -47,10 +47,10 @@ MonoBehaviour:
   agentPrefab: {fileID: 3085577085432938060, guid: 4d572fe5aa8df46498713435c12367ee,
     type: 3}
   range: 10
-  amountOfFlock: 2
+  amountOfFlock: 3
   behaviour: {fileID: 11400000, guid: 54010153fdde74844acfe7ad80491e91, type: 2}
   startingCount: 15
-  driveFactor: 100
+  driveFactor: 54
   maxSpeed: 5
   neighborRadius: 2.2
   avoidanceRadiusMultiplier: 0.5

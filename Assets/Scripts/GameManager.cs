@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void StartDemo() 
+    {
+        SceneManager.LoadScene("DemoScene");
+    }
+    // Used for the demo version of the game.
+
     public void EndGame() 
     {
         SceneManager.LoadScene("Menu");

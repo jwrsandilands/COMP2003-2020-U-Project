@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8236,7 +8236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c021cb79b49cd1a46a5f3e6a3429b590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 500
+  currency: 250
   currencyText: {fileID: 657127135}
   gamePlayCurrencyText: {fileID: 2130848980}
 --- !u!4 &1656890170
@@ -9807,8 +9807,8 @@ MonoBehaviour:
     stackLimit: 5
     rods:
     - {fileID: 8889926005510088406, guid: d3b1e14781bfde44ba5cf3ad7c75ae61, type: 3}
-    - {fileID: 8104662247988772071, guid: a86ab00c324d9cf409bade7320e91d1e, type: 3}
-    - {fileID: 2307622614230580516, guid: fd2f11112e0def94d9c7a3d378db253d, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -9817,8 +9817,8 @@ MonoBehaviour:
     - {fileID: 0}
     bait:
     - {fileID: 224294766755229361, guid: 5bc80bf6b1c36e84babdc0a1a0e55747, type: 3}
-    - {fileID: 224294766755229361, guid: 48ea46af230c8074daffa32ced60062e, type: 3}
-    - {fileID: 2947534790831439371, guid: 6c1206d9d8f39494f83becc7ec012b68, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -9827,8 +9827,8 @@ MonoBehaviour:
     - {fileID: 0}
     hooks:
     - {fileID: 8943030816231317856, guid: a1fcadd6b5c546b4d86f2216835862d1, type: 3}
-    - {fileID: 391601076490940907, guid: 56cfd84920b88c64880afee5a9807a0d, type: 3}
-    - {fileID: 391601076490940907, guid: f686a4c1b26b443499bf8e57fc8e6a39, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -9837,8 +9837,8 @@ MonoBehaviour:
     - {fileID: 0}
     reels:
     - {fileID: 5887992129093209334, guid: 841e7b5a78ee81f4f9bbd2367f765cee, type: 3}
-    - {fileID: 5887992129093209334, guid: 6ee598f88084db0418ef2cc79a5842f9, type: 3}
-    - {fileID: 5887992129093209334, guid: e7e5fd8477f8c8c4cb1ab0ffe985a69c, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}

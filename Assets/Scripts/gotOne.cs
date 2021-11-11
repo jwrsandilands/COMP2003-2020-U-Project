@@ -29,7 +29,7 @@ public class gotOne : MonoBehaviour
     {
         if(stateManager.instance.HasCaught == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, lureTo, 0.06f * PlayerStats.instance.speed);
+            transform.position = Vector2.MoveTowards(transform.position, lureTo, 3f * PlayerStats.instance.speed * Time.deltaTime);
         }
         if (Vector2.Distance(this.transform.position, lureTo ) < 0.5f && stateManager.instance.HasCaught == true)
         {
